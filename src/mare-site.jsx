@@ -66,6 +66,8 @@ export default function Mare() {
   const [interest, setInterest] = useState("both");
   const [submitted, setSubmitted] = useState(false);
   const [activeNav, setActiveNav] = useState("hero");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [emailError, setEmailError] = useState(false);
 
   useEffect(() => { const h = () => setScrollY(window.scrollY); window.addEventListener("scroll", h, { passive: true }); return () => window.removeEventListener("scroll", h); }, []);
   useEffect(() => { const ids = ["hero","products","drift","aquapulse","signup"]; const o = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) setActiveNav(e.target.id); }); }, { threshold: 0.2 }); ids.forEach(id => { const el = document.getElementById(id); if (el) o.observe(el); }); return () => o.disconnect(); }, []);
@@ -99,6 +101,20 @@ export default function Mare() {
         .ib:hover{border-color:#22d3ee;color:#22d3ee}
         .ib.s{border-color:#0891b2;background:#0891b2;color:#020a18;font-weight:600}
         .bb{position:absolute;background:rgba(255,255,255,0.12);border-radius:50%;animation:bubbleRise linear infinite}
+        .nav-links{display:flex;gap:28px}
+        .hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:36px;height:36px;cursor:pointer;background:none;border:none;padding:0;z-index:1002}
+        .hamburger span{display:block;width:22px;height:2px;background:white;border-radius:2px;transition:all 0.3s cubic-bezier(0.16,1,0.3,1)}
+        .hamburger span:nth-child(1){transform:translateY(-6px)}
+        .hamburger span:nth-child(3){transform:translateY(6px)}
+        .hamburger.open span:nth-child(1){transform:rotate(45deg)}
+        .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+        .hamburger.open span:nth-child(3){transform:rotate(-45deg)}
+        .mobile-menu{position:fixed;inset:0;z-index:1001;background:rgba(2,10,24,0.95);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1)}
+        .mobile-menu.open{opacity:1;pointer-events:auto}
+        .mobile-menu a{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s,transform 0.3s;transform:translateY(20px);opacity:0}
+        .mobile-menu.open a{transform:translateY(0);opacity:1}
+        .mobile-menu a:hover,.mobile-menu a.a{color:#22d3ee}
+        @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
       `}</style>
 
       <div style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}>
@@ -111,10 +127,16 @@ export default function Mare() {
           <div style={{ width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg,#0891b2,#22d3ee)", display: "flex", alignItems: "center", justifyContent: "center", color: "#020a18", fontSize: 17, fontWeight: 800, fontFamily: "'Syne',sans-serif" }}>M</div>
           <span style={{ fontFamily: "'Syne',sans-serif", fontSize: 22, fontWeight: 800, color: "white" }}>MARE</span>
         </a>
-        <div style={{ display: "flex", gap: 28 }}>
+        <div className="nav-links">
           {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"drift",l:"DRIFT"},{id:"aquapulse",l:"AquaPulse"},{id:"signup",l:"Join"}].map(n => <a key={n.id} href={`#${n.id}`} className={`nl ${activeNav===n.id?"a":""}`} style={{ fontSize: 13, fontWeight: 500, color: activeNav===n.id ? "#22d3ee" : "rgba(255,255,255,0.5)" }}>{n.l}</a>)}
         </div>
+        <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+          <span /><span /><span />
+        </button>
       </nav>
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"drift",l:"DRIFT"},{id:"aquapulse",l:"AquaPulse"},{id:"signup",l:"Join"}].map((n, i) => <a key={n.id} href={`#${n.id}`} className={activeNav===n.id?"a":""} style={{ transitionDelay: menuOpen ? `${i * 0.06}s` : "0s" }} onClick={() => setMenuOpen(false)}>{n.l}</a>)}
+      </div>
 
       {/* HERO */}
       <section id="hero" style={{ height: "100vh", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -164,7 +186,7 @@ export default function Mare() {
             <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,5vw,52px)", fontWeight: 800, color: "white", marginBottom: 16, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>Choose your adventure</h2>
             <p style={{ fontSize: 18, color: "rgba(255,255,255,0.9)", maxWidth: 500, margin: "0 auto", lineHeight: 1.6, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 3px 12px rgba(0,0,0,0.4)" }}>Whether you want total freedom or full-face immersion, MARE has you covered.</p>
           </div></SR>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 28 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28 }}>
             <SR delay={0.1}><div className="gc" style={{ overflow: "hidden", borderRadius: 28 }}>
               <div style={{ padding: 6 }}><img src={P.dF} alt="DRIFT" style={{ width: "100%", borderRadius: 24, display: "block", aspectRatio: "1", objectFit: "cover" }} /></div>
               <div style={{ padding: "24px 32px 32px" }}>
@@ -201,7 +223,7 @@ export default function Mare() {
       <section id="drift" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
         <BgImg src={BG.splash} brightness={0.75} position="center top" overlay="rgba(2,10,24,0.8)" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 48, alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 48, alignItems: "center" }}>
             <SR><div>
               <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.2em", color: "#22d3ee", marginBottom: 12, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>FLAGSHIP PRODUCT</div>
               <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,4vw,48px)", fontWeight: 800, color: "white", marginBottom: 20, lineHeight: 1.08, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>
@@ -228,7 +250,7 @@ export default function Mare() {
       <section id="aquapulse" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
         <BgImg src={BG.deep} brightness={0.8} position="center 30%" overlay="rgba(2,10,24,0.8)" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 48, alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 48, alignItems: "center" }}>
             <SR><PG images={[P.ap1, P.ap2, P.ap3]} labels={["AquaPulse with tank","AquaPulse front","AquaPulse mask"]} /></SR>
             <SR delay={0.15}><div>
               <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.2em", color: "#f97316", marginBottom: 12, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>PORTABLE SYSTEM</div>
@@ -262,7 +284,7 @@ export default function Mare() {
 
       {/* WHY DIFFERENT */}
       <section style={{ position: "relative", padding: "100px 24px", overflow: "hidden" }}>
-        <BgImg src={BG.coral} brightness={0.5} position="center bottom" overlay="rgba(2,10,24,0.8)" />
+        <BgImg src={BG.coral} brightness={0.75} position="center bottom" overlay="rgba(2,10,24,0.55)" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 900, margin: "0 auto" }}>
           <SR><div style={{ textAlign: "center", marginBottom: 56 }}>
             <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(28px,4.5vw,44px)", fontWeight: 800, color: "white", marginBottom: 16, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>Not just lighter. Different.</h2>
@@ -292,18 +314,22 @@ export default function Mare() {
             <div style={{ width: 64, height: 64, borderRadius: 20, background: "linear-gradient(135deg,#0891b2,#22d3ee)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px", fontSize: 28 }}>{"\uD83C\uDF0A"}</div>
             <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(28px,4vw,40px)", fontWeight: 800, color: "white", marginBottom: 12, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>Be first in the water</h2>
             <p style={{ fontSize: 17, color: "rgba(255,255,255,0.9)", marginBottom: 36, lineHeight: 1.6, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 3px 12px rgba(0,0,0,0.4)" }}>Sign up for early access, behind-the-scenes updates, and launch-day pricing.</p>
-            <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 24, flexWrap: "wrap" }}>
-              {[{v:"drift",l:"DRIFT"},{v:"aquapulse",l:"AquaPulse"},{v:"both",l:"Both"}].map(o => <button key={o.v} className={`ib ${interest===o.v?"s":""}`} onClick={() => setInterest(o.v)}>{o.l}</button>)}
+            <div style={{ marginBottom: 24 }}>
+              <p style={{ fontSize: 13, fontWeight: 500, color: "rgba(255,255,255,0.5)", marginBottom: 10, letterSpacing: "0.02em" }}>I'm interested in:</p>
+              <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
+                {[{v:"drift",l:"DRIFT"},{v:"aquapulse",l:"AquaPulse"},{v:"both",l:"Both"}].map(o => <button key={o.v} className={`ib ${interest===o.v?"s":""}`} onClick={() => setInterest(o.v)}>{o.l}</button>)}
+              </div>
             </div>
             <div style={{ display: "flex", gap: 12, maxWidth: 440, margin: "0 auto", flexWrap: "wrap", justifyContent: "center" }}>
-              <input type="email" placeholder="your@email.com" value={email} onChange={e => setEmail(e.target.value)} onKeyDown={e => e.key==="Enter" && email.includes("@") && (async () => {
-                      try { await addDoc(collection(db, "waitlist"), { email, interest, timestamp: serverTimestamp() }); } catch(err) { console.error(err); }
-                      setSubmitted(true);
-                    })()}
-                style={{ flex: 1, minWidth: 220, padding: "16px 20px", borderRadius: 100, border: "1.5px solid rgba(255,255,255,0.2)", fontSize: 16, fontFamily: "'Outfit',sans-serif", outline: "none", transition: "border-color 0.3s", color: "white", background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}
-                onFocus={e => e.target.style.borderColor="#22d3ee"} onBlur={e => e.target.style.borderColor="rgba(255,255,255,0.2)"} />
+              <input type="email" placeholder="your@email.com" value={email} onChange={e => { setEmail(e.target.value); setEmailError(false); }} onKeyDown={e => {
+                      if (e.key !== "Enter") return;
+                      if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) { setEmailError(true); return; }
+                      (async () => { try { await addDoc(collection(db, "waitlist"), { email, interest, timestamp: serverTimestamp() }); } catch(err) { console.error(err); } setSubmitted(true); })();
+                    }}
+                style={{ flex: 1, minWidth: 220, padding: "16px 20px", borderRadius: 100, border: `1.5px solid ${emailError ? "#ef4444" : "rgba(255,255,255,0.2)"}`, fontSize: 16, fontFamily: "'Outfit',sans-serif", outline: "none", transition: "border-color 0.3s", color: "white", background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}
+                onFocus={e => { if (!emailError) e.target.style.borderColor="#22d3ee"; }} onBlur={e => { if (!emailError) e.target.style.borderColor="rgba(255,255,255,0.2)"; }} />
               <button className="cb cp" style={{ padding: "16px 32px" }} onClick={async () => {
-                    if (!email.includes("@")) return;
+                    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) { setEmailError(true); return; }
                     try {
                       await addDoc(collection(db, "waitlist"), {
                         email: email,
@@ -314,7 +340,8 @@ export default function Mare() {
                     setSubmitted(true);
                   }}>Join waitlist</button>
             </div>
-            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 16, textShadow: "0 1px 3px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.4)" }}>No spam. Just launch updates and early access.</p>
+            {emailError && <p style={{ fontSize: 13, color: "#ef4444", marginTop: 10, transition: "opacity 0.3s" }}>Please enter a valid email address.</p>}
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: emailError ? 8 : 16, textShadow: "0 1px 3px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.4)" }}>No spam. Just launch updates and early access.</p>
           </> : <div style={{ padding: 48, animation: "fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) both" }}>
             <div style={{ width: 80, height: 80, borderRadius: "50%", background: "rgba(34,211,238,0.15)", border: "2px solid rgba(34,211,238,0.4)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px", fontSize: 36, color: "#22d3ee" }}>{"\u2713"}</div>
             <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: 32, fontWeight: 800, color: "white", marginBottom: 12 }}>{`You\u2019re on the list`}</h2>
