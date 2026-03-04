@@ -48,7 +48,7 @@ function AC({ value, suffix = "", label }) {
   const ref = useRef(null);
   useEffect(() => { const el = ref.current; if (!el) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) setGo(true); }, { threshold: 0.3 }); o.observe(el); return () => o.disconnect(); }, []);
   useEffect(() => { if (!go) return; let c = 0; const s = value / 80; const t = setInterval(() => { c += s; if (c >= value) { setCount(value); clearInterval(t); } else setCount(Math.floor(c)); }, 20); return () => clearInterval(t); }, [go, value]);
-  return <div ref={ref} style={{ textAlign: "center" }}><div style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(36px,5vw,56px)", fontWeight: 800, color: "white", lineHeight: 1 }}>{count}{suffix}</div><div style={{ fontSize: 14, color: "rgba(255,255,255,0.9)", marginTop: 8 }}>{label}</div></div>;
+  return <div ref={ref} style={{ textAlign: "center" }}><div style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(28px,5vw,56px)", fontWeight: 800, color: "white", lineHeight: 1 }}>{count}{suffix}</div><div style={{ fontSize: 14, color: "rgba(255,255,255,0.9)", marginTop: 8 }}>{label}</div></div>;
 }
 
 function PG({ images, labels }) {
@@ -168,7 +168,7 @@ export default function Mare() {
       <section style={{ minHeight: "55vh", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <BgImg src={BG.splash} brightness={0.9} overlay="rgba(2,10,24,0.8)" />
         <SR><div style={{ position: "relative", zIndex: 1, padding: "60px 24px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "clamp(24px,4vw,48px)", maxWidth: 700, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "clamp(24px,4vw,48px)", maxWidth: 700, margin: "0 auto" }}>
             <AC value={40} suffix="%" label="Lighter than competitors" />
             <AC value={613} suffix="g" label="DRIFT Lightweight" />
             <AC value={2} suffix="" label="Product lines" />
