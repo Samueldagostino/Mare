@@ -70,7 +70,7 @@ export default function Mare() {
   const [emailError, setEmailError] = useState(false);
 
   useEffect(() => { const h = () => setScrollY(window.scrollY); window.addEventListener("scroll", h, { passive: true }); return () => window.removeEventListener("scroll", h); }, []);
-  useEffect(() => { const ids = ["hero","products","drift","aquapulse","signup"]; const o = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) setActiveNav(e.target.id); }); }, { threshold: 0.2 }); ids.forEach(id => { const el = document.getElementById(id); if (el) o.observe(el); }); return () => o.disconnect(); }, []);
+  useEffect(() => { const ids = ["hero","products","drift","aquapulse","hydroharness","signup"]; const o = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) setActiveNav(e.target.id); }); }, { threshold: 0.2 }); ids.forEach(id => { const el = document.getElementById(id); if (el) o.observe(el); }); return () => o.disconnect(); }, []);
 
   const ns = scrollY > 80;
   const hp = Math.min(scrollY * 0.4, 300);
@@ -128,14 +128,14 @@ export default function Mare() {
           <span style={{ fontFamily: "'Syne',sans-serif", fontSize: 22, fontWeight: 800, color: "white" }}>MARE</span>
         </a>
         <div className="nav-links">
-          {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"drift",l:"DRIFT"},{id:"aquapulse",l:"AquaPulse"},{id:"signup",l:"Join"}].map(n => <a key={n.id} href={`#${n.id}`} className={`nl ${activeNav===n.id?"a":""}`} style={{ fontSize: 13, fontWeight: 500, color: activeNav===n.id ? "#22d3ee" : "rgba(255,255,255,0.5)" }}>{n.l}</a>)}
+          {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"drift",l:"DRIFT"},{id:"aquapulse",l:"AquaPulse"},{id:"hydroharness",l:"HydroHarness"},{id:"signup",l:"Join"}].map(n => <a key={n.id} href={`#${n.id}`} className={`nl ${activeNav===n.id?"a":""}`} style={{ fontSize: 13, fontWeight: 500, color: activeNav===n.id ? "#22d3ee" : "rgba(255,255,255,0.5)" }}>{n.l}</a>)}
         </div>
         <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span /><span /><span />
         </button>
       </nav>
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"drift",l:"DRIFT"},{id:"aquapulse",l:"AquaPulse"},{id:"signup",l:"Join"}].map((n, i) => <a key={n.id} href={`#${n.id}`} className={activeNav===n.id?"a":""} style={{ transitionDelay: menuOpen ? `${i * 0.06}s` : "0s" }} onClick={() => setMenuOpen(false)}>{n.l}</a>)}
+        {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"drift",l:"DRIFT"},{id:"aquapulse",l:"AquaPulse"},{id:"hydroharness",l:"HydroHarness"},{id:"signup",l:"Join"}].map((n, i) => <a key={n.id} href={`#${n.id}`} className={activeNav===n.id?"a":""} style={{ transitionDelay: menuOpen ? `${i * 0.06}s` : "0s" }} onClick={() => setMenuOpen(false)}>{n.l}</a>)}
       </div>
 
       {/* HERO */}
@@ -171,8 +171,8 @@ export default function Mare() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "clamp(24px,4vw,48px)", maxWidth: 700, margin: "0 auto" }}>
             <AC value={40} suffix="%" label="Lighter than competitors" />
             <AC value={613} suffix="g" label="DRIFT Lightweight" />
-            <AC value={2} suffix="" label="Product lines" />
-            <AC value={8} suffix="" label="Innovations" />
+            <AC value={3} suffix="" label="Patents pending" />
+            <AC value={10} suffix="" label="Innovations" />
           </div>
         </div></SR>
       </section>
@@ -208,9 +208,9 @@ export default function Mare() {
                   <h3 style={{ fontFamily: "'Syne',sans-serif", fontSize: 28, fontWeight: 800, color: "white" }}>AquaPulse</h3>
                   <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", color: "#f97316", background: "rgba(249,115,22,0.15)", padding: "4px 12px", borderRadius: 100 }}>PORTABLE</span>
                 </div>
-                <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(255,255,255,0.85)", marginBottom: 16 }}>Open mask with handheld mini tank and long-tube mouthpiece regulator. Patented waist-belt attachment coming soon.</p>
+                <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(255,255,255,0.85)", marginBottom: 16 }}>Open mask with mouthpiece regulator, paired with the HydroHarness dual-tank body mount. Two patented devices, one system.</p>
                 <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {["Ultra-portable","0.5L mini tank","Waist-belt ready","Travel-friendly"].map(t => <span key={t} style={{ fontSize: 11, color: "rgba(255,255,255,0.9)", background: "rgba(255,255,255,0.08)", padding: "5px 12px", borderRadius: 100 }}>{t}</span>)}
+                  {["Ultra-portable","0.5L mini tank","HydroHarness","Travel-friendly"].map(t => <span key={t} style={{ fontSize: 11, color: "rgba(255,255,255,0.9)", background: "rgba(255,255,255,0.08)", padding: "5px 12px", borderRadius: 100 }}>{t}</span>)}
                 </div>
                 <a href="#aquapulse" style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 20, fontSize: 15, fontWeight: 600, color: "#f97316", textDecoration: "none", transition: "gap 0.3s" }} onMouseEnter={e => e.currentTarget.style.gap = "12px"} onMouseLeave={e => e.currentTarget.style.gap = "6px"}>{"Explore AquaPulse \u2192"}</a>
               </div>
@@ -260,23 +260,85 @@ export default function Mare() {
               <p style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.9)", marginBottom: 20, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 3px 12px rgba(0,0,0,0.4)" }}>
                 A lightweight open mask paired with a handheld 0.5L mini tank and a long-tube mouthpiece regulator. No certification needed. No heavy gear. Pack it in your beach bag and explore.
               </p>
-              <div style={{ background: "rgba(249,115,22,0.1)", border: "1px solid rgba(249,115,22,0.25)", borderRadius: 16, padding: "16px 20px", marginBottom: 28, backdropFilter: "blur(8px)" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#f97316", boxShadow: "0 0 8px rgba(249,115,22,0.6)" }} />
-                  <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", color: "#f97316" }}>COMING SOON</span>
-                </div>
-                <p style={{ fontSize: 14, color: "rgba(255,255,255,0.85)", lineHeight: 1.5, margin: 0 }}>
-                  {`Patented waist-belt attachment \u2014 holds up to 2 tanks for extended dive time. Currently in design.`}
+              <div style={{ background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.2)", borderRadius: 20, padding: "24px 24px 20px", marginBottom: 28, backdropFilter: "blur(8px)" }}>
+                <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.15em", color: "#f97316", marginBottom: 8 }}>HYDROHARNESS</div>
+                <h3 style={{ fontFamily: "'Syne',sans-serif", fontSize: 22, fontWeight: 800, color: "white", marginBottom: 10, lineHeight: 1.15 }}>Hands free, twice the air.</h3>
+                <p style={{ fontSize: 14, color: "rgba(255,255,255,0.85)", lineHeight: 1.6, margin: "0 0 16px" }}>
+                  The HydroHarness mounts two 0.5L tanks to your waist and thigh, routing air hands-free to the mouthpiece. Snap-lock cradles, Y-valve switching between tanks, ~400g dry weight.
                 </p>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                  {[{i:"\uD83E\uDDBF",l:"Waist + thigh mount"},{i:"\uD83D\uDD04",l:"Dual-tank Y-valve"},{i:"\uD83D\uDD90\uFE0F",l:"Hands-free diving"},{i:"\u26A1",l:"~400g dry weight"}].map(item => (
+                    <div key={item.l} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "rgba(255,255,255,0.9)" }}>
+                      <span style={{ fontSize: 16 }}>{item.i}</span>
+                      <span style={{ fontWeight: 500 }}>{item.l}</span>
+                    </div>
+                  ))}
+                </div>
+                <a href="#hydroharness" style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 16, fontSize: 14, fontWeight: 600, color: "#f97316", textDecoration: "none", transition: "gap 0.3s" }} onMouseEnter={e => e.currentTarget.style.gap = "12px"} onMouseLeave={e => e.currentTarget.style.gap = "6px"}>{"Full specs \u2192"}</a>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-                {[{i:"\uD83C\uDF92",l:"Travel-sized"},{i:"\u270B",l:"One-hand use"},{i:"\uD83E\uDEB6",l:"Ultra lightweight"},{i:"\uD83C\uDF0A",l:"Beach-ready"}].map((item,idx) => (
+                {[{i:"\uD83C\uDF92",l:"Travel-sized"},{i:"\uD83D\uDD90\uFE0F",l:"Hands-free"},{i:"\u2696\uFE0F",l:"Under 2.5 kg total"},{i:"\uD83C\uDF0A",l:"Beach-ready"}].map((item,idx) => (
                   <SR key={item.l} delay={idx*0.06}><div className="gc" style={{ textAlign: "center", padding: "24px 16px" }}>
                     <span style={{ fontSize: 28, display: "block", marginBottom: 8 }}>{item.i}</span>
                     <span style={{ fontSize: 14, fontWeight: 600, color: "white" }}>{item.l}</span>
                   </div></SR>
                 ))}
               </div>
+            </div></SR>
+          </div>
+        </div>
+      </section>
+
+
+      {/* HYDROHARNESS */}
+      <section id="hydroharness" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
+        <BgImg src={BG.deep} brightness={0.75} position="center 60%" overlay="rgba(2,10,24,0.85)" />
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 48, alignItems: "start" }}>
+            <SR><div>
+              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.2em", color: "#f97316", marginBottom: 12, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>AQUAPULSE ACCESSORY</div>
+              <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,4vw,48px)", fontWeight: 800, color: "white", marginBottom: 8, lineHeight: 1.08, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>HydroHarness</h2>
+              <p style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(18px,2vw,24px)", fontWeight: 600, color: "rgba(255,255,255,0.7)", marginBottom: 24, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 3px 12px rgba(0,0,0,0.4)" }}>Wear your air supply.</p>
+              <p style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.9)", marginBottom: 32, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 3px 12px rgba(0,0,0,0.4)" }}>
+                A dual-tank waist belt and thigh strap system engineered for perfect weight balance underwater. Snap-lock tank cradles, a Y-valve manifold for switching between tanks, and integrated tubing routing&nbsp;&mdash; all under 400&nbsp;grams.
+              </p>
+              <div style={{ display: "grid", gap: 16 }}>
+                {[
+                  {i:"\uD83D\uDD12",t:"Snap-Lock Cradles",d:"Click tanks in, thumb-release out. Under 2 seconds."},
+                  {i:"\uD83D\uDD04",t:"Y-Valve Manifold",d:"Switch between tanks with a rotary dial. Double your dive time."},
+                  {i:"\u2696\uFE0F",t:"Hip-Thigh Balance",d:"Weight sits at your center of gravity. Zero drag, zero swing."},
+                  {i:"\uD83E\uDDF5",t:"Marine-Grade Build",d:"Ballistic nylon, neoprene liner, 316 stainless hardware."}
+                ].map((item, idx) => (
+                  <SR key={item.t} delay={idx * 0.08}><div className="gc" style={{ display: "flex", gap: 16, padding: "20px 24px", alignItems: "flex-start" }}>
+                    <span style={{ fontSize: 24, flexShrink: 0, marginTop: 2 }}>{item.i}</span>
+                    <div>
+                      <h4 style={{ fontFamily: "'Syne',sans-serif", fontSize: 16, fontWeight: 700, color: "white", marginBottom: 4 }}>{item.t}</h4>
+                      <p style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", lineHeight: 1.5, margin: 0 }}>{item.d}</p>
+                    </div>
+                  </div></SR>
+                ))}
+              </div>
+            </div></SR>
+            <SR delay={0.15}><div className="gc" style={{ padding: 0, overflow: "hidden", borderRadius: 24 }}>
+              <div style={{ background: "rgba(249,115,22,0.1)", padding: "20px 28px", borderBottom: "1px solid rgba(249,115,22,0.15)" }}>
+                <h3 style={{ fontFamily: "'Syne',sans-serif", fontSize: 20, fontWeight: 800, color: "white", margin: 0 }}>System Specs</h3>
+              </div>
+              {[
+                {l:"Dry Weight",v:"~400g"},
+                {l:"Tank Capacity",v:"2\u00D7 0.5L (1.0L total)"},
+                {l:"Est. Dive Time",v:"20\u201330 min"},
+                {l:"Fits Waist",v:"24\u201346 in"},
+                {l:"Fits Thigh",v:"18\u201328 in"},
+                {l:"Closure",v:"Quick-release marine buckles"},
+                {l:"Tank Interface",v:"Snap-lock polymer cradles"},
+                {l:"Tubing",v:"Medical-grade silicone"},
+                {l:"Patent Status",v:"Pending"}
+              ].map((row, idx) => (
+                <div key={row.l} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 28px", background: idx % 2 === 0 ? "rgba(255,255,255,0.02)" : "transparent", borderBottom: idx < 8 ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
+                  <span style={{ fontSize: 14, color: "rgba(255,255,255,0.6)", fontWeight: 500 }}>{row.l}</span>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: row.l === "Patent Status" ? "#f97316" : "white", textAlign: "right" }}>{row.v}</span>
+                </div>
+              ))}
             </div></SR>
           </div>
         </div>
@@ -295,6 +357,7 @@ export default function Mare() {
               {t:"Engineered, not assembled",d:"Every component \u2014 shell, visor, straps, exhaust \u2014 was individually re-engineered with modern materials. Not off-the-shelf parts in a new shell.",a:"#22d3ee"},
               {t:"Built for content",d:"Integrated GoPro mount, acoustic exhaust diffuser for clean audio, and a visor designed for zero distortion on camera.",a:"#06b6d4"},
               {t:"Magnetic everything",d:"Our patent-pending magnetic quick-release strap system means one-click on, one-click off. No buckles. No fumbling.",a:"#f97316"},
+              {t:"Wearable air supply",d:"The HydroHarness mounts two tanks to your body with snap-lock cradles and a Y-valve manifold. No hands needed. Patent pending.",a:"#f97316"},
             ].map((item,i) => (
               <SR key={item.t} delay={i*0.12}><div className="gc" style={{ padding: 32, height: "100%" }}>
                 <div style={{ width: 48, height: 3, borderRadius: 2, background: item.a, marginBottom: 20 }} />
@@ -356,7 +419,7 @@ export default function Mare() {
           <div style={{ fontFamily: "'Syne',sans-serif", fontSize: 20, fontWeight: 800, color: "white", marginBottom: 16 }}>MARE</div>
           <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)", marginBottom: 24 }}>Underwater breathing gear for a new generation.</p>
           <div style={{ display: "flex", gap: 24, justifyContent: "center", fontSize: 13, marginBottom: 32 }}>
-            {["Home","Products","DRIFT","AquaPulse","Join"].map(l => <a key={l} href={`#${l.toLowerCase()==="home"?"hero":l.toLowerCase()==="join"?"signup":l.toLowerCase()}`} style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={e => e.target.style.color="rgba(255,255,255,0.8)"} onMouseLeave={e => e.target.style.color="rgba(255,255,255,0.35)"}>{l}</a>)}
+            {["Home","Products","DRIFT","AquaPulse","HydroHarness","Join"].map(l => <a key={l} href={`#${l.toLowerCase()==="home"?"hero":l.toLowerCase()==="join"?"signup":l.toLowerCase()}`} style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={e => e.target.style.color="rgba(255,255,255,0.8)"} onMouseLeave={e => e.target.style.color="rgba(255,255,255,0.35)"}>{l}</a>)}
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 24, fontSize: 12, color: "rgba(255,255,255,0.2)" }}>{"\u00A9 2026 MARE. All rights reserved. Patent pending."}</div>
         </div>
