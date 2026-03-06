@@ -133,14 +133,14 @@ export default function Mare() {
           <span style={{ fontFamily: "'Syne',sans-serif", fontSize: 22, fontWeight: 800, color: "white" }}>MARE</span>
         </a>
         <div className="nav-links">
-          {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"drift",l:"DRIFT"},{id:"aquapulse",l:"AquaPulse"},{id:"hydroharness",l:"HydroHarness"},{id:"signup",l:"Join"}].map(n => <a key={n.id} href={`#${n.id}`} className={`nl ${activeNav===n.id?"a":""}`} style={{ fontSize: 13, fontWeight: 500, color: activeNav===n.id ? "#22d3ee" : "rgba(255,255,255,0.5)" }}>{n.l}</a>)}
+          {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"aquapulse",l:"AquaPulse"},{id:"drift",l:"DRIFT"},{id:"hydroharness",l:"HydroHarness"},{id:"signup",l:"Join"}].map(n => <a key={n.id} href={`#${n.id}`} className={`nl ${activeNav===n.id?"a":""}`} style={{ fontSize: 13, fontWeight: 500, color: activeNav===n.id ? "#22d3ee" : "rgba(255,255,255,0.5)" }}>{n.l}</a>)}
         </div>
         <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span /><span /><span />
         </button>
       </nav>
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"drift",l:"DRIFT"},{id:"aquapulse",l:"AquaPulse"},{id:"hydroharness",l:"HydroHarness"},{id:"signup",l:"Join"}].map((n, i) => <a key={n.id} href={`#${n.id}`} className={activeNav===n.id?"a":""} style={{ transitionDelay: menuOpen ? `${i * 0.06}s` : "0s" }} onClick={() => setMenuOpen(false)}>{n.l}</a>)}
+        {[{id:"hero",l:"Home"},{id:"products",l:"Products"},{id:"aquapulse",l:"AquaPulse"},{id:"drift",l:"DRIFT"},{id:"hydroharness",l:"HydroHarness"},{id:"signup",l:"Join"}].map((n, i) => <a key={n.id} href={`#${n.id}`} className={activeNav===n.id?"a":""} style={{ transitionDelay: menuOpen ? `${i * 0.06}s` : "0s" }} onClick={() => setMenuOpen(false)}>{n.l}</a>)}
       </div>
 
       {/* HERO */}
@@ -193,20 +193,6 @@ export default function Mare() {
           </div></SR>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28 }}>
             <SR delay={0.1}><div className="gc" style={{ overflow: "hidden", borderRadius: 28 }}>
-              <div style={{ padding: 6 }}><img src={P.dF} alt="DRIFT" style={{ width: "100%", borderRadius: 24, display: "block", aspectRatio: "1", objectFit: "cover" }} /></div>
-              <div style={{ padding: "24px 32px 32px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-                  <h3 style={{ fontFamily: "'Syne',sans-serif", fontSize: 28, fontWeight: 800, color: "white" }}>DRIFT</h3>
-                  <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", color: "#22d3ee", background: "rgba(34,211,238,0.15)", padding: "4px 12px", borderRadius: 100 }}>FLAGSHIP</span>
-                </div>
-                <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(255,255,255,0.85)", marginBottom: 16 }}>Full-face helmet with integrated side-mount tank, magnetic quick-release straps, and built-in GoPro mount.</p>
-                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {["Full-face seal","Magnetic straps","GoPro mount","Acoustic diffuser"].map(t => <span key={t} style={{ fontSize: 11, color: "rgba(255,255,255,0.9)", background: "rgba(255,255,255,0.08)", padding: "5px 12px", borderRadius: 100 }}>{t}</span>)}
-                </div>
-                <a href="#drift" style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 20, fontSize: 15, fontWeight: 600, color: "#22d3ee", textDecoration: "none", transition: "gap 0.3s" }} onMouseEnter={e => e.currentTarget.style.gap = "12px"} onMouseLeave={e => e.currentTarget.style.gap = "6px"}>{"Explore DRIFT \u2192"}</a>
-              </div>
-            </div></SR>
-            <SR delay={0.25}><div className="gc" style={{ overflow: "hidden", borderRadius: 28 }}>
               <div style={{ padding: 6 }}><img src={P.apF} alt="AquaPulse" style={{ width: "100%", borderRadius: 24, display: "block", aspectRatio: "1", objectFit: "cover" }} /></div>
               <div style={{ padding: "24px 32px 32px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
@@ -220,33 +206,20 @@ export default function Mare() {
                 <a href="#aquapulse" style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 20, fontSize: 15, fontWeight: 600, color: "#f97316", textDecoration: "none", transition: "gap 0.3s" }} onMouseEnter={e => e.currentTarget.style.gap = "12px"} onMouseLeave={e => e.currentTarget.style.gap = "6px"}>{"Explore AquaPulse \u2192"}</a>
               </div>
             </div></SR>
-          </div>
-        </div>
-      </section>
-
-      {/* DRIFT */}
-      <section id="drift" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
-        <BgImg src={BG.splash} brightness={0.75} position="center top" overlay="rgba(2,10,24,0.8)" />
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 48, alignItems: "center" }}>
-            <SR><div>
-              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.2em", color: "#22d3ee", marginBottom: 12, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>FLAGSHIP PRODUCT</div>
-              <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,4vw,48px)", fontWeight: 800, color: "white", marginBottom: 20, lineHeight: 1.08, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>
-                {"DRIFT isn\u2019t a mask."}<br />{"It\u2019s a platform."}
-              </h2>
-              <p style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.9)", marginBottom: 36, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 3px 12px rgba(0,0,0,0.4)" }}>
-                A full-face helmet engineered from scratch to be the lightest, smartest, and most content-creator-friendly diving system ever made.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                {[{i:"\uD83E\uDDF2",t:"Magnetic Quick-Release",d:"Snap on, snap off. No fumbling with buckles underwater."},{i:"\uD83D\uDD07",t:"Acoustic Exhaust Diffuser",d:"Silent bubble exhaust for crystal-clear audio recording."},{i:"\uD83D\uDCF7",t:"Integrated GoPro Mount",d:"Front-mounted camera bracket. Your POV, hands-free."},{i:"\u26A1",t:"40% Lighter",d:"~613g. Lighter than every professional full-face mask on the market."}].map((f,idx) => (
-                  <SR key={f.t} delay={idx*0.08}><div className="gc" style={{ display: "flex", gap: 16, alignItems: "flex-start", padding: "20px 24px" }}>
-                    <span style={{ fontSize: 24, flexShrink: 0 }}>{f.i}</span>
-                    <div><div style={{ fontSize: 15, fontWeight: 700, color: "white", marginBottom: 4 }}>{f.t}</div><div style={{ fontSize: 14, color: "rgba(255,255,255,0.9)", lineHeight: 1.5 }}>{f.d}</div></div>
-                  </div></SR>
-                ))}
+            <SR delay={0.25}><div className="gc" style={{ overflow: "hidden", borderRadius: 28 }}>
+              <div style={{ padding: 6 }}><img src={P.dF} alt="DRIFT" style={{ width: "100%", borderRadius: 24, display: "block", aspectRatio: "1", objectFit: "cover" }} /></div>
+              <div style={{ padding: "24px 32px 32px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+                  <h3 style={{ fontFamily: "'Syne',sans-serif", fontSize: 28, fontWeight: 800, color: "white" }}>DRIFT</h3>
+                  <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", color: "#22d3ee", background: "rgba(34,211,238,0.15)", padding: "4px 12px", borderRadius: 100 }}>FLAGSHIP</span>
+                </div>
+                <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(255,255,255,0.85)", marginBottom: 16 }}>Full-face helmet with integrated side-mount tank, magnetic quick-release straps, and built-in GoPro mount.</p>
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {["Full-face seal","Magnetic straps","GoPro mount","Acoustic diffuser"].map(t => <span key={t} style={{ fontSize: 11, color: "rgba(255,255,255,0.9)", background: "rgba(255,255,255,0.08)", padding: "5px 12px", borderRadius: 100 }}>{t}</span>)}
+                </div>
+                <a href="#drift" style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 20, fontSize: 15, fontWeight: 600, color: "#22d3ee", textDecoration: "none", transition: "gap 0.3s" }} onMouseEnter={e => e.currentTarget.style.gap = "12px"} onMouseLeave={e => e.currentTarget.style.gap = "6px"}>{"Explore DRIFT \u2192"}</a>
               </div>
             </div></SR>
-            <SR delay={0.15}><PG images={[P.dF, P.ap3]} labels={["DRIFT front","DRIFT side"]} /></SR>
           </div>
         </div>
       </section>
@@ -290,6 +263,33 @@ export default function Mare() {
                 ))}
               </div>
             </div></SR>
+          </div>
+        </div>
+      </section>
+
+      {/* DRIFT */}
+      <section id="drift" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
+        <BgImg src={BG.splash} brightness={0.75} position="center top" overlay="rgba(2,10,24,0.8)" />
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 48, alignItems: "center" }}>
+            <SR><div>
+              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.2em", color: "#22d3ee", marginBottom: 12, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>FLAGSHIP PRODUCT</div>
+              <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,4vw,48px)", fontWeight: 800, color: "white", marginBottom: 20, lineHeight: 1.08, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>
+                {"DRIFT isn\u2019t a mask."}<br />{"It\u2019s a platform."}
+              </h2>
+              <p style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.9)", marginBottom: 36, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 3px 12px rgba(0,0,0,0.4)" }}>
+                A full-face helmet engineered from scratch to be the lightest, smartest, and most content-creator-friendly diving system ever made.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                {[{i:"\uD83E\uDDF2",t:"Magnetic Quick-Release",d:"Snap on, snap off. No fumbling with buckles underwater."},{i:"\uD83D\uDD07",t:"Acoustic Exhaust Diffuser",d:"Silent bubble exhaust for crystal-clear audio recording."},{i:"\uD83D\uDCF7",t:"Integrated GoPro Mount",d:"Front-mounted camera bracket. Your POV, hands-free."},{i:"\u26A1",t:"40% Lighter",d:"~613g. Lighter than every professional full-face mask on the market."}].map((f,idx) => (
+                  <SR key={f.t} delay={idx*0.08}><div className="gc" style={{ display: "flex", gap: 16, alignItems: "flex-start", padding: "20px 24px" }}>
+                    <span style={{ fontSize: 24, flexShrink: 0 }}>{f.i}</span>
+                    <div><div style={{ fontSize: 15, fontWeight: 700, color: "white", marginBottom: 4 }}>{f.t}</div><div style={{ fontSize: 14, color: "rgba(255,255,255,0.9)", lineHeight: 1.5 }}>{f.d}</div></div>
+                  </div></SR>
+                ))}
+              </div>
+            </div></SR>
+            <SR delay={0.15}><PG images={[P.dF, P.ap3]} labels={["DRIFT front","DRIFT side"]} /></SR>
           </div>
         </div>
       </section>
@@ -428,7 +428,7 @@ export default function Mare() {
           <div style={{ fontFamily: "'Syne',sans-serif", fontSize: 20, fontWeight: 800, color: "white", marginBottom: 16 }}>MARE</div>
           <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)", marginBottom: 24 }}>Underwater breathing gear for a new generation.</p>
           <div style={{ display: "flex", gap: 24, justifyContent: "center", fontSize: 13, marginBottom: 32 }}>
-            {["Home","Products","DRIFT","AquaPulse","HydroHarness","Join"].map(l => <a key={l} href={`#${l.toLowerCase()==="home"?"hero":l.toLowerCase()==="join"?"signup":l.toLowerCase()}`} style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={e => e.target.style.color="rgba(255,255,255,0.8)"} onMouseLeave={e => e.target.style.color="rgba(255,255,255,0.35)"}>{l}</a>)}
+            {["Home","Products","AquaPulse","DRIFT","HydroHarness","Join"].map(l => <a key={l} href={`#${l.toLowerCase()==="home"?"hero":l.toLowerCase()==="join"?"signup":l.toLowerCase()}`} style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={e => e.target.style.color="rgba(255,255,255,0.8)"} onMouseLeave={e => e.target.style.color="rgba(255,255,255,0.35)"}>{l}</a>)}
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 24, fontSize: 12, color: "rgba(255,255,255,0.2)" }}>{"\u00A9 2026 MARE. All rights reserved. Patent pending."}</div>
         </div>
