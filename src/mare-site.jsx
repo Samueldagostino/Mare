@@ -207,7 +207,8 @@ function PG({ images, labels }) {
 }
 
 function BgImg({ src, brightness = 1, position = "center", overlay = "rgba(2,10,24,0.85)", parallax = 0 }) {
-  return <><div style={{ position: "absolute", inset: "-10%", backgroundImage: `url(${src})`, backgroundSize: "cover", backgroundPosition: position, filter: `brightness(${brightness})`, transform: `translate3d(0,${parallax}px,0) scale(1.05)`, transition: "transform 0.1s linear", willChange: "transform" }} /><div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, #020a18 0%, ${overlay} 8%, rgba(2,10,24,0.15) 22%, transparent 38%, transparent 62%, rgba(2,10,24,0.15) 78%, ${overlay} 92%, #020a18 100%)` }} /></>;
+  const mob = typeof window !== "undefined" && (window.innerWidth <= 768 || "ontouchstart" in window);
+  return <><div style={{ position: "absolute", inset: mob ? 0 : "-10%", backgroundImage: `url(${src})`, backgroundSize: "cover", backgroundPosition: position, filter: `brightness(${brightness})`, ...(mob ? {} : { transform: `translate3d(0,${parallax}px,0) scale(1.05)`, transition: "transform 0.1s linear", willChange: "transform" }) }} /><div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, #020a18 0%, ${overlay} 8%, rgba(2,10,24,0.15) 22%, transparent 38%, transparent 62%, rgba(2,10,24,0.15) 78%, ${overlay} 92%, #020a18 100%)` }} /></>;
 }
 
 export default function Mare() {
@@ -220,7 +221,16 @@ export default function Mare() {
   const [emailError, setEmailError] = useState(false);
   const lerpRef = useLerpScroll(0.08);
 
-  useEffect(() => { const h = () => setScrollY(window.scrollY); window.addEventListener("scroll", h, { passive: true }); return () => window.removeEventListener("scroll", h); }, []);
+  const isMobile = typeof window !== "undefined" && (window.innerWidth <= 768 || "ontouchstart" in window);
+
+  useEffect(() => {
+    let ticking = false;
+    const h = () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(() => { setScrollY(window.scrollY); ticking = false; }); }
+    };
+    window.addEventListener("scroll", h, { passive: true });
+    return () => window.removeEventListener("scroll", h);
+  }, []);
   useEffect(() => { const ids = ["hero","howitworks","products","drift","aquapulse","hydroharness","compare","signup"]; const o = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) setActiveNav(e.target.id); }); }, { threshold: 0.2 }); ids.forEach(id => { const el = document.getElementById(id); if (el) o.observe(el); }); return () => o.disconnect(); }, []);
 
   const ns = scrollY > 80;
@@ -306,7 +316,7 @@ export default function Mare() {
 
       <ScrollProgress scrollY={scrollY} />
       {typeof window !== "undefined" && window.innerWidth > 768 && <Caustics scrollY={scrollY} />}
-      <DepthMeter scrollY={scrollY} />
+      {!isMobile && <DepthMeter scrollY={scrollY} />}
 
       {/* NAV */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, padding: ns ? "10px clamp(16px,4vw,32px)" : "18px clamp(16px,4vw,32px)", background: ns ? "rgba(2,10,24,0.8)" : "transparent", backdropFilter: ns ? "blur(24px)" : "none", borderBottom: ns ? "1px solid rgba(255,255,255,0.06)" : "none", transition: "all 0.4s", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -327,9 +337,9 @@ export default function Mare() {
 
       {/* HERO */}
       <section id="hero" style={{ height: "100vh", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${BG.sunset})`, backgroundSize: "cover", backgroundPosition: "center bottom", transform: `scale(${1 + scrollY * 0.0003}) translate3d(0,${scrollY * 0.15}px,0)`, willChange: "transform" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${BG.sunset})`, backgroundSize: "cover", backgroundPosition: "center bottom", transform: isMobile ? undefined : `scale(${1 + scrollY * 0.0003}) translate3d(0,${scrollY * 0.15}px,0)`, willChange: "transform" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(2,10,24,0.4) 0%, rgba(2,10,24,0.08) 25%, rgba(2,10,24,0.08) 55%, rgba(2,10,24,0.5) 75%, rgba(2,10,24,0.95) 100%)" }} />
-        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 clamp(28px,6vw,48px)", maxWidth: 900, opacity: ho, transform: `translateY(${-hp * 0.12}px)` }}>
+        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 clamp(28px,6vw,48px)", maxWidth: 900, opacity: isMobile ? 1 : ho, transform: isMobile ? undefined : `translateY(${-hp * 0.12}px)` }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 20px", borderRadius: 100, background: "rgba(0,0,0,0.45)", border: "1px solid rgba(255,255,255,0.2)", marginBottom: 32, backdropFilter: "blur(16px)", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both" }}>
             <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#22d3ee", boxShadow: "0 0 12px #22d3ee" }} />
             <span style={{ fontSize: "clamp(11px,2.8vw,13px)", fontWeight: 500, color: "rgba(255,255,255,0.95)", textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>Breathe beneath the surface — 3 patents pending</span>
