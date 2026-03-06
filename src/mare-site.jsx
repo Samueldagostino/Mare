@@ -207,9 +207,7 @@ function PG({ images, labels }) {
 }
 
 function BgImg({ src, brightness = 1, position = "center", overlay = "rgba(2,10,24,0.85)", parallax = 0 }) {
-  const isMobile = typeof window !== "undefined" && (window.innerWidth <= 768 || "ontouchstart" in window);
-  const pxVal = isMobile ? 0 : parallax;
-  return <><div style={{ position: "absolute", inset: "-10%", backgroundImage: `url(${src})`, backgroundSize: "cover", backgroundPosition: position, filter: `brightness(${brightness})`, transform: isMobile ? "scale(1.05)" : `translateY(${pxVal}px) scale(1.05)`, transition: isMobile ? "none" : "transform 0.1s linear", willChange: isMobile ? "auto" : "transform" }} /><div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, ${overlay} 0%, rgba(2,10,24,0.15) 18%, transparent 35%, transparent 65%, rgba(2,10,24,0.15) 82%, ${overlay} 100%)` }} /></>;
+  return <><div style={{ position: "absolute", inset: "-10%", backgroundImage: `url(${src})`, backgroundSize: "cover", backgroundPosition: position, filter: `brightness(${brightness})`, transform: `translate3d(0,${parallax}px,0) scale(1.05)`, transition: "transform 0.1s linear", willChange: "transform" }} /><div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, ${overlay} 0%, rgba(2,10,24,0.15) 18%, transparent 35%, transparent 65%, rgba(2,10,24,0.15) 82%, ${overlay} 100%)` }} /></>;
 }
 
 export default function Mare() {
@@ -329,7 +327,7 @@ export default function Mare() {
 
       {/* HERO */}
       <section id="hero" style={{ height: "100vh", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${BG.sunset})`, backgroundSize: "cover", backgroundPosition: "center bottom", transform: typeof window !== 'undefined' && (window.innerWidth <= 768 || 'ontouchstart' in window) ? 'scale(1.05)' : `scale(${1 + scrollY * 0.0003}) translateY(${scrollY * 0.15}px)`, willChange: "transform" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${BG.sunset})`, backgroundSize: "cover", backgroundPosition: "center bottom", transform: `scale(${1 + scrollY * 0.0003}) translate3d(0,${scrollY * 0.15}px,0)`, willChange: "transform" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(2,10,24,0.4) 0%, rgba(2,10,24,0.08) 25%, rgba(2,10,24,0.08) 55%, rgba(2,10,24,0.5) 75%, rgba(2,10,24,0.95) 100%)" }} />
         <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 clamp(28px,6vw,48px)", maxWidth: 900, opacity: ho, transform: `translateY(${-hp * 0.12}px)` }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 20px", borderRadius: 100, background: "rgba(0,0,0,0.45)", border: "1px solid rgba(255,255,255,0.2)", marginBottom: 32, backdropFilter: "blur(16px)", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both" }}>
