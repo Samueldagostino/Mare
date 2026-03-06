@@ -207,7 +207,7 @@ export default function Mare() {
               </div>
             </div></SR>
             <SR delay={0.25}><div className="gc" style={{ overflow: "hidden", borderRadius: 28 }}>
-              <div style={{ padding: 6 }}><img src={P.hw} alt="AquaPulse" style={{ width: "100%", borderRadius: 24, display: "block", aspectRatio: "1", objectFit: "cover" }} /></div>
+              <div style={{ padding: 6 }}><img src={P.apF} alt="AquaPulse" style={{ width: "100%", borderRadius: 24, display: "block", aspectRatio: "1", objectFit: "cover" }} /></div>
               <div style={{ padding: "24px 32px 32px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
                   <h3 style={{ fontFamily: "'Syne',sans-serif", fontSize: 28, fontWeight: 800, color: "white" }}>AquaPulse</h3>
