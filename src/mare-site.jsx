@@ -229,7 +229,7 @@ export default function Mare() {
         <BgImg src={BG.deep} brightness={0.8} position="center 30%" overlay="rgba(2,10,24,0.8)" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 48, alignItems: "center" }}>
-            <SR><PG images={[P.apF, P.hw, P.mc2]} labels={["AquaPulse in action","AquaPulse with HydroHarness","Mask close-up — further angle"]} /></SR>
+            <SR><PG images={[P.apF, P.mc2, P.hw]} labels={["AquaPulse in action","Mask close-up","AquaPulse with HydroHarness"]} /></SR>
             <SR delay={0.15}><div>
               <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.2em", color: "#f97316", marginBottom: 12, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>PORTABLE SYSTEM</div>
               <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,4vw,48px)", fontWeight: 800, color: "white", marginBottom: 20, lineHeight: 1.08, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>
