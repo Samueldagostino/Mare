@@ -122,6 +122,20 @@ export default function Mare() {
         .mobile-menu.open a{transform:translateY(0);opacity:1}
         .mobile-menu a:hover,.mobile-menu a.a{color:#22d3ee}
         @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+        @media(max-width:480px){
+          .cb{padding:14px 24px;font-size:14px}
+          .gc{border-radius:18px}
+          .gc:hover{transform:none}
+        }
+        @media(max-width:360px){
+          .cb{padding:12px 20px;font-size:13px}
+        }
+        *{-webkit-tap-highlight-color:transparent}
+        @media(hover:none){
+          .gc:hover{transform:none;background:rgba(2,10,24,0.55);border-color:rgba(255,255,255,0.1)}
+          .cb:hover{transform:none;box-shadow:none}
+          .co:hover{background:rgba(0,0,0,0.3);border-color:rgba(255,255,255,0.4)}
+        }
       `}</style>
 
       <div style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}>
@@ -129,7 +143,7 @@ export default function Mare() {
       </div>
 
       {/* NAV */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, padding: ns ? "10px 32px" : "18px 32px", background: ns ? "rgba(2,10,24,0.8)" : "transparent", backdropFilter: ns ? "blur(24px)" : "none", borderBottom: ns ? "1px solid rgba(255,255,255,0.06)" : "none", transition: "all 0.4s", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, padding: ns ? "10px clamp(16px,4vw,32px)" : "18px clamp(16px,4vw,32px)", background: ns ? "rgba(2,10,24,0.8)" : "transparent", backdropFilter: ns ? "blur(24px)" : "none", borderBottom: ns ? "1px solid rgba(255,255,255,0.06)" : "none", transition: "all 0.4s", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="#hero" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
           <div style={{ width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg,#0891b2,#22d3ee)", display: "flex", alignItems: "center", justifyContent: "center", color: "#020a18", fontSize: 17, fontWeight: 800, fontFamily: "'Syne',sans-serif" }}>M</div>
           <span style={{ fontFamily: "'Syne',sans-serif", fontSize: 22, fontWeight: 800, color: "white" }}>MARE</span>
@@ -152,7 +166,7 @@ export default function Mare() {
         <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 24px", maxWidth: 900, opacity: ho, transform: `translateY(${-hp * 0.12}px)` }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 20px", borderRadius: 100, background: "rgba(0,0,0,0.45)", border: "1px solid rgba(255,255,255,0.2)", marginBottom: 32, backdropFilter: "blur(16px)", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both" }}>
             <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#22d3ee", boxShadow: "0 0 12px #22d3ee" }} />
-            <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(255,255,255,0.95)", textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>Breathe beneath the surface — 3 patents pending</span>
+            <span style={{ fontSize: "clamp(11px,2.8vw,13px)", fontWeight: 500, color: "rgba(255,255,255,0.95)", textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>Breathe beneath the surface — 3 patents pending</span>
           </div>
           <h1 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(48px,8vw,88px)", fontWeight: 800, lineHeight: 1.02, color: "white", letterSpacing: "-0.03em", marginBottom: 24, textShadow: "0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.5), 0 8px 48px rgba(0,0,0,0.3)", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.15s both" }}>
             Explore underwater.<br /><span style={{ color: "#e8f4f8", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 4px 24px rgba(0,0,0,0.4)" }}>No tanks on your back.</span>
@@ -173,14 +187,14 @@ export default function Mare() {
 
 
       {/* HOW IT WORKS */}
-      <section id="howitworks" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
+      <section id="howitworks" style={{ position: "relative", overflow: "hidden", padding: "clamp(60px,12vw,100px) clamp(16px,4vw,24px)" }}>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, #020a18 0%, #041525 50%, #020a18 100%)" }} />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto" }}>
           <SR><div style={{ textAlign: "center", marginBottom: 64 }}>
             <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.15em", color: "#22d3ee", marginBottom: 16 }}>HOW IT WORKS</div>
             <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,5vw,52px)", fontWeight: 800, color: "white", marginBottom: 16 }}>Three steps. Zero complexity.</h2>
           </div></SR>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: 24 }}>
             {[
               { num: "01", icon: "\u{1F9BF}", title: "Strap on the HydroHarness", desc: "Two mini tanks clip onto your hip. Under 2.5\u00A0kg total. Fits over any swimsuit." },
               { num: "02", icon: "\u{1F62E}\u200D\u{1F4A8}", title: "Bite the mouthpiece", desc: "Soft silicone lip flange seals comfortably. Connect the tube to either tank and breathe normally." },
@@ -214,7 +228,7 @@ export default function Mare() {
       </section>
 
       {/* PRODUCTS */}
-      <section id="products" style={{ position: "relative", overflow: "hidden", padding: "100px 24px 80px" }}>
+      <section id="products" style={{ position: "relative", overflow: "hidden", padding: "clamp(60px,12vw,100px) clamp(16px,4vw,24px) clamp(48px,10vw,80px)" }}>
         <BgImg src={BG.coral} brightness={0.85} position="center 60%" overlay="rgba(2,10,24,0.8)" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
           <SR><div style={{ textAlign: "center", marginBottom: 64 }}>
@@ -222,7 +236,7 @@ export default function Mare() {
             <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,5vw,52px)", fontWeight: 800, color: "white", marginBottom: 16, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>Choose your adventure</h2>
             <p style={{ fontSize: 18, color: "rgba(255,255,255,0.9)", maxWidth: 500, margin: "0 auto", lineHeight: 1.6, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 3px 12px rgba(0,0,0,0.4)" }}>Whether you want total freedom or full-face immersion, MARE has you covered.</p>
           </div></SR>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: 28 }}>
             <SR delay={0.1}><div className="gc" style={{ overflow: "hidden", borderRadius: 28 }}>
               <div style={{ padding: 6 }}><img src={P.apF} alt="AquaPulse" style={{ width: "100%", borderRadius: 24, display: "block", aspectRatio: "1", objectFit: "cover" }} /></div>
               <div style={{ padding: "24px 32px 32px" }}>
@@ -256,10 +270,10 @@ export default function Mare() {
       </section>
 
       {/* AQUAPULSE */}
-      <section id="aquapulse" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
+      <section id="aquapulse" style={{ position: "relative", overflow: "hidden", padding: "clamp(60px,12vw,100px) clamp(16px,4vw,24px)" }}>
         <BgImg src={BG.deep} brightness={0.8} position="center 30%" overlay="rgba(8,80,60,0.5)" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 48, alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: "clamp(24px,6vw,48px)", alignItems: "center" }}>
             <SR><PG images={[P.apF, P.mc2, P.hw, P.cd]} labels={["AquaPulse in action","Mask close-up","AquaPulse with HydroHarness","Coral reef dive"]} /></SR>
             <SR delay={0.15}><div>
               <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.2em", color: "#f97316", marginBottom: 16, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>PORTABLE SYSTEM</div>
@@ -275,7 +289,7 @@ export default function Mare() {
                 <p style={{ fontSize: 14, color: "rgba(255,255,255,0.85)", lineHeight: 1.6, margin: "0 0 16px" }}>
                   The HydroHarness mounts two 0.5L tanks to your waist and thigh, routing air hands-free to the mouthpiece. Snap-lock cradles, Y-valve switching between tanks, ~400g dry weight.
                 </p>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 10 }}>
                   {[{i:"\uD83E\uDDBF",l:"Waist + thigh mount"},{i:"\uD83D\uDD04",l:"Dual-tank Y-valve"},{i:"\uD83D\uDD90\uFE0F",l:"Hands-free diving"},{i:"\u26A1",l:"~400g dry weight"}].map(item => (
                     <div key={item.l} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "rgba(255,255,255,0.9)" }}>
                       <span style={{ fontSize: 16 }}>{item.i}</span>
@@ -285,7 +299,7 @@ export default function Mare() {
                 </div>
                 <a href="#hydroharness" style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 16, fontSize: 14, fontWeight: 600, color: "#f97316", textDecoration: "none", transition: "gap 0.3s" }} onMouseEnter={e => e.currentTarget.style.gap = "12px"} onMouseLeave={e => e.currentTarget.style.gap = "6px"}>{"Full specs \u2192"}</a>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(140px, 100%), 1fr))", gap: 14 }}>
                 {[{i:"\uD83C\uDF92",l:"Travel-sized"},{i:"\uD83D\uDD90\uFE0F",l:"Hands-free"},{i:"\u2696\uFE0F",l:"Under 2.5 kg total"},{i:"\uD83C\uDF0A",l:"Beach-ready"}].map((item,idx) => (
                   <SR key={item.l} delay={idx*0.06}><div className="gc" style={{ textAlign: "center", padding: "24px 16px" }}>
                     <span style={{ fontSize: 28, display: "block", marginBottom: 8 }}>{item.i}</span>
@@ -299,10 +313,10 @@ export default function Mare() {
       </section>
 
       {/* DRIFT */}
-      <section id="drift" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
+      <section id="drift" style={{ position: "relative", overflow: "hidden", padding: "clamp(60px,12vw,100px) clamp(16px,4vw,24px)" }}>
         <BgImg src={BG.splash} brightness={0.75} position="center top" overlay="rgba(2,10,24,0.8)" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 48, alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: "clamp(24px,6vw,48px)", alignItems: "center" }}>
             <SR><div>
               <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.2em", color: "#22d3ee", marginBottom: 16, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>FLAGSHIP PRODUCT</div>
               <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,4vw,48px)", fontWeight: 800, color: "white", marginBottom: 20, lineHeight: 1.08, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>
@@ -327,10 +341,10 @@ export default function Mare() {
 
 
       {/* HYDROHARNESS */}
-      <section id="hydroharness" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
+      <section id="hydroharness" style={{ position: "relative", overflow: "hidden", padding: "clamp(60px,12vw,100px) clamp(16px,4vw,24px)" }}>
         <BgImg src={BG.deep} brightness={0.78} position="center 60%" overlay="rgba(2,10,24,0.8)" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 48, alignItems: "start" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "clamp(24px,6vw,48px)", alignItems: "start" }}>
             <SR><div>
               <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.2em", color: "#f97316", marginBottom: 16, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>AQUAPULSE ACCESSORY</div>
               <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,4vw,48px)", fontWeight: 800, color: "white", marginBottom: 8, lineHeight: 1.08, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>HydroHarness</h2>
@@ -392,7 +406,7 @@ export default function Mare() {
             <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(28px,4.5vw,44px)", fontWeight: 800, color: "white", marginBottom: 16, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>Not just lighter. Different.</h2>
             <p style={{ fontSize: 17, color: "rgba(255,255,255,0.9)", maxWidth: 480, margin: "0 auto", lineHeight: 1.6, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 3px 12px rgba(0,0,0,0.4)" }}>Every full-face mask on the market was designed for commercial divers. MARE was designed for you.</p>
           </div></SR>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(250px, 100%), 1fr))", gap: 20 }}>
             {[
               {t:"Engineered, not assembled",d:"Every component \u2014 shell, visor, straps, exhaust \u2014 was individually re-engineered with modern materials. Not off-the-shelf parts in a new shell.",a:"#22d3ee"},
               {t:"Built for content",d:"Integrated GoPro mount, acoustic exhaust diffuser for clean audio, and a visor designed for zero distortion on camera.",a:"#06b6d4"},
@@ -411,7 +425,7 @@ export default function Mare() {
 
 
       {/* COMPARE — WHY NOT SCUBA */}
-      <section id="compare" style={{ position: "relative", overflow: "hidden", padding: "100px 24px" }}>
+      <section id="compare" style={{ position: "relative", overflow: "hidden", padding: "clamp(60px,12vw,100px) clamp(16px,4vw,24px)" }}>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, #020a18 0%, #041525 50%, #020a18 100%)" }} />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 900, margin: "0 auto" }}>
           <SR><div style={{ textAlign: "center", marginBottom: 56 }}>
@@ -419,10 +433,10 @@ export default function Mare() {
             <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(28px,4.5vw,44px)", fontWeight: 800, color: "white", marginBottom: 16 }}>{"Everything SCUBA gives you. Nothing it doesn\u2019t."}</h2>
           </div></SR>
           <SR delay={0.15}><div className="gc" style={{ overflow: "hidden", borderRadius: 24 }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", padding: "16px 28px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.4)", letterSpacing: "0.08em" }}>FEATURE</span>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.4)", letterSpacing: "0.08em", textAlign: "center" }}>SCUBA</span>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "#22d3ee", letterSpacing: "0.08em", textAlign: "center" }}>AQUAPULSE</span>
+            <div className="compare-header" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", padding: "16px 20px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+              <span style={{ fontSize: "clamp(10px,2.5vw,13px)", fontWeight: 600, color: "rgba(255,255,255,0.4)", letterSpacing: "0.08em" }}>FEATURE</span>
+              <span style={{ fontSize: "clamp(10px,2.5vw,13px)", fontWeight: 600, color: "rgba(255,255,255,0.4)", letterSpacing: "0.08em", textAlign: "center" }}>SCUBA</span>
+              <span style={{ fontSize: "clamp(10px,2.5vw,13px)", fontWeight: 600, color: "#22d3ee", letterSpacing: "0.08em", textAlign: "center" }}>AQUAPULSE</span>
             </div>
             {[
               { f: "Certification", s: "Required ($300+)", a: "None needed", highlight: true },
@@ -433,10 +447,10 @@ export default function Mare() {
               { f: "Max dive time", s: "45\u201360 min", a: "20\u201330 min", highlight: false },
               { f: "Max depth", s: "40m+", a: "10m / 33 ft", highlight: false },
             ].map((row, idx) => (
-              <div key={row.f} style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", padding: "14px 28px", background: idx % 2 === 0 ? "rgba(255,255,255,0.02)" : "transparent", borderBottom: idx < 6 ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
-                <span style={{ fontSize: 14, fontWeight: 500, color: "rgba(255,255,255,0.8)" }}>{row.f}</span>
-                <span style={{ fontSize: 14, color: "rgba(255,255,255,0.4)", textAlign: "center" }}>{row.s}</span>
-                <span style={{ fontSize: 14, fontWeight: 600, color: row.highlight ? "#22d3ee" : "rgba(255,255,255,0.7)", textAlign: "center" }}>{row.a}</span>
+              <div key={row.f} style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", padding: "14px 20px", background: idx % 2 === 0 ? "rgba(255,255,255,0.02)" : "transparent", borderBottom: idx < 6 ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
+                <span style={{ fontSize: "clamp(11px,2.8vw,14px)", fontWeight: 500, color: "rgba(255,255,255,0.8)" }}>{row.f}</span>
+                <span style={{ fontSize: "clamp(11px,2.8vw,14px)", color: "rgba(255,255,255,0.4)", textAlign: "center" }}>{row.s}</span>
+                <span style={{ fontSize: "clamp(11px,2.8vw,14px)", fontWeight: 600, color: row.highlight ? "#22d3ee" : "rgba(255,255,255,0.7)", textAlign: "center" }}>{row.a}</span>
               </div>
             ))}
           </div></SR>
@@ -464,13 +478,13 @@ export default function Mare() {
                 {[{v:"drift",l:"DRIFT"},{v:"aquapulse",l:"AquaPulse"},{v:"both",l:"Both"}].map(o => <button key={o.v} className={`ib ${interest===o.v?"s":""}`} onClick={() => setInterest(o.v)}>{o.l}</button>)}
               </div>
             </div>
-            <div style={{ display: "flex", gap: 12, maxWidth: 440, margin: "0 auto", flexWrap: "wrap", justifyContent: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 440, margin: "0 auto", alignItems: "stretch" }}>
               <input type="email" placeholder="your@email.com" value={email} onChange={e => { setEmail(e.target.value); setEmailError(false); }} onKeyDown={e => {
                       if (e.key !== "Enter") return;
                       if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) { setEmailError(true); return; }
                       (async () => { try { await addDoc(collection(db, "waitlist"), { email, interest, timestamp: serverTimestamp() }); } catch(err) { console.error(err); } setSubmitted(true); })();
                     }}
-                style={{ flex: 1, minWidth: 220, padding: "16px 20px", borderRadius: 100, border: `1.5px solid ${emailError ? "#ef4444" : "rgba(255,255,255,0.2)"}`, fontSize: 16, fontFamily: "'Outfit',sans-serif", outline: "none", transition: "border-color 0.3s", color: "white", background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}
+                style={{ width: "100%", padding: "16px 20px", borderRadius: 100, border: `1.5px solid ${emailError ? "#ef4444" : "rgba(255,255,255,0.2)"}`, fontSize: 16, fontFamily: "'Outfit',sans-serif", outline: "none", transition: "border-color 0.3s", color: "white", background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}
                 onFocus={e => { if (!emailError) e.target.style.borderColor="#22d3ee"; }} onBlur={e => { if (!emailError) e.target.style.borderColor="rgba(255,255,255,0.2)"; }} />
               <button className="cb cp" style={{ padding: "16px 32px" }} onClick={async () => {
                     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) { setEmailError(true); return; }
@@ -499,7 +513,7 @@ export default function Mare() {
         <div style={{ maxWidth: 600, margin: "0 auto" }}>
           <div style={{ fontFamily: "'Syne',sans-serif", fontSize: 20, fontWeight: 800, color: "white", marginBottom: 16 }}>MARE</div>
           <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)", marginBottom: 24 }}>Underwater breathing gear for a new generation.</p>
-          <div style={{ display: "flex", gap: 24, justifyContent: "center", fontSize: 13, marginBottom: 32 }}>
+          <div style={{ display: "flex", gap: "clamp(12px,3vw,24px)", justifyContent: "center", flexWrap: "wrap", fontSize: "clamp(11px,2.5vw,13px)", marginBottom: 32 }}>
             {["Home","How It Works","Products","AquaPulse","DRIFT","HydroHarness","Join"].map(l => <a key={l} href={`#${l==="Home"?"hero":l==="How It Works"?"howitworks":l==="Join"?"signup":l.toLowerCase()}`} style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={e => e.target.style.color="rgba(255,255,255,0.8)"} onMouseLeave={e => e.target.style.color="rgba(255,255,255,0.35)"}>{l}</a>)}
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 24, fontSize: 12, color: "rgba(255,255,255,0.2)" }}>{"\u00A9 2026 MARE. All rights reserved. Patent pending."}</div>
