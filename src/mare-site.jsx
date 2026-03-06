@@ -207,7 +207,7 @@ function PG({ images, labels }) {
 }
 
 function BgImg({ src, brightness = 1, position = "center", overlay = "rgba(2,10,24,0.85)", parallax = 0 }) {
-  return <><div style={{ position: "absolute", inset: "-10%", backgroundImage: `url(${src})`, backgroundSize: "cover", backgroundPosition: position, filter: `brightness(${brightness})`, transform: `translate3d(0,${parallax}px,0) scale(1.05)`, transition: "transform 0.1s linear", willChange: "transform" }} /><div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, ${overlay} 0%, rgba(2,10,24,0.15) 18%, transparent 35%, transparent 65%, rgba(2,10,24,0.15) 82%, ${overlay} 100%)` }} /></>;
+  return <><div style={{ position: "absolute", inset: "-10%", backgroundImage: `url(${src})`, backgroundSize: "cover", backgroundPosition: position, filter: `brightness(${brightness})`, transform: `translate3d(0,${parallax}px,0) scale(1.05)`, transition: "transform 0.1s linear", willChange: "transform" }} /><div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, #020a18 0%, ${overlay} 8%, rgba(2,10,24,0.15) 22%, transparent 38%, transparent 62%, rgba(2,10,24,0.15) 78%, ${overlay} 92%, #020a18 100%)` }} /></>;
 }
 
 export default function Mare() {
