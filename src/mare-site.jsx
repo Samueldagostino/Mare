@@ -206,7 +206,7 @@ export default function Mare() {
               </div>
             </div></SR>
             <SR delay={0.25}><div className="gc" style={{ overflow: "hidden", borderRadius: 28 }}>
-              <div style={{ padding: 6 }}><img src={P.mc2} alt="AquaPulse" style={{ width: "100%", borderRadius: 24, display: "block", aspectRatio: "1", objectFit: "cover" }} /></div>
+              <div style={{ padding: 6 }}><img src={P.hw} alt="AquaPulse" style={{ width: "100%", borderRadius: 24, display: "block", aspectRatio: "1", objectFit: "cover" }} /></div>
               <div style={{ padding: "24px 32px 32px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
                   <h3 style={{ fontFamily: "'Syne',sans-serif", fontSize: 28, fontWeight: 800, color: "white" }}>AquaPulse</h3>
@@ -255,7 +255,7 @@ export default function Mare() {
         <BgImg src={BG.deep} brightness={0.8} position="center 30%" overlay="rgba(2,10,24,0.8)" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 48, alignItems: "center" }}>
-            <SR><PG images={[P.mc2]} labels={["Mask close-up — further angle"]} /></SR>
+            <SR><PG images={[P.hw, P.mc2]} labels={["AquaPulse with HydroHarness","Mask close-up — further angle"]} /></SR>
             <SR delay={0.15}><div>
               <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.2em", color: "#f97316", marginBottom: 12, textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>PORTABLE SYSTEM</div>
               <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,4vw,48px)", fontWeight: 800, color: "white", marginBottom: 20, lineHeight: 1.08, textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.4)" }}>
