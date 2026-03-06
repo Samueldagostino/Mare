@@ -184,7 +184,9 @@ export default function Mare() {
         @keyframes gentlePulse{0%,100%{opacity:0.4}50%{opacity:0.8}}
         @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
         @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+        @keyframes ctaGlow{0%,100%{box-shadow:0 0 20px rgba(34,211,238,0.3),0 0 60px rgba(8,145,178,0.15)}50%{box-shadow:0 0 30px rgba(34,211,238,0.5),0 0 80px rgba(8,145,178,0.25)}}
         @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        @keyframes scrollBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
         @keyframes lightRay{0%{opacity:0.03;transform:translateY(0) scaleY(1)}50%{opacity:0.08;transform:translateY(-5%) scaleY(1.1)}100%{opacity:0.03;transform:translateY(0) scaleY(1)}}
         @keyframes orb{0%{transform:translate(0,0) scale(1)}25%{transform:translate(5%,-8%) scale(1.1)}50%{transform:translate(-3%,-12%) scale(0.95)}75%{transform:translate(8%,-4%) scale(1.05)}100%{transform:translate(0,0) scale(1)}}
         .nl{position:relative;text-decoration:none;padding:6px 0;transition:color 0.3s}
@@ -212,7 +214,7 @@ export default function Mare() {
         .hamburger.open span:nth-child(3){transform:rotate(-45deg)}
         .mobile-menu{position:fixed;inset:0;z-index:1001;background:rgba(2,10,24,0.95);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1)}
         .mobile-menu.open{opacity:1;pointer-events:auto}
-        .mobile-menu a{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s,transform 0.3s;transform:translateY(20px);opacity:0}
+        .mobile-menu a{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.4s,transform 0.5s cubic-bezier(0.16,1,0.3,1),opacity 0.5s cubic-bezier(0.16,1,0.3,1);transform:translateY(20px);opacity:0}
         .mobile-menu.open a{transform:translateY(0);opacity:1}
         .mobile-menu a:hover,.mobile-menu a.a{color:#22d3ee}
         @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
@@ -225,7 +227,9 @@ export default function Mare() {
           .cb{padding:12px 20px;font-size:13px}
         }
         *{-webkit-tap-highlight-color:transparent}
+        *:focus-visible{outline:2px solid #22d3ee;outline-offset:2px;border-radius:4px}
         @media(hover:none){
+          .cb:active{transform:scale(0.97)!important;opacity:0.9}.gc:active{transform:scale(0.98)!important;border-color:rgba(34,211,238,0.25)!important}
           .gc:hover{transform:none;background:rgba(2,10,24,0.55);border-color:rgba(255,255,255,0.1)}
           .cb:hover{transform:none;box-shadow:none}
           .co:hover{background:rgba(0,0,0,0.3);border-color:rgba(255,255,255,0.4)}
@@ -275,13 +279,13 @@ export default function Mare() {
             The world's lightest hands-free diving system. Strap it on, bite the mouthpiece, and go. No certification needed.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.45s both" }}>
-            <a href="#signup" className="cb cp" style={{ backgroundSize: "200% 200%", animation: "shimmer 3s ease-in-out infinite" }}>{"Join the waitlist \u2014 early pricing \u2192"}</a>
+            <a href="#signup" className="cb cp" style={{ background: "linear-gradient(135deg, #0891b2, #22d3ee, #0891b2, #22d3ee)", backgroundSize: "300% 300%", animation: "shimmer 4s ease-in-out infinite, ctaGlow 3s ease-in-out infinite" }}>{"Join the waitlist \u2014 early pricing \u2192"}</a>
             <a href="#howitworks" className="cb co">See how it works</a>
           </div>
         </div>
         <div style={{ position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 8, opacity: ho, zIndex: 1 }}>
-          <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", color: "rgba(255,255,255,0.5)", textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>DIVE IN</span>
-          <div style={{ width: 1, height: 36, background: "linear-gradient(180deg, rgba(255,255,255,0.5), transparent)", animation: "gentlePulse 2s ease-in-out infinite" }} />
+          <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", color: "rgba(255,255,255,0.6)", textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.5)" }}>DIVE IN</span>
+          <div style={{ fontSize: 20, color: "rgba(255,255,255,0.5)", animation: "scrollBounce 2s ease-in-out infinite", lineHeight: 1 }}>{"⌄"}</div>
         </div>
       </section>
 
@@ -434,7 +438,7 @@ export default function Mare() {
                 ))}
               </div>
             </div></SR>
-            <SR delay={0.15} effect="scale"><Tilt3D><PG images={[P.dF, P.ap3]} labels={["DRIFT front","DRIFT side"]} /></Tilt3D></SR>
+            <SR delay={0.15} effect="scale"><Tilt3D><PG images={[P.dF, P.dS]} labels={["DRIFT front","DRIFT side"]} /></Tilt3D></SR>
           </div>
         </div>
       </section>
