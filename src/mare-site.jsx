@@ -163,15 +163,15 @@ export default function Mare() {
       <section id="hero" style={{ height: "100vh", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${BG.sunset})`, backgroundSize: "cover", backgroundPosition: "center bottom", transform: `scale(${1 + scrollY * 0.0003})` }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(2,10,24,0.4) 0%, rgba(2,10,24,0.08) 25%, rgba(2,10,24,0.08) 55%, rgba(2,10,24,0.5) 75%, rgba(2,10,24,0.95) 100%)" }} />
-        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 24px", maxWidth: 900, opacity: ho, transform: `translateY(${-hp * 0.12}px)` }}>
+        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 clamp(28px,6vw,48px)", maxWidth: 900, opacity: ho, transform: `translateY(${-hp * 0.12}px)` }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 20px", borderRadius: 100, background: "rgba(0,0,0,0.45)", border: "1px solid rgba(255,255,255,0.2)", marginBottom: 32, backdropFilter: "blur(16px)", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both" }}>
             <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#22d3ee", boxShadow: "0 0 12px #22d3ee" }} />
             <span style={{ fontSize: "clamp(11px,2.8vw,13px)", fontWeight: 500, color: "rgba(255,255,255,0.95)", textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>Breathe beneath the surface — 3 patents pending</span>
           </div>
-          <h1 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(48px,8vw,88px)", fontWeight: 800, lineHeight: 1.02, color: "white", letterSpacing: "-0.03em", marginBottom: 24, textShadow: "0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.5), 0 8px 48px rgba(0,0,0,0.3)", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.15s both" }}>
+          <h1 style={{ fontFamily: "'Syne',sans-serif", fontSize: "clamp(32px,7.5vw,88px)", fontWeight: 800, lineHeight: 1.02, color: "white", letterSpacing: "-0.03em", marginBottom: 24, textShadow: "0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.5), 0 8px 48px rgba(0,0,0,0.3)", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.15s both" }}>
             Explore underwater.<br /><span style={{ color: "#e8f4f8", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 4px 24px rgba(0,0,0,0.4)" }}>No tanks on your back.</span>
           </h1>
-          <p style={{ fontSize: "clamp(17px,2.2vw,21px)", lineHeight: 1.6, color: "rgba(255,255,255,0.85)", maxWidth: 520, margin: "0 auto 40px", textShadow: "0 1px 4px rgba(0,0,0,0.9), 0 4px 16px rgba(0,0,0,0.5)", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both" }}>
+          <p style={{ fontSize: "clamp(15px,2.2vw,21px)", lineHeight: 1.6, color: "rgba(255,255,255,0.85)", maxWidth: 520, margin: "0 auto 40px", textShadow: "0 1px 4px rgba(0,0,0,0.9), 0 4px 16px rgba(0,0,0,0.5)", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both" }}>
             The world's lightest hands-free diving system. Strap it on, bite the mouthpiece, and go. No certification needed.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.45s both" }}>
