@@ -31,115 +31,159 @@ function generateFig1SVG() {
   <!-- Shoulders -->
   <path d="M300,100 Q250,110 220,160" fill="none" stroke="black" stroke-dasharray="8,4" class="thin"/>
   <path d="M500,100 Q550,110 580,160" fill="none" stroke="black" stroke-dasharray="8,4" class="thin"/>
+  <!-- Head outline for tube destination -->
+  <ellipse cx="400" cy="70" rx="45" ry="35" fill="none" stroke="black" stroke-dasharray="8,4" class="thin"/>
 
-  <!-- WAIST BELT -->
-  <path d="M220,380 L340,370 L400,368 L460,370 L580,380" fill="none" stroke="black" class="thick"/>
-  <path d="M220,408 L340,398 L400,396 L460,398 L580,408" fill="none" stroke="black" class="thick"/>
-  <!-- Belt webbing pattern -->
+  <!-- WAIST BELT (wraps fully around torso at waist level) -->
+  <!-- Front belt runs across entire waist -->
+  <path d="M220,380 L280,373 L330,370 L400,368 L470,370 L520,373 L580,380" fill="none" stroke="black" class="thick"/>
+  <path d="M220,408 L280,401 L330,398 L400,396 L470,398 L520,401 L580,408" fill="none" stroke="black" class="thick"/>
+  <!-- Belt wraps behind (shown curving at sides) -->
+  <path d="M220,380 Q200,385 195,394 Q200,403 220,408" fill="none" stroke="black" class="thick"/>
+  <path d="M580,380 Q600,385 605,394 Q600,403 580,408" fill="none" stroke="black" class="thick"/>
+  <!-- Belt webbing texture lines -->
   <line x1="250" y1="385" x2="250" y2="403" stroke="black" class="thin"/>
-  <line x1="300" y1="377" x2="300" y2="395" stroke="black" class="thin"/>
-  <line x1="500" y1="377" x2="500" y2="395" stroke="black" class="thin"/>
+  <line x1="290" y1="378" x2="290" y2="396" stroke="black" class="thin"/>
+  <line x1="510" y1="378" x2="510" y2="396" stroke="black" class="thin"/>
   <line x1="550" y1="385" x2="550" y2="403" stroke="black" class="thin"/>
 
-  <!-- Neoprene comfort padding (indicated by cross-hatch interior) -->
-  <line x1="340" y1="372" x2="345" y2="395" stroke="gray" class="thin"/>
-  <line x1="360" y1="371" x2="365" y2="394" stroke="gray" class="thin"/>
-  <line x1="440" y1="371" x2="445" y2="394" stroke="gray" class="thin"/>
-  <line x1="460" y1="372" x2="465" y2="395" stroke="gray" class="thin"/>
+  <!-- Neoprene comfort padding (cross-hatch pattern on belt interior) -->
+  <line x1="340" y1="372" x2="345" y2="394" stroke="gray" class="thin"/>
+  <line x1="360" y1="371" x2="365" y2="393" stroke="gray" class="thin"/>
+  <line x1="440" y1="371" x2="445" y2="393" stroke="gray" class="thin"/>
+  <line x1="460" y1="372" x2="465" y2="394" stroke="gray" class="thin"/>
 
-  <!-- QUICK-RELEASE BUCKLE (center front) -->
-  <rect x="382" y="370" width="36" height="26" rx="4" fill="none" stroke="black" class="thick"/>
-  <line x1="400" y1="370" x2="400" y2="396" stroke="black" class="medium"/>
-  <circle cx="393" cy="383" r="3" fill="none" stroke="black" class="thin"/>
-  <circle cx="407" cy="383" r="3" fill="none" stroke="black" class="thin"/>
+  <!-- QUICK-RELEASE BUCKLE (center front, side-squeeze type) -->
+  <rect x="382" y="369" width="36" height="28" rx="4" fill="none" stroke="black" class="thick"/>
+  <!-- Side-squeeze release indicators -->
+  <path d="M385,375 L385,391" stroke="black" class="medium"/>
+  <path d="M415,375 L415,391" stroke="black" class="medium"/>
+  <!-- Center split line -->
+  <line x1="400" y1="369" x2="400" y2="397" stroke="black" class="thin" stroke-dasharray="3,2"/>
+  <!-- Squeeze arrows -->
+  <path d="M379,383 L385,383" stroke="black" class="thin"/>
+  <path d="M415,383 L421,383" stroke="black" class="thin"/>
 
-  <!-- D-RING attachment points -->
-  <path d="M320,375 Q310,370 305,378 Q300,386 310,390 L320,393" fill="none" stroke="black" class="medium"/>
-  <path d="M480,375 Q490,370 495,378 Q500,386 490,390 L480,393" fill="none" stroke="black" class="medium"/>
+  <!-- D-RING attachment points on belt -->
+  <path d="M330,375 Q320,370 315,378 Q310,386 320,390 L330,393" fill="none" stroke="black" class="medium"/>
+  <path d="M470,375 Q480,370 485,378 Q490,386 480,390 L470,393" fill="none" stroke="black" class="medium"/>
 
-  <!-- LEFT TANK CRADLE -->
-  <rect x="200" y="400" width="75" height="50" rx="8" fill="none" stroke="black" class="thick"/>
-  <!-- Snap-lock latch -->
-  <rect x="225" y="395" width="25" height="10" rx="2" fill="none" stroke="black" class="medium"/>
-  <!-- Anti-rotation ridge -->
-  <line x1="215" y1="415" x2="215" y2="440" stroke="black" class="medium"/>
-  <line x1="260" y1="415" x2="260" y2="440" stroke="black" class="medium"/>
-  <!-- Belt mounting clips -->
-  <rect x="210" y="390" width="12" height="12" rx="1" fill="none" stroke="black" class="thin"/>
-  <rect x="253" y="390" width="12" height="12" rx="1" fill="none" stroke="black" class="thin"/>
+  <!-- TANK CRADLE — Fabric webbing loops sewn onto belt at left-front hip -->
+  <!-- Loop 1 (outer, for Tank 1): fabric strap hangs from belt, wraps under tank, back up -->
+  <path d="M275,398 L275,420 L275,540 Q275,558 290,558 L305,558 Q320,558 320,540 L320,420 L320,398" fill="none" stroke="black" class="thick"/>
+  <!-- Loop 2 (inner, for Tank 2): adjacent fabric strap -->
+  <path d="M330,398 L330,420 L330,540 Q330,558 345,558 L360,558 Q375,558 375,540 L375,420 L375,398" fill="none" stroke="black" class="thick"/>
+  <!-- Stitching at belt attachment (double-stitch reinforcement) -->
+  <line x1="275" y1="400" x2="320" y2="400" stroke="black" class="thin"/>
+  <line x1="275" y1="403" x2="320" y2="403" stroke="black" class="thin"/>
+  <line x1="330" y1="400" x2="375" y2="400" stroke="black" class="thin"/>
+  <line x1="330" y1="403" x2="375" y2="403" stroke="black" class="thin"/>
+  <!-- Fabric texture (stitching lines on loops) -->
+  <line x1="278" y1="420" x2="278" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <line x1="317" y1="420" x2="317" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <line x1="333" y1="420" x2="333" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <line x1="372" y1="420" x2="372" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
 
-  <!-- LEFT TANK (in cradle) -->
-  <rect x="215" y="445" width="45" height="140" rx="22" fill="none" stroke="black" class="thick"/>
-  <rect x="228" y="432" width="20" height="16" rx="3" fill="none" stroke="black" class="medium"/>
-  <text x="237" y="520" text-anchor="middle" font-size="7">0.5L</text>
+  <!-- TANK 1 (left, in outer fabric loop) — white cylindrical 0.5L tank, vertical -->
+  <rect x="280" y="410" width="36" height="140" rx="18" fill="none" stroke="black" class="thick"/>
+  <!-- Tank valve top (silver/metallic cap with profile) -->
+  <rect x="287" y="393" width="22" height="18" rx="3" fill="none" stroke="black" class="medium"/>
+  <line x1="287" y1="400" x2="309" y2="400" stroke="black" class="thin"/>
+  <!-- Pressure gauge dial on valve -->
+  <circle cx="298" cy="397" r="5" fill="none" stroke="black" class="thin"/>
+  <line x1="298" y1="395" x2="301" y2="393" stroke="black" class="thin"/>
+  <text x="298" y="535" text-anchor="middle" font-size="7">0.5L</text>
 
-  <!-- RIGHT TANK CRADLE -->
-  <rect x="525" y="400" width="75" height="50" rx="8" fill="none" stroke="black" class="thick"/>
-  <rect x="550" y="395" width="25" height="10" rx="2" fill="none" stroke="black" class="medium"/>
-  <line x1="540" y1="415" x2="540" y2="440" stroke="black" class="medium"/>
-  <line x1="585" y1="415" x2="585" y2="440" stroke="black" class="medium"/>
-  <rect x="535" y="390" width="12" height="12" rx="1" fill="none" stroke="black" class="thin"/>
-  <rect x="578" y="390" width="12" height="12" rx="1" fill="none" stroke="black" class="thin"/>
+  <!-- TANK 2 (right, in inner fabric loop — side by side, close together) -->
+  <rect x="335" y="410" width="36" height="140" rx="18" fill="none" stroke="black" class="thick"/>
+  <!-- Tank valve top -->
+  <rect x="342" y="393" width="22" height="18" rx="3" fill="none" stroke="black" class="medium"/>
+  <line x1="342" y1="400" x2="364" y2="400" stroke="black" class="thin"/>
+  <!-- Pressure gauge dial -->
+  <circle cx="353" cy="397" r="5" fill="none" stroke="black" class="thin"/>
+  <line x1="353" y1="395" x2="356" y2="393" stroke="black" class="thin"/>
+  <text x="353" y="535" text-anchor="middle" font-size="7">0.5L</text>
 
-  <!-- RIGHT TANK (in cradle) -->
-  <rect x="540" y="445" width="45" height="140" rx="22" fill="none" stroke="black" class="thick"/>
-  <rect x="553" y="432" width="20" height="16" rx="3" fill="none" stroke="black" class="medium"/>
-  <text x="562" y="520" text-anchor="middle" font-size="7">0.5L</text>
+  <!-- Y-VALVE MANIFOLD (metal Y-shaped junction connecting both tank valve tops) -->
+  <!-- Left input arm from Tank 1 valve top -->
+  <line x1="298" y1="393" x2="314" y2="376" stroke="black" class="thick"/>
+  <!-- Right input arm from Tank 2 valve top -->
+  <line x1="353" y1="393" x2="338" y2="376" stroke="black" class="thick"/>
+  <!-- Junction body (where Y merges into single output) -->
+  <circle cx="326" cy="373" r="9" fill="none" stroke="black" class="thick"/>
+  <text x="326" y="376" text-anchor="middle" font-size="6" font-weight="bold">Y</text>
 
-  <!-- Y-VALVE MANIFOLD (between tanks, connected to both) -->
-  <rect x="370" y="440" width="60" height="30" rx="6" fill="none" stroke="black" class="thick"/>
-  <text x="400" y="460" text-anchor="middle" font-size="8" font-weight="bold">Y-VALVE</text>
-  <!-- Input lines from tanks -->
-  <line x1="248" y1="440" x2="370" y2="452" stroke="black" class="medium"/>
-  <line x1="553" y1="440" x2="430" y2="452" stroke="black" class="medium"/>
-  <!-- Output up to breathing tube -->
-  <path d="M400,440 L400,410 Q400,390 400,360 L400,300 Q400,280 400,260" fill="none" stroke="black" class="medium"/>
-  <!-- Tube label -->
-  <text x="415" y="310" font-size="8" fill="gray">to regulator</text>
+  <!-- Single breathing tube from Y-valve output UP to mouthpiece at face -->
+  <path d="M326,364 Q326,340 334,300 Q342,260 360,220 Q378,185 392,155 Q398,130 400,105" fill="none" stroke="black" class="medium"/>
+  <!-- Tube rings (smooth tube with periodic reinforcement rings) -->
+  <ellipse cx="338" cy="285" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="355" cy="240" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="378" cy="185" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="393" cy="148" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <!-- Mouthpiece at end (at mouth level) -->
+  <ellipse cx="400" cy="103" rx="8" ry="5" fill="none" stroke="black" class="medium"/>
+  <line x1="394" y1="108" x2="394" y2="115" stroke="black" class="thin"/>
+  <line x1="406" y1="108" x2="406" y2="115" stroke="black" class="thin"/>
 
-  <!-- THIGH STRAP (optional - shown on right) -->
-  <path d="M520,408 L510,500 Q505,540 510,560 L530,570 Q550,575 560,560 L565,540 Q570,500 560,460" fill="none" stroke="black" stroke-dasharray="6,3" class="medium"/>
-  <!-- Thigh strap buckle -->
-  <rect x="518" y="555" width="20" height="12" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- STABILIZER STRAP (secondary strap below belt, wraps around upper left thigh for stability) -->
+  <path d="M265,410 L260,470 Q255,520 260,560 Q265,580 285,588 Q315,595 345,588 Q365,580 370,560 Q375,520 370,470 L368,410" fill="none" stroke="black" stroke-dasharray="6,3" class="medium"/>
+  <!-- Stabilizer adjustment buckle -->
+  <rect x="300" y="582" width="22" height="10" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Stabilizer connects to belt via loops -->
+  <line x1="265" y1="410" x2="265" y2="398" stroke="black" class="thin"/>
+  <line x1="368" y1="410" x2="368" y2="398" stroke="black" class="thin"/>
 
   <!-- REFERENCE LABELS -->
-  <line x1="400" y1="396" x2="440" y2="420" stroke="black" class="thin"/>
-  <text x="445" y="420" class="label">100</text>
+  <!-- 100 — Quick-release buckle -->
+  <line x1="418" y1="383" x2="470" y2="400" stroke="black" class="thin"/>
+  <text x="475" y="404" class="label">100</text>
 
-  <line x1="220" y1="394" x2="165" y2="385" stroke="black" class="thin"/>
-  <text x="100" y="389" class="label">102</text>
+  <!-- 102 — Waist belt -->
+  <line x1="540" y1="394" x2="590" y2="385" stroke="black" class="thin"/>
+  <text x="595" y="389" class="label">102</text>
 
-  <line x1="237" y1="395" x2="237" y2="370" stroke="black" class="thin"/>
-  <text x="228" y="365" class="label">104</text>
+  <!-- 104 — Fabric loop retention -->
+  <line x1="275" y1="480" x2="230" y2="480" stroke="black" class="thin"/>
+  <text x="185" y="484" class="label">104</text>
 
-  <line x1="315" y1="382" x2="315" y2="360" stroke="black" class="thin"/>
-  <text x="308" y="355" class="label">106</text>
+  <!-- 106 — D-ring attachment -->
+  <line x1="315" y1="382" x2="280" y2="355" stroke="black" class="thin"/>
+  <text x="255" y="350" class="label">106</text>
 
-  <line x1="200" y1="425" x2="165" y2="435" stroke="black" class="thin"/>
-  <text x="100" y="439" class="label">108</text>
+  <!-- 108 — Tank cradle (fabric webbing loop) -->
+  <line x1="375" y1="480" x2="425" y2="480" stroke="black" class="thin"/>
+  <text x="430" y="484" class="label">108</text>
 
-  <line x1="237" y1="500" x2="175" y2="500" stroke="black" class="thin"/>
-  <text x="125" y="504" class="label">110</text>
+  <!-- 110 — 0.5L tank -->
+  <line x1="280" y1="520" x2="225" y2="530" stroke="black" class="thin"/>
+  <text x="170" y="534" class="label">110</text>
 
-  <line x1="400" y1="470" x2="440" y2="490" stroke="black" class="thin"/>
-  <text x="445" y="494" class="label">112</text>
+  <!-- 112 — Y-valve manifold -->
+  <line x1="335" y1="373" x2="390" y2="355" stroke="black" class="thin"/>
+  <text x="395" y="353" class="label">112</text>
 
-  <line x1="510" y1="560" x2="475" y2="570" stroke="black" class="thin"/>
-  <text x="440" y="574" class="label">114</text>
+  <!-- 114 — Stabilizer strap -->
+  <line x1="285" y1="588" x2="235" y2="605" stroke="black" class="thin"/>
+  <text x="170" y="609" class="label">114</text>
 
-  <line x1="310" y1="380" x2="290" y2="365" stroke="black" class="thin"/>
-  <text x="265" y="360" class="label">116</text>
+  <!-- 116 — Neoprene comfort padding -->
+  <line x1="450" y1="393" x2="490" y2="356" stroke="black" class="thin"/>
+  <text x="495" y="354" class="label">116</text>
+
+  <!-- 140 — Breathing tube -->
+  <line x1="358" y1="235" x2="415" y2="235" stroke="black" class="thin"/>
+  <text x="420" y="239" class="label">140</text>
 
   <!-- Legend -->
   <text x="50" y="700" class="caption" font-weight="bold">Reference Numerals:</text>
-  <text x="50" y="715" class="caption">100 — Quick-release belt buckle  |  102 — Waist belt (50mm webbing)  |  104 — Snap-lock latch</text>
-  <text x="50" y="730" class="caption">106 — D-ring attachment  |  108 — Tank cradle  |  110 — 0.5L tank  |  112 — Y-valve manifold</text>
-  <text x="50" y="745" class="caption">114 — Thigh strap (optional)  |  116 — Neoprene comfort padding</text>
+  <text x="50" y="715" class="caption">100 — Quick-release belt buckle (side-squeeze)  |  102 — Waist belt (50mm webbing)  |  104 — Fabric loop retention</text>
+  <text x="50" y="730" class="caption">106 — D-ring attachment  |  108 — Tank cradle (webbing loop)  |  110 — 0.5L tank  |  112 — Y-valve manifold</text>
+  <text x="50" y="745" class="caption">114 — Stabilizer strap (upper thigh)  |  116 — Neoprene comfort padding  |  140 — Breathing tube</text>
 </svg>`;
 }
 
 function generateFig2SVG() {
-  // Exploded view of a single tank cradle
+  // Exploded view of a single tank cradle (fabric webbing loop design)
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
   <style>
     text { font-family: Arial, sans-serif; font-size: 11px; }
@@ -152,83 +196,93 @@ function generateFig2SVG() {
   </style>
   <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold">FIG. 2 — Exploded View of Tank Cradle Assembly</text>
 
-  <!-- BELT MOUNTING CLIPS (top, separated) -->
-  <rect x="180" y="80" width="60" height="30" rx="4" fill="none" stroke="black" class="thick"/>
-  <rect x="195" y="85" width="30" height="20" rx="2" fill="none" stroke="black" class="medium"/>
-  <rect x="560" y="80" width="60" height="30" rx="4" fill="none" stroke="black" class="thick"/>
-  <rect x="575" y="85" width="30" height="20" rx="2" fill="none" stroke="black" class="medium"/>
-  <!-- Dashed connection lines -->
-  <line x1="210" y1="110" x2="270" y2="180" stroke="black" stroke-dasharray="6,3" class="thin"/>
-  <line x1="590" y1="110" x2="530" y2="180" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <!-- BELT SECTION (top, shown as a horizontal band, separated) -->
+  <rect x="150" y="70" width="500" height="35" rx="3" fill="none" stroke="black" class="thick"/>
+  <!-- Belt webbing texture -->
+  <line x1="200" y1="75" x2="200" y2="100" stroke="black" class="thin"/>
+  <line x1="300" y1="75" x2="300" y2="100" stroke="black" class="thin"/>
+  <line x1="500" y1="75" x2="500" y2="100" stroke="black" class="thin"/>
+  <line x1="600" y1="75" x2="600" y2="100" stroke="black" class="thin"/>
+  <!-- Belt threading slots where loop attaches -->
+  <rect x="340" y="95" width="50" height="10" rx="2" fill="none" stroke="black" class="medium"/>
+  <rect x="410" y="95" width="50" height="10" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Dashed assembly lines from belt down to loop -->
+  <line x1="365" y1="105" x2="340" y2="170" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <line x1="435" y1="105" x2="460" y2="170" stroke="black" stroke-dasharray="6,3" class="thin"/>
 
-  <!-- CRADLE BODY (main piece, center) -->
-  <rect x="230" y="200" width="340" height="120" rx="16" fill="none" stroke="black" class="thick"/>
-  <!-- Interior cylindrical recess (dashed - interior feature) -->
-  <ellipse cx="400" cy="260" rx="55" ry="25" fill="none" stroke="black" stroke-dasharray="4,2" class="medium"/>
-  <!-- Anti-rotation ridges (interior) -->
-  <line x1="350" y1="240" x2="350" y2="290" stroke="black" class="medium"/>
-  <line x1="450" y1="240" x2="450" y2="290" stroke="black" class="medium"/>
-  <!-- Material cross-hatch (glass-reinforced nylon) -->
-  <line x1="240" y1="210" x2="260" y2="230" class="hatch"/>
-  <line x1="260" y1="210" x2="280" y2="230" class="hatch"/>
-  <line x1="520" y1="210" x2="540" y2="230" class="hatch"/>
-  <line x1="540" y1="210" x2="560" y2="230" class="hatch"/>
-  <!-- Belt clip receivers -->
-  <rect x="245" y="190" width="30" height="15" rx="2" fill="none" stroke="black" class="medium"/>
-  <rect x="525" y="190" width="30" height="15" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- FABRIC WEBBING LOOP (main cradle piece — U-shaped strap) -->
+  <!-- The loop is a single continuous strap that threads through belt slots -->
+  <!-- Left side of strap going up to belt -->
+  <path d="M310,180 L310,200" fill="none" stroke="black" class="thick"/>
+  <!-- U-shape: down left side, across bottom, up right side -->
+  <path d="M310,200 L310,480 Q310,510 340,510 L460,510 Q490,510 490,480 L490,200" fill="none" stroke="black" class="thick"/>
+  <!-- Right side going up to belt -->
+  <path d="M490,200 L490,180" fill="none" stroke="black" class="thick"/>
+  <!-- Inner edge of fabric strap (showing strap width ~25mm) -->
+  <path d="M335,200 L335,470 Q335,490 355,490 L445,490 Q465,490 465,470 L465,200" fill="none" stroke="black" class="medium"/>
+  <!-- Fabric texture — stitching lines along strap -->
+  <line x1="315" y1="220" x2="315" y2="470" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <line x1="485" y1="220" x2="485" y2="470" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <!-- Double-stitch reinforcement at top where strap meets belt -->
+  <line x1="310" y1="205" x2="335" y2="205" stroke="black" class="thin"/>
+  <line x1="310" y1="210" x2="335" y2="210" stroke="black" class="thin"/>
+  <line x1="465" y1="205" x2="490" y2="205" stroke="black" class="thin"/>
+  <line x1="465" y1="210" x2="490" y2="210" stroke="black" class="thin"/>
+  <!-- Cross-stitch reinforcement at bottom curve -->
+  <line x1="340" y1="495" x2="355" y2="510" class="hatch"/>
+  <line x1="355" y1="495" x2="370" y2="510" class="hatch"/>
+  <line x1="430" y1="495" x2="445" y2="510" class="hatch"/>
+  <line x1="445" y1="495" x2="460" y2="510" class="hatch"/>
 
-  <!-- SPRING-LOADED LATCH (separated above cradle) -->
-  <rect x="355" y="140" width="90" height="30" rx="5" fill="none" stroke="black" class="thick"/>
-  <!-- Spring inside latch -->
-  <path d="M370,150 Q375,145 380,150 Q385,155 390,150 Q395,145 400,150 Q405,155 410,150 Q415,145 420,150 Q425,155 430,150" fill="none" stroke="black" class="thin"/>
-  <!-- Latch hook -->
-  <path d="M400,170 L400,185 Q395,195 390,190" fill="none" stroke="black" class="medium"/>
-  <!-- Dashed assembly line -->
-  <line x1="400" y1="170" x2="400" y2="200" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <!-- ELASTIC RETENTION STRAP (crosses front of loop to hold tank in) -->
+  <path d="M310,300 L490,300" fill="none" stroke="black" class="medium" stroke-dasharray="8,3"/>
+  <path d="M310,310 L490,310" fill="none" stroke="black" class="medium" stroke-dasharray="8,3"/>
+  <!-- Snap button on retention strap -->
+  <circle cx="490" cy="305" r="6" fill="none" stroke="black" class="medium"/>
+  <circle cx="490" cy="305" r="2" fill="black"/>
 
-  <!-- RELEASE TAB (separated to right) -->
-  <path d="M620,230 L660,230 Q670,230 670,240 L670,270 Q670,280 660,280 L620,280 Z" fill="none" stroke="black" class="thick"/>
-  <text x="645" y="260" text-anchor="middle" font-size="9" font-weight="bold">TAB</text>
-  <!-- Connection line -->
-  <line x1="570" y1="260" x2="620" y2="260" stroke="black" stroke-dasharray="6,3" class="thin"/>
-
-  <!-- TANK (below cradle, separated) -->
-  <rect x="365" y="380" width="70" height="180" rx="35" fill="none" stroke="black" class="thick"/>
-  <!-- Tank valve -->
-  <rect x="385" y="365" width="30" height="20" rx="3" fill="none" stroke="black" class="medium"/>
+  <!-- TANK (separated below, showing insertion path) -->
+  <rect x="355" y="580" width="90" height="180" rx="45" fill="none" stroke="black" class="thick"/>
+  <!-- Tank valve top -->
+  <rect x="380" y="562" width="40" height="22" rx="4" fill="none" stroke="black" class="medium"/>
+  <line x1="380" y1="572" x2="420" y2="572" stroke="black" class="thin"/>
+  <!-- Pressure gauge -->
+  <circle cx="400" cy="568" r="6" fill="none" stroke="black" class="thin"/>
+  <line x1="400" y1="565" x2="404" y2="562" stroke="black" class="thin"/>
   <!-- Tank neck ring -->
-  <ellipse cx="400" cy="395" rx="40" ry="8" fill="none" stroke="black" class="medium"/>
-  <text x="400" y="475" text-anchor="middle" font-size="9">0.5L / 3000 PSI</text>
-  <!-- Dashed assembly arrow -->
-  <line x1="400" y1="365" x2="400" y2="320" stroke="black" stroke-dasharray="6,3" class="thin"/>
-  <path d="M395,325 L400,315 L405,325" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="400" cy="595" rx="50" ry="8" fill="none" stroke="black" class="medium"/>
+  <text x="400" y="680" text-anchor="middle" font-size="9">0.5L / 3000 PSI</text>
+
+  <!-- Dashed assembly arrow (tank slides UP into loop) -->
+  <line x1="400" y1="560" x2="400" y2="520" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <path d="M395,525 L400,513 L405,525" fill="none" stroke="black" class="thin"/>
 
   <!-- REFERENCE LABELS -->
-  <line x1="210" y1="95" x2="155" y2="80" stroke="black" class="thin"/>
-  <text x="70" y="84" class="label">120 — Belt clips</text>
+  <line x1="400" y1="70" x2="400" y2="50" stroke="black" class="thin"/>
+  <text x="375" y="47" class="label">120 — Belt</text>
 
-  <line x1="400" y1="155" x2="470" y2="130" stroke="black" class="thin"/>
-  <text x="475" y="134" class="label">104 — Spring latch</text>
+  <line x1="310" y1="350" x2="250" y2="350" stroke="black" class="thin"/>
+  <text x="115" y="354" class="label">108 — Webbing loop</text>
 
-  <line x1="570" y1="260" x2="570" y2="310" stroke="black" class="thin"/>
-  <text x="495" y="318" class="label">122 — Release tab</text>
+  <line x1="490" y1="305" x2="550" y2="305" stroke="black" class="thin"/>
+  <text x="555" y="309" class="label">104 — Retention strap</text>
 
-  <line x1="230" y1="260" x2="170" y2="275" stroke="black" class="thin"/>
-  <text x="60" y="279" class="label">108 — Cradle body</text>
+  <line x1="335" y1="210" x2="265" y2="218" stroke="black" class="thin"/>
+  <text x="135" y="222" class="label">124 — Stitch reinforcement</text>
 
-  <line x1="350" y1="265" x2="300" y2="290" stroke="black" class="thin"/>
-  <text x="190" y="300" class="label">124 — Anti-rotation ridges</text>
+  <line x1="400" y1="595" x2="480" y2="595" stroke="black" class="thin"/>
+  <text x="485" y="599" class="label">126 — Tank neck ring</text>
 
-  <line x1="400" y1="395" x2="480" y2="385" stroke="black" class="thin"/>
-  <text x="485" y="389" class="label">126 — Tank neck ring</text>
+  <line x1="445" y1="680" x2="510" y2="690" stroke="black" class="thin"/>
+  <text x="515" y="694" class="label">110 — 0.5L tank</text>
 
-  <line x1="400" y1="480" x2="480" y2="490" stroke="black" class="thin"/>
-  <text x="485" y="494" class="label">110 — 0.5L tank</text>
+  <line x1="370" y1="100" x2="330" y2="130" stroke="black" class="thin"/>
+  <text x="220" y="140" class="label">122 — Belt threading slot</text>
 
   <!-- Legend -->
-  <text x="50" y="620" class="caption" font-weight="bold">Reference Numerals:</text>
-  <text x="50" y="635" class="caption">104 — Spring-loaded snap-lock latch  |  108 — Cradle body (glass-reinforced nylon)  |  110 — 0.5L tank</text>
-  <text x="50" y="650" class="caption">120 — Belt mounting clips  |  122 — Release tab  |  124 — Anti-rotation ridges  |  126 — Tank neck ring</text>
+  <text x="50" y="730" class="caption" font-weight="bold">Reference Numerals:</text>
+  <text x="50" y="745" class="caption">104 — Elastic retention strap (snap closure)  |  108 — Webbing loop cradle (fabric)  |  110 — 0.5L tank</text>
+  <text x="50" y="760" class="caption">120 — Waist belt (50mm webbing)  |  122 — Belt threading slot  |  124 — Stitch reinforcement  |  126 — Tank neck ring</text>
 </svg>`;
 }
 
@@ -340,7 +394,7 @@ function generateFig3SVG() {
 }
 
 function generateFig4SVG() {
-  // Side profile view of harness worn by user
+  // Side profile view of harness worn by user — tanks at front-hip, tube going up
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900">
   <style>
     text { font-family: Arial, sans-serif; font-size: 11px; }
@@ -352,75 +406,102 @@ function generateFig4SVG() {
   </style>
   <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold">FIG. 4 — Side Profile View (Harness Worn by User)</text>
 
-  <!-- User torso side view (dashed) -->
-  <path d="M350,100 Q380,90 400,100 L420,150 Q430,250 425,380 Q420,450 410,500 Q400,550 380,600 L360,620" fill="none" stroke="black" stroke-dasharray="8,4" class="medium"/>
-  <!-- Back -->
-  <path d="M350,100 L340,150 Q330,250 335,380 Q340,450 345,500 Q350,550 355,600 L360,620" fill="none" stroke="black" stroke-dasharray="8,4" class="medium"/>
-  <!-- Leg (partial) -->
-  <path d="M360,620 Q350,660 345,720 Q342,780 345,830" fill="none" stroke="black" stroke-dasharray="8,4" class="medium"/>
-  <path d="M360,620 Q380,660 385,720 Q388,780 385,830" fill="none" stroke="black" stroke-dasharray="8,4" class="medium"/>
+  <!-- User torso side view (dashed - not part of invention) -->
+  <!-- Front of body (right side of drawing = front) -->
+  <path d="M380,100 Q400,90 420,100 L440,150 Q450,250 445,380 Q440,450 430,520 Q420,570 400,620 L385,650" fill="none" stroke="black" stroke-dasharray="8,4" class="medium"/>
+  <!-- Back of body -->
+  <path d="M380,100 L365,150 Q355,250 358,380 Q362,450 368,520 Q372,570 378,620 L385,650" fill="none" stroke="black" stroke-dasharray="8,4" class="medium"/>
+  <!-- Head (side profile) -->
+  <path d="M380,100 Q395,60 420,55 Q445,55 450,75 Q450,90 440,100" fill="none" stroke="black" stroke-dasharray="8,4" class="thin"/>
+  <!-- Leg (partial, upper thigh) -->
+  <path d="M385,650 Q375,690 372,740 Q370,790 372,840" fill="none" stroke="black" stroke-dasharray="8,4" class="medium"/>
+  <path d="M385,650 Q400,690 403,740 Q405,790 403,840" fill="none" stroke="black" stroke-dasharray="8,4" class="medium"/>
 
-  <!-- WAIST BELT (side view) -->
-  <path d="M310,390 Q335,385 365,383 Q395,382 425,385 Q440,388 450,390" fill="none" stroke="black" class="thick"/>
-  <path d="M310,410 Q335,405 365,403 Q395,402 425,405 Q440,408 450,410" fill="none" stroke="black" class="thick"/>
+  <!-- WAIST BELT (side view — wraps around torso) -->
+  <!-- Belt shown as two lines wrapping from front to back -->
+  <path d="M340,390 Q365,385 390,383 Q415,382 440,384 Q455,387 465,390" fill="none" stroke="black" class="thick"/>
+  <path d="M340,412 Q365,407 390,405 Q415,404 440,406 Q455,409 465,412" fill="none" stroke="black" class="thick"/>
+  <!-- Belt end wrapping behind body -->
+  <path d="M340,390 Q330,394 330,401 Q330,408 340,412" fill="none" stroke="black" class="thick"/>
+  <!-- Belt end at front -->
+  <path d="M465,390 Q475,394 475,401 Q475,408 465,412" fill="none" stroke="black" class="thick"/>
 
-  <!-- Neoprene padding cross-section -->
-  <line x1="350" y1="387" x2="350" y2="401" stroke="gray" class="thin"/>
-  <line x1="370" y1="385" x2="370" y2="400" stroke="gray" class="thin"/>
-  <line x1="390" y1="384" x2="390" y2="400" stroke="gray" class="thin"/>
+  <!-- Neoprene padding (cross-section marks on belt interior) -->
+  <line x1="370" y1="388" x2="370" y2="404" stroke="gray" class="thin"/>
+  <line x1="390" y1="386" x2="390" y2="403" stroke="gray" class="thin"/>
+  <line x1="410" y1="385" x2="410" y2="403" stroke="gray" class="thin"/>
 
-  <!-- TANK CRADLE (on hip) -->
-  <rect x="420" y="395" width="50" height="35" rx="6" fill="none" stroke="black" class="thick"/>
-  <!-- Snap lock -->
-  <rect x="435" y="390" width="20" height="8" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- FABRIC WEBBING LOOP CRADLE (hanging from front of belt, at hip) -->
+  <!-- Side view: shows the fabric loop as a narrow profile hanging down -->
+  <path d="M450,406 L450,420 L450,550 Q450,565 458,565 L468,565 Q476,565 476,550 L476,420 L476,406" fill="none" stroke="black" class="thick"/>
+  <!-- Fabric stitching texture -->
+  <line x1="453" y1="425" x2="453" y2="550" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <line x1="473" y1="425" x2="473" y2="550" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <!-- Stitch reinforcement at belt attachment -->
+  <line x1="450" y1="408" x2="476" y2="408" stroke="black" class="thin"/>
+  <line x1="450" y1="411" x2="476" y2="411" stroke="black" class="thin"/>
 
-  <!-- TANK (hanging from cradle) -->
-  <rect x="428" y="430" width="36" height="130" rx="18" fill="none" stroke="black" class="thick"/>
-  <!-- Tank valve -->
-  <rect x="438" y="418" width="16" height="14" rx="2" fill="none" stroke="black" class="medium"/>
-  <!-- Tank angle ~15 degrees -->
-  <text x="400" y="500" font-size="7" fill="gray">15°</text>
+  <!-- TANKS (two side-by-side, seen from side — one visible, second peeking behind) -->
+  <!-- Front tank (fully visible in side view) -->
+  <rect x="452" y="425" width="22" height="130" rx="11" fill="none" stroke="black" class="thick"/>
+  <!-- Tank valve on top -->
+  <rect x="456" y="415" width="14" height="12" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Pressure gauge (side view — small circle) -->
+  <circle cx="463" cy="419" r="4" fill="none" stroke="black" class="thin"/>
+  <line x1="463" y1="417" x2="465" y2="415" stroke="black" class="thin"/>
+  <!-- Second tank partially visible behind (offset slightly) -->
+  <rect x="458" y="427" width="22" height="130" rx="11" fill="none" stroke="black" class="medium" stroke-dasharray="4,2"/>
 
-  <!-- THIGH STRAP -->
-  <path d="M440,410 Q445,500 440,600 Q435,650 430,700 Q425,720 430,730 Q440,740 455,730 Q465,720 460,700 Q455,650 450,600 Q447,500 445,430" fill="none" stroke="black" stroke-dasharray="6,3" class="medium"/>
-  <rect x="430" y="718" width="25" height="10" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Y-VALVE (seen from side — compact junction piece on tank tops) -->
+  <ellipse cx="467" cy="413" rx="8" ry="5" fill="none" stroke="black" class="medium"/>
 
-  <!-- BREATHING TUBE going up from manifold -->
-  <path d="M446,418 Q450,380 450,350 Q450,300 445,250 Q440,200 435,160" fill="none" stroke="black" class="medium"/>
-  <!-- Tube corrugation -->
-  <path d="M443,300 Q455,305 443,310" fill="none" stroke="black" class="thin"/>
-  <path d="M444,260 Q456,265 444,270" fill="none" stroke="black" class="thin"/>
+  <!-- BREATHING TUBE from Y-valve going up along body to mouth -->
+  <path d="M467,408 Q470,380 470,350 Q468,300 462,250 Q455,200 448,160 Q445,130 445,105" fill="none" stroke="black" class="medium"/>
+  <!-- Tube rings -->
+  <ellipse cx="468" cy="310" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="460" cy="250" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="450" cy="180" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <!-- Mouthpiece (side view at mouth) -->
+  <ellipse cx="445" cy="103" rx="6" ry="4" fill="none" stroke="black" class="medium"/>
 
-  <!-- Profile dimension arrow showing minimal bulk -->
-  <line x1="325" y1="450" x2="470" y2="450" stroke="black" class="thin"/>
-  <line x1="325" y1="440" x2="325" y2="460" stroke="black" class="thin"/>
-  <line x1="470" y1="440" x2="470" y2="460" stroke="black" class="thin"/>
-  <text x="397" y="468" text-anchor="middle" font-size="8">~12cm profile</text>
+  <!-- STABILIZER STRAP (wraps around upper thigh below tanks) -->
+  <path d="M445,415 Q440,500 438,580 Q435,630 438,670 Q442,690 455,695 Q470,695 478,685 Q482,660 480,580 Q478,500 476,415" fill="none" stroke="black" stroke-dasharray="6,3" class="medium"/>
+  <!-- Stabilizer buckle -->
+  <rect x="448" y="684" width="20" height="9" rx="2" fill="none" stroke="black" class="medium"/>
+
+  <!-- Profile dimension arrow showing minimal bulk from body -->
+  <line x1="350" y1="480" x2="490" y2="480" stroke="black" class="thin"/>
+  <line x1="350" y1="470" x2="350" y2="490" stroke="black" class="thin"/>
+  <line x1="490" y1="470" x2="490" y2="490" stroke="black" class="thin"/>
+  <text x="420" y="498" text-anchor="middle" font-size="8">~12cm profile</text>
 
   <!-- REFERENCE LABELS -->
-  <line x1="350" y1="395" x2="290" y2="385" stroke="black" class="thin"/>
-  <text x="210" y="389" class="label">102 — Belt</text>
+  <line x1="370" y1="400" x2="300" y2="390" stroke="black" class="thin"/>
+  <text x="220" y="394" class="label">102 — Belt</text>
 
-  <line x1="445" y1="412" x2="510" y2="400" stroke="black" class="thin"/>
-  <text x="515" y="404" class="label">108 — Cradle</text>
+  <line x1="476" y1="470" x2="530" y2="460" stroke="black" class="thin"/>
+  <text x="535" y="464" class="label">108 — Cradle</text>
 
-  <line x1="464" y1="500" x2="510" y2="500" stroke="black" class="thin"/>
-  <text x="515" y="504" class="label">110 — Tank</text>
+  <line x1="474" y1="510" x2="530" y2="510" stroke="black" class="thin"/>
+  <text x="535" y="514" class="label">110 — Tank</text>
 
-  <line x1="455" y1="730" x2="510" y2="740" stroke="black" class="thin"/>
-  <text x="515" y="744" class="label">114 — Thigh strap</text>
+  <line x1="478" y1="690" x2="530" y2="700" stroke="black" class="thin"/>
+  <text x="535" y="704" class="label">114 — Thigh strap</text>
 
-  <line x1="455" y1="260" x2="510" y2="250" stroke="black" class="thin"/>
-  <text x="515" y="254" class="label">140 — Breathing tube</text>
+  <line x1="462" y1="250" x2="520" y2="240" stroke="black" class="thin"/>
+  <text x="525" y="244" class="label">140 — Tube</text>
+
+  <line x1="467" y1="413" x2="520" y2="413" stroke="black" class="thin"/>
+  <text x="525" y="417" class="label">112 — Y-valve</text>
 
   <!-- Legend -->
   <text x="50" y="840" class="caption" font-weight="bold">Reference Numerals:</text>
-  <text x="50" y="855" class="caption">102 — Waist belt  |  108 — Tank cradle  |  110 — 0.5L tank  |  114 — Thigh strap  |  140 — Breathing tube to regulator</text>
+  <text x="50" y="855" class="caption">102 — Waist belt  |  108 — Tank cradle (webbing loop)  |  110 — 0.5L tank  |  112 — Y-valve manifold  |  114 — Thigh strap  |  140 — Breathing tube</text>
 </svg>`;
 }
 
 function generateFig5SVG() {
-  // Sequence diagram: tank insertion
+  // Sequence diagram: tank insertion into fabric webbing loop
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <style>
     text { font-family: Arial, sans-serif; font-size: 11px; }
@@ -432,54 +513,68 @@ function generateFig5SVG() {
   </style>
   <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold">FIG. 5 — Tank Insertion Sequence</text>
 
-  <!-- STEP A: Tank approaching cradle -->
-  <text x="133" y="65" text-anchor="middle" font-size="12" font-weight="bold">(a) Approach</text>
-  <!-- Cradle -->
-  <rect x="80" y="130" width="106" height="50" rx="8" fill="none" stroke="black" class="thick"/>
-  <rect x="113" y="123" width="40" height="12" rx="2" fill="none" stroke="black" class="medium"/>
-  <!-- Latch open -->
-  <path d="M133,123 L133,105" fill="none" stroke="black" class="medium"/>
-  <path d="M125,108 L133,100 L141,108" fill="none" stroke="black" class="thin"/>
-  <!-- Tank above (approaching) -->
-  <rect x="108" y="210" width="50" height="120" rx="25" fill="none" stroke="black" class="thick"/>
-  <rect x="120" y="198" width="26" height="14" rx="2" fill="none" stroke="black" class="medium"/>
-  <!-- Arrow showing direction -->
-  <line x1="133" y1="198" x2="133" y2="185" stroke="black" class="medium"/>
-  <path d="M128,190 L133,180 L138,190" fill="none" stroke="black" class="medium"/>
+  <!-- STEP A: Loop open, tank approaching from below -->
+  <text x="133" y="60" text-anchor="middle" font-size="12" font-weight="bold">(a) Loop Open</text>
+  <!-- Belt section -->
+  <rect x="75" y="85" width="116" height="16" rx="2" fill="none" stroke="black" class="thick"/>
+  <!-- Fabric webbing loop hanging open from belt -->
+  <path d="M100,101 L100,115 L100,240 Q100,258 118,258 L148,258 Q166,258 166,240 L166,115 L166,101" fill="none" stroke="black" class="thick"/>
+  <!-- Retention strap unsnapped (hanging loose to side) -->
+  <path d="M100,170 L85,170" fill="none" stroke="black" class="medium"/>
+  <circle cx="85" cy="170" r="4" fill="none" stroke="black" class="thin"/>
+  <text x="133" y="275" text-anchor="middle" font-size="8" fill="gray">loop open</text>
+  <!-- Tank below (approaching upward) -->
+  <rect x="112" y="310" width="42" height="110" rx="21" fill="none" stroke="black" class="thick"/>
+  <rect x="121" y="298" width="24" height="14" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Arrow showing upward direction -->
+  <line x1="133" y1="298" x2="133" y2="278" stroke="black" class="medium"/>
+  <path d="M128,284 L133,274 L138,284" fill="none" stroke="black" class="medium"/>
 
-  <!-- STEP B: Tank partially inserted -->
-  <text x="400" y="65" text-anchor="middle" font-size="12" font-weight="bold">(b) Engaging</text>
-  <rect x="347" y="130" width="106" height="50" rx="8" fill="none" stroke="black" class="thick"/>
-  <!-- Latch partially closing -->
-  <path d="M400,125 L400,115 Q395,110 390,115" fill="none" stroke="black" class="medium"/>
-  <!-- Tank partially in -->
-  <rect x="375" y="160" width="50" height="120" rx="25" fill="none" stroke="black" class="thick"/>
-  <rect x="387" y="148" width="26" height="14" rx="2" fill="none" stroke="black" class="medium"/>
-  <!-- Contact indicator -->
-  <text x="470" y="170" font-size="9" fill="gray">latch engaging</text>
-  <text x="470" y="185" font-size="9" fill="gray">neck ring</text>
+  <!-- STEP B: Tank sliding into loop -->
+  <text x="400" y="60" text-anchor="middle" font-size="12" font-weight="bold">(b) Sliding In</text>
+  <!-- Belt section -->
+  <rect x="342" y="85" width="116" height="16" rx="2" fill="none" stroke="black" class="thick"/>
+  <!-- Fabric loop (slightly stretched around tank) -->
+  <path d="M367,101 L367,115 L367,240 Q367,258 385,258 L415,258 Q433,258 433,240 L433,115 L433,101" fill="none" stroke="black" class="thick"/>
+  <!-- Tank partially inside loop (top portion in, bottom sticking out) -->
+  <rect x="379" y="130" width="42" height="110" rx="21" fill="none" stroke="black" class="thick"/>
+  <rect x="388" y="118" width="24" height="14" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Retention strap still open -->
+  <path d="M367,170 L352,170" fill="none" stroke="black" class="medium"/>
+  <circle cx="352" cy="170" r="4" fill="none" stroke="black" class="thin"/>
+  <!-- Arrow showing continued upward motion -->
+  <line x1="400" y1="118" x2="400" y2="108" stroke="black" class="thin"/>
+  <path d="M396,112 L400,105 L404,112" fill="none" stroke="black" class="thin"/>
+  <!-- Annotation -->
+  <text x="450" y="165" font-size="9" fill="gray">tank slides</text>
+  <text x="450" y="178" font-size="9" fill="gray">into loop</text>
 
-  <!-- STEP C: Tank fully seated and locked -->
-  <text x="667" y="65" text-anchor="middle" font-size="12" font-weight="bold">(c) Locked</text>
-  <rect x="614" y="130" width="106" height="50" rx="8" fill="none" stroke="black" class="thick"/>
-  <!-- Latch closed and locked -->
-  <rect x="647" y="123" width="40" height="12" rx="2" fill="none" stroke="black" class="thick"/>
-  <text x="667" y="132" text-anchor="middle" font-size="7" font-weight="bold">CLICK</text>
-  <!-- Tank fully seated -->
-  <rect x="642" y="175" width="50" height="120" rx="25" fill="none" stroke="black" class="thick"/>
-  <rect x="654" y="163" width="26" height="14" rx="2" fill="none" stroke="black" class="medium"/>
-  <!-- Locked indicators -->
-  <line x1="640" y1="155" x2="640" y2="175" stroke="black" class="medium"/>
-  <line x1="692" y1="155" x2="692" y2="175" stroke="black" class="medium"/>
-  <!-- Check mark -->
-  <path d="M730,170 L740,185 L760,155" fill="none" stroke="black" class="thick"/>
+  <!-- STEP C: Tank fully seated, retention strap snapped closed -->
+  <text x="667" y="60" text-anchor="middle" font-size="12" font-weight="bold">(c) Secured</text>
+  <!-- Belt section -->
+  <rect x="609" y="85" width="116" height="16" rx="2" fill="none" stroke="black" class="thick"/>
+  <!-- Fabric loop snug around tank -->
+  <path d="M634,101 L634,115 L634,240 Q634,258 652,258 L682,258 Q700,258 700,240 L700,115 L700,101" fill="none" stroke="black" class="thick"/>
+  <!-- Tank fully seated inside loop -->
+  <rect x="646" y="110" width="42" height="110" rx="21" fill="none" stroke="black" class="thick"/>
+  <rect x="655" y="98" width="24" height="14" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Retention strap snapped closed across front of tank -->
+  <path d="M634,170 L700,170" fill="none" stroke="black" class="thick"/>
+  <path d="M634,176 L700,176" fill="none" stroke="black" class="thick"/>
+  <!-- Snap button closed -->
+  <circle cx="700" cy="173" r="5" fill="none" stroke="black" class="medium"/>
+  <circle cx="700" cy="173" r="2" fill="black"/>
+  <!-- Check mark indicating secure -->
+  <path d="M718,160 L726,175 L745,148" fill="none" stroke="black" class="thick"/>
+  <!-- Secure label -->
+  <text x="667" y="195" text-anchor="middle" font-size="8" fill="gray">strap secured</text>
 
   <!-- Legend -->
-  <text x="50" y="400" class="caption" font-weight="bold">Tank Insertion Sequence:</text>
-  <text x="50" y="415" class="caption">(a) Tank approaches cradle from below with spring-loaded latch in open position</text>
-  <text x="50" y="430" class="caption">(b) Tank neck ring contacts latch mechanism, which begins to engage around the tank's neck flange</text>
-  <text x="50" y="445" class="caption">(c) Tank fully seated — latch snaps closed with audible click, anti-rotation ridges prevent tank from spinning</text>
-  <text x="50" y="465" class="caption">Removal: Press release tab (122) and pull tank downward. Total removal time: under 2 seconds.</text>
+  <text x="50" y="390" class="caption" font-weight="bold">Tank Insertion Sequence:</text>
+  <text x="50" y="405" class="caption">(a) Fabric webbing loop hangs open from belt; retention strap unsnapped. Tank approaches from below, valve end first.</text>
+  <text x="50" y="420" class="caption">(b) Tank slides upward into the fabric loop until valve clears the top of the loop and tank body rests inside.</text>
+  <text x="50" y="435" class="caption">(c) Tank fully seated in loop — elastic retention strap snaps closed across tank front, securing it in place.</text>
+  <text x="50" y="455" class="caption">Removal: Unsnap retention strap and slide tank downward out of loop. Total removal time: under 2 seconds.</text>
 </svg>`;
 }
 

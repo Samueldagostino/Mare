@@ -2,237 +2,266 @@
 // Part 1: SVG figures
 
 function fig1() {
-  // Front isometric view
+  // Front isometric view — smooth dome shell, massive wrap-around visor, side-mount tank with gauge
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900">
   <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}</style>
   <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 1 — Front Isometric View of DRIFT Helmet</text>
 
-  <!-- Helmet shell -->
-  <path d="M400,80 Q520,80 560,150 Q590,220 590,320 Q590,400 570,450 Q540,510 480,550 Q440,570 400,575 Q360,570 320,550 Q260,510 230,450 Q210,400 210,320 Q210,220 240,150 Q280,80 400,80 Z" fill="none" stroke="black" class="k"/>
-  
-  <!-- Visor -->
-  <path d="M400,120 Q500,120 530,180 Q550,230 545,300 Q540,360 520,400 Q500,440 460,470 Q440,480 400,485 Q360,480 340,470 Q300,440 280,400 Q260,360 255,300 Q250,230 270,180 Q300,120 400,120 Z" fill="none" stroke="black" class="m"/>
-  
-  <!-- Camera mount (top) -->
-  <rect x="380" y="68" width="40" height="18" rx="4" fill="none" stroke="black" class="k"/>
-  <line x1="390" y1="68" x2="390" y2="50" stroke="black" class="m"/>
-  <line x1="410" y1="68" x2="410" y2="50" stroke="black" class="m"/>
-  <rect x="385" y="40" width="30" height="12" rx="3" fill="none" stroke="black" class="m"/>
-  
-  <!-- Side-mount tank (right side) -->
-  <rect x="595" y="200" width="40" height="130" rx="20" fill="none" stroke="black" class="k"/>
-  <rect x="603" y="188" width="24" height="16" rx="3" fill="none" stroke="black" class="m"/>
-  <!-- Tank cradle -->
-  <path d="M590,220 Q585,215 583,230 L583,310 Q585,325 590,320" fill="none" stroke="black" class="m"/>
-  <!-- Bulkhead fitting -->
-  <rect x="570" y="260" width="25" height="20" rx="3" fill="none" stroke="black" class="k"/>
-  
-  <!-- Magnetic strap - crown -->
-  <path d="M310,120 Q300,100 320,85 Q360,70 400,68" fill="none" stroke="black" class="m"/>
-  <path d="M490,120 Q500,100 480,85 Q440,70 400,68" fill="none" stroke="black" class="m"/>
-  <!-- Magnetic pucks on crown strap -->
-  <circle cx="310" cy="120" r="8" fill="none" stroke="black" class="k"/>
-  <circle cx="490" cy="120" r="8" fill="none" stroke="black" class="k"/>
-  
-  <!-- Magnetic strap - chin -->
-  <path d="M310,500 Q340,530 400,540 Q460,530 490,500" fill="none" stroke="black" class="m"/>
-  <!-- Magnetic pucks on chin strap -->
-  <circle cx="310" cy="500" r="8" fill="none" stroke="black" class="k"/>
-  <circle cx="490" cy="500" r="8" fill="none" stroke="black" class="k"/>
-  
-  <!-- Diffuser plate (bottom) -->
-  <rect x="360" y="555" width="80" height="15" rx="4" fill="none" stroke="black" class="m"/>
+  <!-- Helmet shell — smooth perfectly round dome, space-helmet shape -->
+  <path d="M400,75 C500,75 570,120 590,200 C610,280 610,370 590,430 C570,490 530,540 480,565 C450,578 425,582 400,583 C375,582 350,578 320,565 C270,540 230,490 210,430 C190,370 190,280 210,200 C230,120 300,75 400,75 Z" fill="none" stroke="black" class="k"/>
+
+  <!-- Visor — MASSIVE wrap-around, covering ~70% of front face, forehead to chin -->
+  <path d="M400,100 C490,100 545,140 565,210 C580,270 580,340 570,400 C558,455 530,500 490,530 C460,548 430,555 400,558 C370,555 340,548 310,530 C270,500 242,455 230,400 C220,340 220,270 235,210 C255,140 310,100 400,100 Z" fill="none" stroke="black" class="m"/>
+  <!-- Visor gasket/frame line -->
+  <path d="M400,105 C485,105 538,143 558,210 C572,268 572,335 563,395 C552,448 525,492 488,522 C458,540 428,548 400,550 C372,548 342,540 312,522 C275,492 248,448 237,395 C228,335 228,268 242,210 C262,143 315,105 400,105 Z" fill="none" stroke="gray" stroke-dasharray="4,3" class="t"/>
+
+  <!-- Internal mouthpiece visible through visor -->
+  <rect x="388" y="440" width="24" height="12" rx="4" fill="none" stroke="black" class="m"/>
+  <line x1="400" y1="452" x2="400" y2="475" stroke="black" class="m"/>
+  <text x="400" y="470" text-anchor="middle" font-size="7" fill="gray">mouthpiece</text>
+
+  <!-- Camera mount (top center of dome) -->
+  <rect x="383" y="63" width="34" height="16" rx="4" fill="none" stroke="black" class="k"/>
+  <line x1="392" y1="63" x2="392" y2="48" stroke="black" class="m"/>
+  <line x1="408" y1="63" x2="408" y2="48" stroke="black" class="m"/>
+  <rect x="387" y="38" width="26" height="12" rx="3" fill="none" stroke="black" class="m"/>
+
+  <!-- Side-mount tank (right side) — cylindrical 0.5L tank -->
+  <rect x="600" y="210" width="42" height="140" rx="21" fill="none" stroke="black" class="k"/>
+  <!-- Pressure gauge on top of tank -->
+  <circle cx="621" cy="200" r="12" fill="none" stroke="black" class="m"/>
+  <line x1="621" y1="193" x2="621" y2="200" stroke="black" class="t"/>
+  <line x1="621" y1="200" x2="626" y2="196" stroke="black" class="t"/>
+  <!-- Tank valve assembly on top -->
+  <rect x="610" y="195" width="22" height="18" rx="3" fill="none" stroke="black" class="m"/>
+
+  <!-- Tank cradle/bracket on helmet side -->
+  <path d="M590,230 C585,225 582,240 582,260 L582,320 C582,340 585,355 590,350" fill="none" stroke="black" class="m"/>
+  <path d="M590,230 L595,230" fill="none" stroke="black" class="m"/>
+  <path d="M590,350 L595,350" fill="none" stroke="black" class="m"/>
+
+  <!-- Air tube from tank valve, looping down and into bulkhead -->
+  <path d="M615,213 C615,230 630,370 630,380 C630,400 610,410 595,400 C585,395 578,380 575,365" fill="none" stroke="black" class="m"/>
+
+  <!-- Bulkhead fitting where tube enters helmet -->
+  <rect x="565" y="350" width="20" height="20" rx="3" fill="none" stroke="black" class="k"/>
+
+  <!-- Exhaust diffuser at bottom chin area -->
+  <path d="M365,570 Q400,580 435,570" fill="none" stroke="black" class="m"/>
+  <rect x="368" y="572" width="64" height="12" rx="4" fill="none" stroke="black" class="m"/>
   <!-- Diffuser holes -->
-  <circle cx="370" cy="562" r="2" fill="black"/>
-  <circle cx="380" cy="562" r="2" fill="black"/>
-  <circle cx="390" cy="562" r="2" fill="black"/>
-  <circle cx="400" cy="562" r="2" fill="black"/>
-  <circle cx="410" cy="562" r="2" fill="black"/>
-  <circle cx="420" cy="562" r="2" fill="black"/>
-  <circle cx="430" cy="562" r="2" fill="black"/>
-  
+  <circle cx="378" cy="578" r="2" fill="black"/>
+  <circle cx="390" cy="578" r="2" fill="black"/>
+  <circle cx="400" cy="578" r="2" fill="black"/>
+  <circle cx="410" cy="578" r="2" fill="black"/>
+  <circle cx="422" cy="578" r="2" fill="black"/>
+
   <!-- Comms port (left side) -->
-  <circle cx="215" cy="300" r="10" fill="none" stroke="black" class="m"/>
-  <circle cx="215" cy="300" r="6" fill="none" stroke="black" class="t"/>
-  
+  <circle cx="215" cy="310" r="10" fill="none" stroke="black" class="m"/>
+  <circle cx="215" cy="310" r="6" fill="none" stroke="black" class="t"/>
+
   <!-- Labels -->
-  <line x1="560" y1="100" x2="530" y2="110" stroke="black" class="t"/>
-  <text x="535" y="100" class="label">200</text>
-  <line x1="545" y1="250" x2="520" y2="240" stroke="black" class="t"/>
-  <text x="522" y="237" class="label">202</text>
-  <line x1="400" y1="40" x2="440" y2="35" stroke="black" class="t"/>
-  <text x="445" y="38" class="label">204</text>
-  <line x1="635" y1="265" x2="660" y2="255" stroke="black" class="t"/>
-  <text x="665" y="259" class="label">206</text>
-  <line x1="570" y1="270" x2="555" y2="255" stroke="black" class="t"/>
-  <text x="540" y="250" class="label">208</text>
-  <line x1="310" y1="112" x2="275" y2="100" stroke="black" class="t"/>
-  <text x="225" y="104" class="label">210</text>
-  <line x1="490" y1="508" x2="530" y2="520" stroke="black" class="t"/>
-  <text x="535" y="524" class="label">210</text>
-  <line x1="440" y1="562" x2="480" y2="565" stroke="black" class="t"/>
-  <text x="485" y="569" class="label">212</text>
-  <line x1="215" y1="310" x2="180" y2="320" stroke="black" class="t"/>
-  <text x="120" y="324" class="label">214</text>
-  <line x1="590" y1="270" x2="560" y2="285" stroke="black" class="t"/>
-  <text x="530" y="295" class="label">216</text>
-  
+  <line x1="240" y1="110" x2="200" y2="95" stroke="black" class="t"/>
+  <text x="140" y="99" class="label">200</text>
+  <line x1="540" y1="300" x2="555" y2="290" stroke="black" class="t"/>
+  <text x="540" y="285" class="label">202</text>
+  <line x1="400" y1="38" x2="440" y2="33" stroke="black" class="t"/>
+  <text x="445" y="36" class="label">204</text>
+  <line x1="642" y1="280" x2="665" y2="270" stroke="black" class="t"/>
+  <text x="670" y="274" class="label">206</text>
+  <line x1="565" y1="360" x2="540" y2="345" stroke="black" class="t"/>
+  <text x="500" y="340" class="label">208</text>
+  <line x1="400" y1="440" x2="340" y2="430" stroke="black" class="t"/>
+  <text x="270" y="434" class="label">252</text>
+  <line x1="435" y1="578" x2="475" y2="580" stroke="black" class="t"/>
+  <text x="480" y="584" class="label">212</text>
+  <line x1="215" y1="320" x2="180" y2="330" stroke="black" class="t"/>
+  <text x="120" y="334" class="label">214</text>
+  <line x1="585" y1="290" x2="555" y2="295" stroke="black" class="t"/>
+  <text x="518" y="305" class="label">216</text>
+  <line x1="621" y1="188" x2="660" y2="175" stroke="black" class="t"/>
+  <text x="665" y="179" class="label">242</text>
+
   <text x="50" y="700" class="caption" font-weight="bold">Reference Numerals:</text>
-  <text x="50" y="715" class="caption">200 — Helmet shell  |  202 — Full-face visor  |  204 — GoPro camera mount  |  206 — 0.5L side-mount tank</text>
-  <text x="50" y="730" class="caption">208 — Sealed bulkhead fitting  |  210 — Magnetic strap pucks  |  212 — Acoustic exhaust diffuser</text>
-  <text x="50" y="745" class="caption">214 — Communications port  |  216 — Tank cradle</text>
+  <text x="50" y="715" class="caption">200 — Helmet shell (smooth dome)  |  202 — Full-face wrap-around visor  |  204 — GoPro camera mount  |  206 — 0.5L side-mount tank</text>
+  <text x="50" y="730" class="caption">208 — Sealed bulkhead fitting  |  212 — Acoustic exhaust diffuser  |  214 — Communications port  |  216 — Tank cradle</text>
+  <text x="50" y="745" class="caption">242 — Pressure gauge/valve assembly  |  252 — Internal mouthpiece</text>
 </svg>`;
 }
 
 function fig2() {
-  // Exploded view
+  // Exploded view — dome shell, large visor, side-mount cradle, tank with gauge, mouthpiece assembly
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100">
   <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}</style>
   <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 2 — Exploded View of DRIFT Helmet Assembly</text>
 
   <!-- Camera mount bracket (top, separated) -->
-  <rect x="370" y="50" width="60" height="20" rx="4" fill="none" stroke="black" class="k"/>
-  <line x1="385" y1="50" x2="385" y2="40" stroke="black" class="m"/>
-  <line x1="415" y1="50" x2="415" y2="40" stroke="black" class="m"/>
-  <rect x="380" y="32" width="40" height="10" rx="2" fill="none" stroke="black" class="m"/>
-  <line x1="400" y1="70" x2="400" y2="95" stroke="black" stroke-dasharray="6,3" class="t"/>
-  
-  <!-- Helmet shell (main body) -->
-  <path d="M400,110 Q500,110 530,160 Q550,210 550,280 Q550,340 535,380 Q515,430 470,460 Q440,475 400,480 Q360,475 330,460 Q285,430 265,380 Q250,340 250,280 Q250,210 270,160 Q300,110 400,110 Z" fill="none" stroke="black" class="k"/>
-  
-  <!-- Visor (separated forward) -->
-  <path d="M400,520 Q480,520 505,560 Q520,590 518,640 Q515,680 500,710 Q485,740 455,760 Q440,770 400,773 Q360,770 345,760 Q315,740 300,710 Q285,680 282,640 Q280,590 295,560 Q320,520 400,520 Z" fill="none" stroke="black" class="k"/>
-  <line x1="400" y1="480" x2="400" y2="520" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="400" y="650" text-anchor="middle" font-size="9" fill="gray">VISOR</text>
-  
-  <!-- Face seal (separated, dashed) -->
-  <path d="M400,800 Q470,800 495,830 Q510,850 510,880 Q510,910 490,930 Q470,945 430,955 Q410,958 400,960 Q390,958 370,955 Q330,945 310,930 Q290,910 290,880 Q290,850 305,830 Q330,800 400,800 Z" fill="none" stroke="black" stroke-dasharray="6,3" class="m"/>
-  <line x1="400" y1="773" x2="400" y2="800" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="400" y="885" text-anchor="middle" font-size="9" fill="gray">LSR FACE SEAL</text>
-  
-  <!-- Comfort liner (separated right) -->
-  <path d="M620,200 Q660,200 670,230 L670,330 Q670,360 640,370 L620,370 Q590,360 590,330 L590,230 Q590,200 620,200 Z" fill="none" stroke="black" class="m"/>
-  <line x1="625" y1="210" x2="635" y2="225" stroke="gray" class="t"/>
-  <line x1="635" y1="210" x2="645" y2="225" stroke="gray" class="t"/>
-  <line x1="645" y1="210" x2="655" y2="225" stroke="gray" class="t"/>
-  <line x1="555" y1="280" x2="590" y2="280" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="630" y="295" text-anchor="middle" font-size="9" fill="gray">EVA LINER</text>
-  
-  <!-- Magnetic strap assemblies (separated left) -->
-  <path d="M100,180 L180,180 Q190,180 190,190 L190,210 Q190,220 180,220 L100,220 Q90,220 90,210 L90,190 Q90,180 100,180 Z" fill="none" stroke="black" class="m"/>
-  <circle cx="175" cy="200" r="10" fill="none" stroke="black" class="k"/>
-  <text x="140" y="204" text-anchor="middle" font-size="8">STRAP + MAGNET</text>
-  <line x1="190" y1="200" x2="250" y2="200" stroke="black" stroke-dasharray="6,3" class="t"/>
-  
-  <!-- Bulkhead fitting (separated right, below liner) -->
-  <rect x="620" y="420" width="50" height="35" rx="5" fill="none" stroke="black" class="k"/>
-  <circle cx="645" cy="437" r="8" fill="none" stroke="black" class="m"/>
-  <line x1="555" y1="350" x2="620" y2="420" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="645" y="470" text-anchor="middle" font-size="8" fill="gray">BULKHEAD</text>
-  
-  <!-- Tank cradle (separated far right) -->
-  <rect x="700" y="300" width="60" height="40" rx="8" fill="none" stroke="black" class="k"/>
-  <line x1="660" y1="330" x2="700" y2="320" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="730" y="355" text-anchor="middle" font-size="8" fill="gray">CRADLE</text>
-  
-  <!-- Diffuser plate (separated below) -->
-  <rect x="350" y="990" width="100" height="18" rx="5" fill="none" stroke="black" class="k"/>
-  <circle cx="365" cy="999" r="2" fill="black"/>
-  <circle cx="380" cy="999" r="2" fill="black"/>
-  <circle cx="395" cy="999" r="2" fill="black"/>
-  <circle cx="410" cy="999" r="2" fill="black"/>
-  <circle cx="425" cy="999" r="2" fill="black"/>
-  <circle cx="440" cy="999" r="2" fill="black"/>
-  <line x1="400" y1="960" x2="400" y2="990" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="400" y="1025" text-anchor="middle" font-size="8" fill="gray">DIFFUSER PLATE</text>
-  
+  <rect x="375" y="50" width="50" height="18" rx="4" fill="none" stroke="black" class="k"/>
+  <line x1="390" y1="50" x2="390" y2="40" stroke="black" class="m"/>
+  <line x1="410" y1="50" x2="410" y2="40" stroke="black" class="m"/>
+  <rect x="385" y="32" width="30" height="10" rx="2" fill="none" stroke="black" class="m"/>
+  <line x1="400" y1="68" x2="400" y2="95" stroke="black" stroke-dasharray="6,3" class="t"/>
+
+  <!-- Helmet shell (smooth dome shape) -->
+  <path d="M400,110 C490,110 545,150 560,220 C575,290 575,350 560,400 C545,450 510,490 470,510 C445,522 420,527 400,528 C380,527 355,522 330,510 C290,490 255,450 240,400 C225,350 225,290 240,220 C255,150 310,110 400,110 Z" fill="none" stroke="black" class="k"/>
+
+  <!-- Visor (separated forward — large wrap-around piece) -->
+  <path d="M400,565 C480,565 530,600 545,655 C555,700 555,750 548,795 C540,835 518,870 488,895 C463,910 432,918 400,920 C368,918 337,910 312,895 C282,870 260,835 252,795 C245,750 245,700 255,655 C270,600 320,565 400,565 Z" fill="none" stroke="black" class="k"/>
+  <line x1="400" y1="528" x2="400" y2="565" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="400" y="750" text-anchor="middle" font-size="9" fill="gray">WRAP-AROUND VISOR</text>
+
+  <!-- Face seal (separated below visor) -->
+  <path d="M400,945 C455,945 490,965 500,990 C508,1010 505,1030 495,1045 C480,1060 450,1070 420,1075 C407,1077 393,1077 380,1075 C350,1070 320,1060 305,1045 C295,1030 292,1010 300,990 C310,965 345,945 400,945 Z" fill="none" stroke="black" stroke-dasharray="6,3" class="m"/>
+  <line x1="400" y1="920" x2="400" y2="945" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="400" y="1015" text-anchor="middle" font-size="9" fill="gray">LSR FACE SEAL</text>
+
+  <!-- Internal mouthpiece assembly (separated left) -->
+  <rect x="80" y="400" width="100" height="30" rx="6" fill="none" stroke="black" class="m"/>
+  <rect x="105" y="410" width="30" height="12" rx="4" fill="none" stroke="black" class="m"/>
+  <line x1="130" y1="430" x2="130" y2="450" stroke="black" class="m"/>
+  <rect x="120" y="450" width="20" height="15" rx="2" fill="none" stroke="black" class="m"/>
+  <text x="130" y="395" text-anchor="middle" font-size="8" fill="gray">MOUTHPIECE + TUBE</text>
+  <line x1="180" y1="415" x2="240" y2="350" stroke="black" stroke-dasharray="6,3" class="t"/>
+
+  <!-- Magnetic strap assemblies (separated left, above mouthpiece) -->
+  <path d="M80,220 L160,220 Q170,220 170,230 L170,250 Q170,260 160,260 L80,260 Q70,260 70,250 L70,230 Q70,220 80,220 Z" fill="none" stroke="black" class="m"/>
+  <circle cx="155" cy="240" r="10" fill="none" stroke="black" class="k"/>
+  <text x="120" y="244" text-anchor="middle" font-size="8">STRAP + MAGNET</text>
+  <line x1="170" y1="240" x2="240" y2="240" stroke="black" stroke-dasharray="6,3" class="t"/>
+
+  <!-- Tank with pressure gauge/valve (separated far right) -->
+  <rect x="660" y="160" width="45" height="150" rx="22" fill="none" stroke="black" class="k"/>
+  <!-- Pressure gauge on top -->
+  <circle cx="682" cy="150" r="14" fill="none" stroke="black" class="m"/>
+  <line x1="682" y1="142" x2="682" y2="150" stroke="black" class="t"/>
+  <line x1="682" y1="150" x2="688" y2="146" stroke="black" class="t"/>
+  <!-- Valve assembly -->
+  <rect x="670" y="148" width="24" height="18" rx="3" fill="none" stroke="black" class="m"/>
+  <text x="682" y="245" text-anchor="middle" font-size="8" fill="gray">0.5L TANK</text>
+  <text x="682" y="258" text-anchor="middle" font-size="7" fill="gray">+ GAUGE</text>
+
+  <!-- Tank cradle bracket (separated right, between tank and shell) -->
+  <path d="M610,220 C620,210 630,215 630,230 L630,330 C630,345 620,350 610,340 Z" fill="none" stroke="black" class="k"/>
+  <path d="M630,240 L645,240" fill="none" stroke="black" class="m"/>
+  <path d="M630,310 L645,310" fill="none" stroke="black" class="m"/>
+  <line x1="560" y1="280" x2="610" y2="280" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="620" y="370" text-anchor="middle" font-size="8" fill="gray">CRADLE</text>
+
+  <!-- Bulkhead fitting (separated right, below cradle) -->
+  <rect x="620" y="410" width="50" height="35" rx="5" fill="none" stroke="black" class="k"/>
+  <circle cx="645" cy="427" r="8" fill="none" stroke="black" class="m"/>
+  <line x1="555" y1="380" x2="620" y2="410" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="645" y="460" text-anchor="middle" font-size="8" fill="gray">BULKHEAD</text>
+
+  <!-- Diffuser plate (separated below face seal) -->
+  <rect x="355" y="1060" width="90" height="16" rx="5" fill="none" stroke="black" class="k"/>
+  <circle cx="370" cy="1068" r="2" fill="black"/>
+  <circle cx="385" cy="1068" r="2" fill="black"/>
+  <circle cx="400" cy="1068" r="2" fill="black"/>
+  <circle cx="415" cy="1068" r="2" fill="black"/>
+  <circle cx="430" cy="1068" r="2" fill="black"/>
+  <line x1="400" y1="1040" x2="400" y2="1060" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="400" y="1090" text-anchor="middle" font-size="8" fill="gray">DIFFUSER PLATE</text>
+
   <!-- Labels -->
-  <text x="555" y="125" class="label">200 — Shell</text>
-  <text x="520" y="640" class="label">202 — Visor</text>
+  <text x="555" y="125" class="label">200 — Shell (dome)</text>
+  <text x="520" y="740" class="label">202 — Visor</text>
   <text x="365" y="46" class="label">204 — Camera mount</text>
-  <text x="60" y="175" class="label">210 — Magnetic strap</text>
-  <text x="600" y="415" class="label">208 — Bulkhead</text>
-  <text x="690" y="295" class="label">216 — Cradle</text>
-  <text x="455" y="995" class="label">212 — Diffuser</text>
-  <text x="520" y="880" class="label">218 — Face seal</text>
-  <text x="580" y="290" class="label">220 — Comfort liner</text>
-  
-  <text x="50" y="1060" class="caption" font-weight="bold">Components shown separated along assembly axis for clarity.</text>
+  <text x="40" y="215" class="label">210 — Magnetic strap</text>
+  <text x="600" y="405" class="label">208 — Bulkhead</text>
+  <text x="600" y="215" class="label">216 — Cradle</text>
+  <text x="700" y="145" class="label">206 — Tank</text>
+  <text x="455" y="1068" class="label">212 — Diffuser</text>
+  <text x="520" y="1010" class="label">218 — Face seal</text>
+  <text x="40" y="390" class="label">252 — Mouthpiece</text>
+  <text x="700" y="168" class="label">242 — Gauge/valve</text>
+
+  <text x="50" y="1100" class="caption" font-weight="bold">Components shown separated along assembly axis for clarity. Tank mounts to right side of dome shell via cradle bracket.</text>
 </svg>`;
 }
 
 function fig3() {
-  // Cross-section side view
+  // Cross-section side view — dome shell, mouthpiece with internal tube, air path
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
   <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}.h{stroke-width:0.4;stroke:gray}</style>
   <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 3 — Cross-Section Side View (Air Path Detail)</text>
-  
-  <!-- Helmet shell cross-section (side view) -->
-  <path d="M350,80 Q420,70 460,100 Q500,140 510,200 Q520,280 515,360 Q510,420 490,470 Q470,510 440,540 L430,550 L380,560 Q350,555 330,540 Q300,510 285,470 Q270,420 265,360 Q260,280 265,200 Q270,140 300,100 Q330,75 350,80 Z" fill="none" stroke="black" class="k"/>
-  <!-- Shell thickness hatching -->
-  <path d="M355,85 Q415,76 455,103 Q493,140 503,200 Q512,275 508,355 Q503,415 485,465 Q467,505 438,535" fill="none" stroke="black" class="m"/>
-  <line x1="352" y1="88" x2="358" y2="88" class="h"/>
-  <line x1="458" y1="105" x2="452" y2="108" class="h"/>
-  <line x1="505" y1="200" x2="512" y2="202" class="h"/>
-  <line x1="500" y1="350" x2="510" y2="352" class="h"/>
-  
-  <!-- Visor (front face) -->
-  <path d="M455,105 Q490,160 500,250 Q505,330 490,400 Q475,450 445,490" fill="none" stroke="black" class="k"/>
-  
+
+  <!-- Helmet shell cross-section (side view) — smooth dome -->
+  <path d="M350,80 C400,70 450,75 480,100 C510,130 525,180 530,240 C535,310 532,380 520,430 C508,480 485,520 455,545 L435,555 L375,565 C350,560 330,545 310,520 C285,485 270,440 262,390 C255,330 255,270 262,210 C270,150 300,100 330,85 Z" fill="none" stroke="black" class="k"/>
+  <!-- Shell thickness inner wall -->
+  <path d="M355,90 C400,80 445,84 473,107 C500,135 515,180 520,235 C525,305 522,370 512,420 C502,465 482,502 455,530" fill="none" stroke="black" class="m"/>
+  <!-- Shell hatching -->
+  <line x1="352" y1="88" x2="358" y2="93" class="h"/>
+  <line x1="475" y1="105" x2="470" y2="112" class="h"/>
+  <line x1="522" y1="240" x2="528" y2="242" class="h"/>
+  <line x1="518" y1="370" x2="528" y2="372" class="h"/>
+
+  <!-- Visor (front face — large, from forehead to chin) -->
+  <path d="M473,107 C505,155 518,230 520,310 C522,380 510,440 490,485 C475,515 458,535 440,548" fill="none" stroke="black" class="k"/>
+
   <!-- Interior breathing space -->
-  <text x="380" y="300" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Interior</text>
-  <text x="380" y="315" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Breathing</text>
-  <text x="380" y="330" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Space</text>
-  
+  <text x="390" y="280" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Interior</text>
+  <text x="390" y="295" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Breathing</text>
+  <text x="390" y="310" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Space</text>
+
+  <!-- Internal mouthpiece (user bites on it) -->
+  <rect x="410" y="420" width="30" height="14" rx="5" fill="none" stroke="black" class="m"/>
+  <text x="425" y="415" font-size="7" text-anchor="middle" fill="gray">MOUTHPIECE</text>
+
+  <!-- Internal tube from mouthpiece to bulkhead -->
+  <path d="M440,427 L470,427 C480,427 485,420 485,410 L485,310 C485,300 490,295 498,295" fill="none" stroke="black" class="m"/>
+
   <!-- BULKHEAD FITTING — air path through shell wall -->
-  <!-- Exterior side -->
-  <rect x="510" y="230" width="40" height="25" rx="3" fill="none" stroke="black" class="k"/>
+  <rect x="498" y="285" width="35" height="25" rx="3" fill="none" stroke="black" class="k"/>
   <!-- Through-wall passage -->
-  <rect x="500" y="237" width="15" height="12" fill="none" stroke="black" class="m"/>
+  <rect x="520" y="292" width="15" height="12" fill="none" stroke="black" class="m"/>
   <!-- Hatching for bulkhead -->
-  <line x1="512" y1="233" x2="518" y2="240" class="h"/>
-  <line x1="520" y1="233" x2="526" y2="240" class="h"/>
-  <line x1="528" y1="233" x2="534" y2="240" class="h"/>
-  <line x1="536" y1="233" x2="542" y2="240" class="h"/>
-  <!-- Interior demand valve -->
-  <rect x="485" y="237" width="18" height="12" rx="2" fill="none" stroke="black" class="m"/>
-  <!-- Air flow arrows through bulkhead -->
+  <line x1="500" y1="288" x2="506" y2="295" class="h"/>
+  <line x1="508" y1="288" x2="514" y2="295" class="h"/>
+  <line x1="524" y1="288" x2="530" y2="295" class="h"/>
+
+  <!-- Air flow arrows -->
   <defs><marker id="a3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="black" stroke-width="0.8"/></marker></defs>
-  <line x1="550" y1="243" x2="525" y2="243" stroke="black" class="m" marker-end="url(#a3)"/>
-  <line x1="500" y1="243" x2="490" y2="243" stroke="black" class="m" marker-end="url(#a3)"/>
-  <text x="540" y="225" font-size="8" fill="gray">AIR IN</text>
-  
-  <!-- Tank connected to exterior of bulkhead -->
-  <rect x="555" y="180" width="30" height="100" rx="15" fill="none" stroke="black" class="k"/>
-  <rect x="562" y="170" width="16" height="14" rx="2" fill="none" stroke="black" class="m"/>
-  <!-- First-stage regulator -->
-  <rect x="548" y="160" width="44" height="15" rx="3" fill="none" stroke="black" class="m"/>
-  
+  <line x1="555" y1="298" x2="535" y2="298" stroke="black" class="m" marker-end="url(#a3)"/>
+  <line x1="498" y1="298" x2="488" y2="298" stroke="black" class="m" marker-end="url(#a3)"/>
+  <text x="555" y="285" font-size="8" fill="gray">AIR IN</text>
+
+  <!-- Air tube from tank loops down then into bulkhead -->
+  <path d="M580,210 C580,250 590,380 590,400 C590,420 575,425 560,415 C550,408 540,390 535,310" fill="none" stroke="black" class="m"/>
+
+  <!-- Tank connected via tube -->
+  <rect x="565" y="130" width="32" height="110" rx="16" fill="none" stroke="black" class="k"/>
+  <!-- Pressure gauge on top -->
+  <circle cx="581" cy="122" r="10" fill="none" stroke="black" class="m"/>
+  <line x1="581" y1="116" x2="581" y2="122" stroke="black" class="t"/>
+  <line x1="581" y1="122" x2="585" y2="119" stroke="black" class="t"/>
+  <!-- Valve assembly -->
+  <rect x="572" y="118" width="18" height="16" rx="2" fill="none" stroke="black" class="m"/>
+
   <!-- EXHAUST PATH -->
   <!-- Chin chamber -->
-  <path d="M330,510 L330,540 Q330,560 350,565 L430,565 Q450,560 450,540 L450,510" fill="none" stroke="black" class="m"/>
-  <text x="390" y="540" text-anchor="middle" font-size="8" fill="gray">Chin Chamber</text>
-  <text x="390" y="552" text-anchor="middle" font-size="8" fill="gray">(~150 mL)</text>
-  
+  <path d="M325,520 L325,545 Q325,560 345,565 L425,565 Q445,560 445,545 L445,520" fill="none" stroke="black" class="m"/>
+  <text x="385" y="540" text-anchor="middle" font-size="8" fill="gray">Chin Chamber</text>
+  <text x="385" y="552" text-anchor="middle" font-size="8" fill="gray">(~150 mL)</text>
+
   <!-- Exhale flow arrow down into chin chamber -->
-  <path d="M390,450 L390,510" fill="none" stroke="black" class="m" marker-end="url(#a3)"/>
-  <text x="410" y="480" font-size="8" fill="gray">EXHALED AIR</text>
-  
+  <path d="M385,460 L385,520" fill="none" stroke="black" class="m" marker-end="url(#a3)"/>
+  <text x="405" y="490" font-size="8" fill="gray">EXHALED AIR</text>
+
   <!-- Diffuser plate at bottom of chin chamber -->
-  <rect x="340" y="565" width="100" height="10" rx="3" fill="none" stroke="black" class="k"/>
+  <rect x="335" y="565" width="100" height="10" rx="3" fill="none" stroke="black" class="k"/>
   <!-- Holes in diffuser -->
-  <circle cx="355" cy="570" r="1.5" fill="black"/>
-  <circle cx="365" cy="570" r="1.5" fill="black"/>
-  <circle cx="375" cy="570" r="1.5" fill="black"/>
-  <circle cx="385" cy="570" r="1.5" fill="black"/>
-  <circle cx="395" cy="570" r="1.5" fill="black"/>
-  <circle cx="405" cy="570" r="1.5" fill="black"/>
-  <circle cx="415" cy="570" r="1.5" fill="black"/>
-  <circle cx="425" cy="570" r="1.5" fill="black"/>
-  
+  <circle cx="350" cy="570" r="1.5" fill="black"/>
+  <circle cx="362" cy="570" r="1.5" fill="black"/>
+  <circle cx="374" cy="570" r="1.5" fill="black"/>
+  <circle cx="386" cy="570" r="1.5" fill="black"/>
+  <circle cx="398" cy="570" r="1.5" fill="black"/>
+  <circle cx="410" cy="570" r="1.5" fill="black"/>
+  <circle cx="422" cy="570" r="1.5" fill="black"/>
+
   <!-- Mushroom valve -->
-  <path d="M350,563 Q345,558 350,555 Q355,553 360,555" fill="none" stroke="black" class="m"/>
-  
+  <path d="M345,563 Q340,558 345,555 Q350,553 355,555" fill="none" stroke="black" class="m"/>
+
   <!-- Tiny bubbles exiting -->
   <circle cx="355" cy="585" r="2" fill="none" stroke="black" class="t"/>
   <circle cx="370" cy="590" r="1.5" fill="none" stroke="black" class="t"/>
@@ -240,139 +269,141 @@ function fig3() {
   <circle cx="400" cy="592" r="1.5" fill="none" stroke="black" class="t"/>
   <circle cx="415" cy="586" r="2" fill="none" stroke="black" class="t"/>
   <circle cx="430" cy="590" r="1.5" fill="none" stroke="black" class="t"/>
-  <circle cx="360" cy="598" r="1" fill="none" stroke="black" class="t"/>
-  <circle cx="390" cy="602" r="1.5" fill="none" stroke="black" class="t"/>
-  <circle cx="420" cy="600" r="1" fill="none" stroke="black" class="t"/>
-  
+  <circle cx="365" cy="598" r="1" fill="none" stroke="black" class="t"/>
+  <circle cx="395" cy="602" r="1.5" fill="none" stroke="black" class="t"/>
+
   <!-- Labels -->
   <line x1="265" y1="200" x2="230" y2="190" stroke="black" class="t"/>
-  <text x="160" y="194" class="label">200 — Shell</text>
-  
-  <line x1="490" y1="243" x2="460" y2="250" stroke="black" class="t"/>
-  <text x="400" y="262" class="label">222 — Demand valve</text>
-  
-  <line x1="510" y1="243" x2="510" y2="270" stroke="black" class="t"/>
-  <text x="510" y="285" class="label">208 — Bulkhead</text>
-  
-  <line x1="570" y1="230" x2="620" y2="220" stroke="black" class="t"/>
-  <text x="625" y="224" class="label">206 — Tank</text>
-  
-  <line x1="440" y1="570" x2="480" y2="580" stroke="black" class="t"/>
-  <text x="485" y="584" class="label">212 — Diffuser</text>
-  
-  <line x1="350" y1="555" x2="310" y2="545" stroke="black" class="t"/>
-  <text x="220" y="549" class="label">224 — Mushroom valve</text>
-  
-  <line x1="390" y1="600" x2="460" y2="615" stroke="black" class="t"/>
-  <text x="465" y="619" class="label">226 — Dispersed bubbles</text>
-  
-  <text x="50" y="680" class="caption" font-weight="bold">Air Path: Tank (206) → Bulkhead (208) → Demand valve (222) → Interior breathing space → Chin chamber → Diffuser (212) → Bubbles (226)</text>
-  <text x="50" y="695" class="caption">Cross-hatching indicates solid material in cross-section. Dashed lines indicate hidden/internal features.</text>
+  <text x="150" y="194" class="label">200 — Shell (dome)</text>
+
+  <line x1="425" y1="427" x2="350" y2="430" stroke="black" class="t"/>
+  <text x="260" y="434" class="label">252 — Mouthpiece</text>
+
+  <line x1="498" y1="298" x2="470" y2="310" stroke="black" class="t"/>
+  <text x="390" y="350" class="label">208 — Bulkhead</text>
+
+  <line x1="581" y1="185" x2="630" y2="175" stroke="black" class="t"/>
+  <text x="635" y="179" class="label">206 — Tank</text>
+
+  <line x1="581" y1="112" x2="630" y2="105" stroke="black" class="t"/>
+  <text x="635" y="109" class="label">242 — Gauge</text>
+
+  <line x1="435" y1="570" x2="470" y2="580" stroke="black" class="t"/>
+  <text x="475" y="584" class="label">212 — Diffuser</text>
+
+  <line x1="345" y1="555" x2="300" y2="545" stroke="black" class="t"/>
+  <text x="200" y="549" class="label">224 — Mushroom valve</text>
+
+  <line x1="390" y1="600" x2="455" y2="615" stroke="black" class="t"/>
+  <text x="460" y="619" class="label">226 — Dispersed bubbles</text>
+
+  <text x="50" y="680" class="caption" font-weight="bold">Air Path: Tank (206) → Tube → Bulkhead (208) → Internal tube → Mouthpiece (252) → Interior breathing space → Chin chamber → Diffuser (212) → Bubbles (226)</text>
+  <text x="50" y="695" class="caption">Cross-hatching indicates solid material in cross-section. User bites mouthpiece inside helmet. Air tube loops from tank down and into bulkhead on shell side.</text>
 </svg>`;
 }
 
 function fig4() {
-  // Magnetic quick-release detail
+  // Magnetic quick-release detail — dome shell wall curvature
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
   <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}.h{stroke-width:0.4;stroke:gray}</style>
   <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 4 — Magnetic Quick-Release Strap Mechanism (Detail)</text>
-  
+
   <!-- STATE A: ATTACHED -->
   <text x="200" y="60" text-anchor="middle" font-size="12" font-weight="bold">(a) Attached State</text>
-  
-  <!-- Helmet shell wall section -->
-  <rect x="130" y="100" width="140" height="30" rx="4" fill="none" stroke="black" class="k"/>
+
+  <!-- Helmet shell wall section — curved to show dome curvature -->
+  <path d="M130,95 C160,90 240,88 270,95 L270,130 C240,125 160,125 130,130 Z" fill="none" stroke="black" class="k"/>
   <!-- Hatching for shell material -->
-  <line x1="135" y1="105" x2="145" y2="115" class="h"/>
-  <line x1="150" y1="105" x2="160" y2="115" class="h"/>
-  <line x1="235" y1="105" x2="245" y2="115" class="h"/>
-  <line x1="250" y1="105" x2="260" y2="115" class="h"/>
-  
-  <!-- Recessed ferromagnetic receiver plate -->
-  <rect x="170" y="115" width="60" height="15" rx="2" fill="none" stroke="black" class="k"/>
+  <line x1="135" y1="100" x2="145" y2="112" class="h"/>
+  <line x1="150" y1="99" x2="160" y2="112" class="h"/>
+  <line x1="240" y1="99" x2="250" y2="112" class="h"/>
+  <line x1="255" y1="100" x2="265" y2="112" class="h"/>
+
+  <!-- Recessed ferromagnetic receiver plate (inside curved wall) -->
+  <path d="M170,118 C185,116 215,116 230,118 L230,130 C215,128 185,128 170,130 Z" fill="none" stroke="black" class="k"/>
   <!-- Hatching for steel plate -->
-  <line x1="175" y1="118" x2="180" y2="127" class="h"/>
-  <line x1="185" y1="118" x2="190" y2="127" class="h"/>
-  <line x1="195" y1="118" x2="200" y2="127" class="h"/>
-  <line x1="205" y1="118" x2="210" y2="127" class="h"/>
-  <line x1="215" y1="118" x2="220" y2="127" class="h"/>
-  
+  <line x1="175" y1="120" x2="180" y2="128" class="h"/>
+  <line x1="185" y1="119" x2="190" y2="127" class="h"/>
+  <line x1="195" y1="119" x2="200" y2="127" class="h"/>
+  <line x1="205" y1="119" x2="210" y2="127" class="h"/>
+  <line x1="215" y1="119" x2="220" y2="127" class="h"/>
+
   <!-- Magnetic puck (snapped to plate) -->
   <rect x="168" y="130" width="64" height="20" rx="6" fill="none" stroke="black" class="k"/>
   <!-- N52 magnet inside puck -->
   <rect x="180" y="134" width="40" height="12" rx="2" fill="none" stroke="black" class="m"/>
   <text x="200" y="143" text-anchor="middle" font-size="7" font-weight="bold">N52</text>
-  
+
   <!-- Silicone encapsulation (around magnet) -->
   <path d="M172,132 Q168,135 168,140 Q168,148 172,150" fill="none" stroke="black" stroke-dasharray="3,2" class="t"/>
-  
-  <!-- Strap webbing -->
+
+  <!-- Strap webbing (internal, hidden from exterior) -->
   <rect x="145" y="140" width="23" height="8" rx="1" fill="none" stroke="black" class="m"/>
   <rect x="232" y="140" width="23" height="8" rx="1" fill="none" stroke="black" class="m"/>
   <line x1="120" y1="144" x2="145" y2="144" stroke="black" class="m"/>
   <line x1="255" y1="144" x2="280" y2="144" stroke="black" class="m"/>
-  
+
   <!-- Magnetic field lines -->
   <path d="M185,130 Q180,125 185,120" fill="none" stroke="gray" stroke-dasharray="2,2" class="t"/>
   <path d="M200,130 Q200,122 200,118" fill="none" stroke="gray" stroke-dasharray="2,2" class="t"/>
   <path d="M215,130 Q220,125 215,120" fill="none" stroke="gray" stroke-dasharray="2,2" class="t"/>
-  
+
   <!-- Force label -->
   <text x="200" y="175" text-anchor="middle" font-size="9" fill="gray">3-5 kg pull force</text>
-  
+
   <!-- STATE B: SEPARATED -->
   <text x="600" y="60" text-anchor="middle" font-size="12" font-weight="bold">(b) Separated State</text>
-  
-  <!-- Helmet shell wall section -->
-  <rect x="530" y="100" width="140" height="30" rx="4" fill="none" stroke="black" class="k"/>
-  <line x1="535" y1="105" x2="545" y2="115" class="h"/>
-  <line x1="550" y1="105" x2="560" y2="115" class="h"/>
-  <line x1="635" y1="105" x2="645" y2="115" class="h"/>
-  <line x1="650" y1="105" x2="660" y2="115" class="h"/>
-  
+
+  <!-- Helmet shell wall section — curved dome -->
+  <path d="M530,95 C560,90 640,88 670,95 L670,130 C640,125 560,125 530,130 Z" fill="none" stroke="black" class="k"/>
+  <line x1="535" y1="100" x2="545" y2="112" class="h"/>
+  <line x1="550" y1="99" x2="560" y2="112" class="h"/>
+  <line x1="635" y1="99" x2="645" y2="112" class="h"/>
+  <line x1="650" y1="100" x2="660" y2="112" class="h"/>
+
   <!-- Receiver plate still in shell -->
-  <rect x="570" y="115" width="60" height="15" rx="2" fill="none" stroke="black" class="k"/>
-  <line x1="575" y1="118" x2="580" y2="127" class="h"/>
-  <line x1="585" y1="118" x2="590" y2="127" class="h"/>
-  <line x1="595" y1="118" x2="600" y2="127" class="h"/>
-  <line x1="605" y1="118" x2="610" y2="127" class="h"/>
-  <line x1="615" y1="118" x2="620" y2="127" class="h"/>
-  
+  <path d="M570,118 C585,116 615,116 630,118 L630,130 C615,128 585,128 570,130 Z" fill="none" stroke="black" class="k"/>
+  <line x1="575" y1="120" x2="580" y2="128" class="h"/>
+  <line x1="585" y1="119" x2="590" y2="127" class="h"/>
+  <line x1="595" y1="119" x2="600" y2="127" class="h"/>
+  <line x1="605" y1="119" x2="610" y2="127" class="h"/>
+  <line x1="615" y1="119" x2="620" y2="127" class="h"/>
+
   <!-- Magnetic puck (separated, pulled away) -->
   <rect x="568" y="200" width="64" height="20" rx="6" fill="none" stroke="black" class="k"/>
   <rect x="580" y="204" width="40" height="12" rx="2" fill="none" stroke="black" class="m"/>
   <text x="600" y="213" text-anchor="middle" font-size="7" font-weight="bold">N52</text>
-  
+
   <!-- Strap pulled away -->
   <rect x="545" y="208" width="23" height="8" rx="1" fill="none" stroke="black" class="m"/>
   <rect x="632" y="208" width="23" height="8" rx="1" fill="none" stroke="black" class="m"/>
   <line x1="520" y1="212" x2="545" y2="212" stroke="black" class="m"/>
   <line x1="655" y1="212" x2="680" y2="212" stroke="black" class="m"/>
-  
+
   <!-- Pull direction arrow -->
   <line x1="600" y1="170" x2="600" y2="195" stroke="black" class="m"/>
   <path d="M595,190 L600,200 L605,190" fill="none" stroke="black" class="m"/>
   <text x="600" y="165" text-anchor="middle" font-size="9" fill="gray">perpendicular pull</text>
-  
+
   <!-- Separation gap -->
   <line x1="560" y1="130" x2="560" y2="200" stroke="gray" stroke-dasharray="4,4" class="t"/>
   <line x1="640" y1="130" x2="640" y2="200" stroke="gray" stroke-dasharray="4,4" class="t"/>
   <text x="600" y="180" text-anchor="middle" font-size="8" fill="gray">gap</text>
-  
+
   <!-- Labels -->
-  <text x="60" y="110" class="label">228 — Shell wall</text>
+  <text x="60" y="110" class="label">228 — Shell wall (dome)</text>
   <line x1="130" y1="115" x2="110" y2="110" stroke="black" class="t"/>
   <text x="60" y="130" class="label">230 — Receiver plate</text>
-  <line x1="170" y1="122" x2="120" y2="127" stroke="black" class="t"/>
+  <line x1="170" y1="124" x2="120" y2="127" stroke="black" class="t"/>
   <text x="60" y="148" class="label">232 — Magnetic puck</text>
   <line x1="168" y1="140" x2="120" y2="145" stroke="black" class="t"/>
   <text x="60" y="170" class="label">234 — Silicone encapsulation</text>
   <text x="295" y="148" class="label">236 — Strap webbing</text>
   <line x1="255" y1="144" x2="290" y2="145" stroke="black" class="t"/>
-  
-  <text x="50" y="290" class="caption" font-weight="bold">Operation: Strap terminal magnetic puck (232) snaps to ferromagnetic receiver plate (230) recessed in helmet shell (228).</text>
+
+  <text x="50" y="290" class="caption" font-weight="bold">Operation: Strap terminal magnetic puck (232) snaps to ferromagnetic receiver plate (230) recessed inside dome shell wall (228).</text>
   <text x="50" y="305" class="caption">N52 neodymium magnets encapsulated in medical-grade silicone (234) for saltwater corrosion resistance.</text>
-  <text x="50" y="320" class="caption">Release: deliberate perpendicular pull overcomes 3-5 kg magnetic force. Don/doff time: under 3 seconds.</text>
+  <text x="50" y="320" class="caption">Release: deliberate perpendicular pull overcomes 3-5 kg magnetic force. Don/doff time: under 3 seconds. Straps hidden inside helmet — clean exterior.</text>
 </svg>`;
 }
 

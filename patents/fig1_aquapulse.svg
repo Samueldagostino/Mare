@@ -12,126 +12,111 @@
   <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold">FIG. 1 — Exploded Isometric View</text>
 
   <!-- MASK ASSEMBLY (top) -->
-  <!-- Mask frame - dual lens -->
-  <ellipse cx="400" cy="180" rx="140" ry="80" fill="none" stroke="black" class="thick"/>
-  <line x1="400" y1="100" x2="400" y2="260" stroke="black" class="medium"/>
-  <!-- Left lens -->
-  <ellipse cx="340" cy="175" rx="50" ry="55" fill="none" stroke="black" class="medium"/>
-  <!-- Right lens -->
-  <ellipse cx="460" cy="175" rx="50" ry="55" fill="none" stroke="black" class="medium"/>
-  <!-- Nose pocket -->
-  <path d="M385,210 Q400,250 415,210" fill="none" stroke="black" class="medium"/>
-  <!-- Face seal perimeter (dashed - soft component) -->
-  <ellipse cx="400" cy="180" rx="148" ry="88" fill="none" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <!-- Mask frame - single panoramic frameless lens -->
+  <path d="M260,165 Q270,110 400,100 Q530,110 540,165 Q545,210 535,250 Q520,290 480,310 Q440,325 400,328 Q360,325 320,310 Q280,290 265,250 Q255,210 260,165 Z" fill="none" stroke="black" class="thick"/>
+  <!-- Single panoramic lens (wide, no divider) -->
+  <path d="M280,170 Q290,125 400,118 Q510,125 520,170 Q525,205 518,240 Q508,272 475,290 Q445,303 400,305 Q355,303 325,290 Q292,272 282,240 Q275,205 280,170 Z" fill="none" stroke="black" class="medium"/>
+  <!-- Nose bridge area integrated within lens (subtle bump, no divider) -->
+  <path d="M385,240 Q390,260 400,268 Q410,260 415,240" fill="none" stroke="black" stroke-dasharray="4,2" class="thin"/>
+  <!-- Nose pocket (below lens) -->
+  <path d="M385,310 Q400,340 415,310" fill="none" stroke="black" class="medium"/>
+  <!-- Face seal perimeter (dashed - soft silicone skirt) -->
+  <path d="M252,162 Q262,102 400,92 Q538,102 548,162 Q553,212 543,255 Q526,298 484,318 Q444,335 400,338 Q356,335 316,318 Q274,298 257,255 Q247,212 252,162 Z" fill="none" stroke="black" stroke-dasharray="6,3" class="thin"/>
   <!-- Strap attachment points -->
-  <circle cx="255" cy="170" r="6" fill="none" stroke="black" class="medium"/>
-  <circle cx="545" cy="170" r="6" fill="none" stroke="black" class="medium"/>
+  <circle cx="255" cy="195" r="6" fill="none" stroke="black" class="medium"/>
+  <circle cx="545" cy="195" r="6" fill="none" stroke="black" class="medium"/>
 
   <!-- HEAD STRAP (offset above/right) -->
-  <path d="M570,120 Q620,80 640,120 Q660,200 640,240 Q620,280 570,240" fill="none" stroke="black" class="medium"/>
+  <path d="M570,145 Q620,105 640,145 Q660,225 640,265 Q620,305 570,265" fill="none" stroke="black" class="medium"/>
   <!-- Quick-release buckle on strap -->
-  <rect x="625" y="155" width="30" height="20" rx="3" fill="none" stroke="black" class="medium"/>
-  <line x1="640" y1="155" x2="640" y2="175" stroke="black" class="thin"/>
+  <rect x="625" y="180" width="30" height="20" rx="3" fill="none" stroke="black" class="medium"/>
+  <line x1="640" y1="180" x2="640" y2="200" stroke="black" class="thin"/>
 
-  <!-- BREATHING TUBE (middle section) -->
-  <!-- Corrugated tube -->
-  <path d="M400,290 L400,310 Q395,315 400,320 Q405,325 400,330 Q395,335 400,340 Q405,345 400,350 Q395,355 400,360 Q405,365 400,370 Q395,375 400,380 Q405,385 400,390 Q395,395 400,400 Q405,405 400,410 Q395,415 400,420 L400,440" fill="none" stroke="black" class="medium"/>
-  <!-- Tube walls -->
-  <path d="M388,290 L388,310 Q383,315 388,320 Q393,325 388,330 Q383,335 388,340 Q393,345 388,350 Q383,355 388,360 Q393,365 388,370 Q383,375 388,380 Q393,385 388,390 Q383,395 388,400 Q393,405 388,410 Q383,415 388,420 L388,440" fill="none" stroke="black" class="thin"/>
-  <path d="M412,290 L412,310 Q417,315 412,320 Q407,325 412,330 Q417,335 412,340 Q407,345 412,350 Q417,355 412,360 Q407,365 412,370 Q417,375 412,380 Q407,385 412,390 Q417,395 412,400 Q407,405 412,410 Q417,415 412,420 L412,440" fill="none" stroke="black" class="thin"/>
-
-  <!-- MOUTHPIECE (offset left of tube top) -->
-  <path d="M300,280 Q310,265 340,268 Q360,270 370,285 L370,300 Q360,310 340,312 Q310,310 300,300 Z" fill="none" stroke="black" class="medium"/>
+  <!-- MOUTHPIECE (compact cylindrical, offset left) -->
+  <path d="M305,380 Q310,368 330,365 Q350,363 360,370 L362,385 Q358,395 340,398 Q318,398 308,392 Z" fill="none" stroke="black" class="medium"/>
   <!-- Bite flanges -->
-  <path d="M310,285 Q330,278 355,282" fill="none" stroke="black" class="thin"/>
-  <path d="M310,295 Q330,302 355,298" fill="none" stroke="black" class="thin"/>
-  <!-- Connection to tube -->
-  <line x1="370" y1="292" x2="388" y2="292" stroke="black" stroke-dasharray="4,2" class="thin"/>
+  <path d="M315,375 Q332,370 352,373" fill="none" stroke="black" class="thin"/>
+  <path d="M315,387 Q332,392 352,389" fill="none" stroke="black" class="thin"/>
+  <!-- Connection to tube (dashed = separated in exploded view) -->
+  <line x1="362" y1="382" x2="388" y2="420" stroke="black" stroke-dasharray="4,2" class="thin"/>
 
-  <!-- REGULATOR BODY (below tube) -->
-  <ellipse cx="400" cy="500" rx="55" ry="40" fill="none" stroke="black" class="thick"/>
-  <!-- Diaphragm housing (dome on top) -->
-  <path d="M355,480 Q400,445 445,480" fill="none" stroke="black" class="medium"/>
-  <!-- Purge button -->
-  <circle cx="400" cy="515" r="12" fill="none" stroke="black" class="medium"/>
-  <text x="400" y="519" text-anchor="middle" font-size="7">PURGE</text>
-  <!-- LP hose connection -->
-  <rect x="448" y="490" width="30" height="14" rx="3" fill="none" stroke="black" class="medium"/>
-  <!-- Connection to tube (dashed = separated) -->
-  <line x1="400" y1="460" x2="400" y2="440" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <!-- BREATHING TUBE (smooth, not corrugated) -->
+  <!-- Smooth tube - outer wall -->
+  <path d="M388,420 Q392,450 394,480 Q396,510 398,540 Q400,560 402,580" fill="none" stroke="black" class="medium"/>
+  <!-- Smooth tube - inner wall (parallel) -->
+  <path d="M412,420 Q410,450 408,480 Q406,510 404,540 Q402,560 402,580" fill="none" stroke="black" class="thin"/>
+  <!-- Tube top opening -->
+  <ellipse cx="400" cy="420" rx="12" ry="4" fill="none" stroke="black" class="thin"/>
 
-  <!-- TANK CONNECTION POINT (bottom) -->
-  <!-- First-stage regulator housing -->
-  <rect x="370" y="600" width="60" height="35" rx="5" fill="none" stroke="black" class="thick"/>
-  <!-- Yoke/DIN connection -->
-  <path d="M385,635 L385,660 Q400,670 415,660 L415,635" fill="none" stroke="black" class="medium"/>
-  <!-- Thread detail -->
-  <line x1="388" y1="645" x2="412" y2="645" stroke="black" class="thin"/>
-  <line x1="388" y1="650" x2="412" y2="650" stroke="black" class="thin"/>
-  <line x1="388" y1="655" x2="412" y2="655" stroke="black" class="thin"/>
-  <!-- HP hose to regulator -->
-  <line x1="400" y1="600" x2="400" y2="540" stroke="black" stroke-dasharray="6,3" class="thin"/>
-  <!-- LP hose output -->
-  <rect x="430" y="608" width="25" height="12" rx="2" fill="none" stroke="black" class="medium"/>
-
-  <!-- 0.5L TANK (bottom, outline) -->
-  <rect x="365" y="700" width="70" height="160" rx="35" fill="none" stroke="black" class="thick"/>
-  <!-- Tank valve -->
-  <rect x="385" y="685" width="30" height="20" rx="3" fill="none" stroke="black" class="medium"/>
+  <!-- 0.5L TANK (bottom, white cylindrical) -->
+  <rect x="365" y="680" width="70" height="170" rx="35" fill="none" stroke="black" class="thick"/>
   <!-- Tank markings -->
-  <text x="400" y="780" text-anchor="middle" font-size="8">0.5L</text>
-  <text x="400" y="795" text-anchor="middle" font-size="7">3000 PSI</text>
-  <!-- Connection dashed line -->
-  <line x1="400" y1="685" x2="400" y2="670" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <text x="400" y="770" text-anchor="middle" font-size="8">0.5L</text>
+  <text x="400" y="785" text-anchor="middle" font-size="7">3000 PSI</text>
+
+  <!-- INTEGRATED VALVE/REGULATOR ASSEMBLY on top of tank -->
+  <!-- Tank valve body (sits directly on tank top) -->
+  <rect x="382" y="650" width="36" height="30" rx="4" fill="none" stroke="black" class="medium"/>
+  <!-- Tank valve connection thread -->
+  <line x1="388" y1="680" x2="412" y2="680" stroke="black" class="thin"/>
+  <!-- First-stage regulator housing (compact block on top of valve) -->
+  <rect x="375" y="620" width="50" height="32" rx="5" fill="none" stroke="black" class="thick"/>
+  <!-- Pressure gauge (small circle on side of regulator) -->
+  <circle cx="430" cy="636" r="10" fill="none" stroke="black" class="medium"/>
+  <line x1="430" y1="630" x2="430" y2="636" stroke="black" class="thin"/>
+  <!-- LP hose output port (top of first-stage, connects to tube) -->
+  <rect x="393" y="610" width="14" height="12" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Connection dashed line from regulator to tube -->
+  <line x1="400" y1="610" x2="402" y2="580" stroke="black" stroke-dasharray="6,3" class="thin"/>
 
   <!-- REFERENCE NUMERAL LABELS -->
   <!-- 10 - Mask assembly -->
-  <line x1="260" y1="130" x2="295" y2="155" stroke="black" class="thin"/>
-  <text x="210" y="128" class="label">10</text>
-  <!-- 12 - Tempered glass lenses -->
-  <line x1="285" y1="175" x2="295" y2="175" stroke="black" class="thin"/>
-  <text x="240" y="179" class="label">12</text>
+  <line x1="260" y1="140" x2="220" y2="120" stroke="black" class="thin"/>
+  <text x="170" y="124" class="label">10</text>
+  <!-- 12 - Panoramic lens -->
+  <line x1="285" y1="200" x2="240" y2="200" stroke="black" class="thin"/>
+  <text x="195" y="204" class="label">12</text>
   <!-- 14 - Silicone face seal -->
-  <line x1="258" y1="210" x2="275" y2="200" stroke="black" class="thin"/>
-  <text x="195" y="214" class="label">14</text>
+  <line x1="255" y1="240" x2="215" y2="250" stroke="black" class="thin"/>
+  <text x="155" y="254" class="label">14</text>
   <!-- 16 - Nose pocket -->
-  <line x1="420" y1="240" x2="450" y2="255" stroke="black" class="thin"/>
-  <text x="455" y="259" class="label">16</text>
+  <line x1="420" y1="330" x2="460" y2="345" stroke="black" class="thin"/>
+  <text x="465" y="349" class="label">16</text>
   <!-- 18 - Strap attachment -->
-  <line x1="545" y1="160" x2="575" y2="145" stroke="black" class="thin"/>
-  <text x="580" y="149" class="label">18</text>
+  <line x1="545" y1="185" x2="575" y2="170" stroke="black" class="thin"/>
+  <text x="580" y="174" class="label">18</text>
   <!-- 20 - Head strap -->
-  <line x1="650" y1="180" x2="680" y2="180" stroke="black" class="thin"/>
-  <text x="685" y="184" class="label">20</text>
+  <line x1="650" y1="205" x2="680" y2="205" stroke="black" class="thin"/>
+  <text x="685" y="209" class="label">20</text>
   <!-- 22 - Quick-release buckle -->
-  <line x1="655" y1="165" x2="690" y2="150" stroke="black" class="thin"/>
-  <text x="695" y="154" class="label">22</text>
+  <line x1="655" y1="190" x2="690" y2="175" stroke="black" class="thin"/>
+  <text x="695" y="179" class="label">22</text>
   <!-- 24 - Mouthpiece -->
-  <line x1="300" y1="270" x2="260" y2="260" stroke="black" class="thin"/>
-  <text x="210" y="264" class="label">24</text>
+  <line x1="305" y1="375" x2="260" y2="365" stroke="black" class="thin"/>
+  <text x="210" y="369" class="label">24</text>
   <!-- 26 - Breathing tube -->
-  <line x1="415" y1="360" x2="450" y2="360" stroke="black" class="thin"/>
-  <text x="455" y="364" class="label">26</text>
-  <!-- 28 - Regulator body -->
-  <line x1="455" y1="500" x2="490" y2="500" stroke="black" class="thin"/>
-  <text x="495" y="504" class="label">28</text>
-  <!-- 30 - Purge button -->
-  <line x1="412" y1="515" x2="470" y2="530" stroke="black" class="thin"/>
-  <text x="475" y="534" class="label">30</text>
+  <line x1="412" y1="490" x2="455" y2="490" stroke="black" class="thin"/>
+  <text x="460" y="494" class="label">26</text>
+  <!-- 28 - Regulator body (second stage / integrated) -->
+  <line x1="425" y1="636" x2="470" y2="636" stroke="black" class="thin"/>
+  <text x="475" y="640" class="label">28</text>
+  <!-- 30 - Pressure gauge -->
+  <line x1="440" y1="636" x2="475" y2="620" stroke="black" class="thin"/>
+  <text x="480" y="618" class="label">30</text>
   <!-- 32 - First-stage regulator -->
-  <line x1="430" y1="618" x2="470" y2="618" stroke="black" class="thin"/>
-  <text x="475" y="622" class="label">32</text>
+  <line x1="375" y1="636" x2="335" y2="636" stroke="black" class="thin"/>
+  <text x="285" y="640" class="label">32</text>
   <!-- 34 - Tank valve connection -->
-  <line x1="415" y1="695" x2="470" y2="688" stroke="black" class="thin"/>
-  <text x="475" y="692" class="label">34</text>
+  <line x1="418" y1="665" x2="470" y2="658" stroke="black" class="thin"/>
+  <text x="475" y="662" class="label">34</text>
   <!-- 36 - 0.5L tank -->
-  <line x1="435" y1="780" x2="470" y2="780" stroke="black" class="thin"/>
-  <text x="475" y="784" class="label">36</text>
+  <line x1="435" y1="770" x2="470" y2="770" stroke="black" class="thin"/>
+  <text x="475" y="774" class="label">36</text>
 
   <!-- Legend -->
   <text x="50" y="920" class="caption" font-weight="bold">Reference Numerals:</text>
-  <text x="50" y="935" class="caption">10 — Mask assembly  |  12 — Tempered glass lenses  |  14 — Silicone face seal  |  16 — Nose pocket</text>
+  <text x="50" y="935" class="caption">10 — Mask assembly  |  12 — Panoramic lens  |  14 — Silicone face seal  |  16 — Nose pocket</text>
   <text x="50" y="950" class="caption">18 — Strap attachment points  |  20 — Head strap  |  22 — Quick-release buckle  |  24 — Mouthpiece</text>
-  <text x="50" y="965" class="caption">26 — Breathing tube  |  28 — Regulator body  |  30 — Purge button  |  32 — First-stage regulator</text>
+  <text x="50" y="965" class="caption">26 — Breathing tube  |  28 — Regulator body  |  30 — Pressure gauge  |  32 — First-stage regulator</text>
   <text x="50" y="980" class="caption">34 — Tank valve connection  |  36 — 0.5L compressed air tank</text>
 </svg>

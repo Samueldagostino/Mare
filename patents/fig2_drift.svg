@@ -3,71 +3,85 @@
   <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 2 — Exploded View of DRIFT Helmet Assembly</text>
 
   <!-- Camera mount bracket (top, separated) -->
-  <rect x="370" y="50" width="60" height="20" rx="4" fill="none" stroke="black" class="k"/>
-  <line x1="385" y1="50" x2="385" y2="40" stroke="black" class="m"/>
-  <line x1="415" y1="50" x2="415" y2="40" stroke="black" class="m"/>
-  <rect x="380" y="32" width="40" height="10" rx="2" fill="none" stroke="black" class="m"/>
-  <line x1="400" y1="70" x2="400" y2="95" stroke="black" stroke-dasharray="6,3" class="t"/>
-  
-  <!-- Helmet shell (main body) -->
-  <path d="M400,110 Q500,110 530,160 Q550,210 550,280 Q550,340 535,380 Q515,430 470,460 Q440,475 400,480 Q360,475 330,460 Q285,430 265,380 Q250,340 250,280 Q250,210 270,160 Q300,110 400,110 Z" fill="none" stroke="black" class="k"/>
-  
-  <!-- Visor (separated forward) -->
-  <path d="M400,520 Q480,520 505,560 Q520,590 518,640 Q515,680 500,710 Q485,740 455,760 Q440,770 400,773 Q360,770 345,760 Q315,740 300,710 Q285,680 282,640 Q280,590 295,560 Q320,520 400,520 Z" fill="none" stroke="black" class="k"/>
-  <line x1="400" y1="480" x2="400" y2="520" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="400" y="650" text-anchor="middle" font-size="9" fill="gray">VISOR</text>
-  
-  <!-- Face seal (separated, dashed) -->
-  <path d="M400,800 Q470,800 495,830 Q510,850 510,880 Q510,910 490,930 Q470,945 430,955 Q410,958 400,960 Q390,958 370,955 Q330,945 310,930 Q290,910 290,880 Q290,850 305,830 Q330,800 400,800 Z" fill="none" stroke="black" stroke-dasharray="6,3" class="m"/>
-  <line x1="400" y1="773" x2="400" y2="800" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="400" y="885" text-anchor="middle" font-size="9" fill="gray">LSR FACE SEAL</text>
-  
-  <!-- Comfort liner (separated right) -->
-  <path d="M620,200 Q660,200 670,230 L670,330 Q670,360 640,370 L620,370 Q590,360 590,330 L590,230 Q590,200 620,200 Z" fill="none" stroke="black" class="m"/>
-  <line x1="625" y1="210" x2="635" y2="225" stroke="gray" class="t"/>
-  <line x1="635" y1="210" x2="645" y2="225" stroke="gray" class="t"/>
-  <line x1="645" y1="210" x2="655" y2="225" stroke="gray" class="t"/>
-  <line x1="555" y1="280" x2="590" y2="280" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="630" y="295" text-anchor="middle" font-size="9" fill="gray">EVA LINER</text>
-  
-  <!-- Magnetic strap assemblies (separated left) -->
-  <path d="M100,180 L180,180 Q190,180 190,190 L190,210 Q190,220 180,220 L100,220 Q90,220 90,210 L90,190 Q90,180 100,180 Z" fill="none" stroke="black" class="m"/>
-  <circle cx="175" cy="200" r="10" fill="none" stroke="black" class="k"/>
-  <text x="140" y="204" text-anchor="middle" font-size="8">STRAP + MAGNET</text>
-  <line x1="190" y1="200" x2="250" y2="200" stroke="black" stroke-dasharray="6,3" class="t"/>
-  
-  <!-- Bulkhead fitting (separated right, below liner) -->
-  <rect x="620" y="420" width="50" height="35" rx="5" fill="none" stroke="black" class="k"/>
-  <circle cx="645" cy="437" r="8" fill="none" stroke="black" class="m"/>
-  <line x1="555" y1="350" x2="620" y2="420" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="645" y="470" text-anchor="middle" font-size="8" fill="gray">BULKHEAD</text>
-  
-  <!-- Tank cradle (separated far right) -->
-  <rect x="700" y="300" width="60" height="40" rx="8" fill="none" stroke="black" class="k"/>
-  <line x1="660" y1="330" x2="700" y2="320" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="730" y="355" text-anchor="middle" font-size="8" fill="gray">CRADLE</text>
-  
-  <!-- Diffuser plate (separated below) -->
-  <rect x="350" y="990" width="100" height="18" rx="5" fill="none" stroke="black" class="k"/>
-  <circle cx="365" cy="999" r="2" fill="black"/>
-  <circle cx="380" cy="999" r="2" fill="black"/>
-  <circle cx="395" cy="999" r="2" fill="black"/>
-  <circle cx="410" cy="999" r="2" fill="black"/>
-  <circle cx="425" cy="999" r="2" fill="black"/>
-  <circle cx="440" cy="999" r="2" fill="black"/>
-  <line x1="400" y1="960" x2="400" y2="990" stroke="black" stroke-dasharray="6,3" class="t"/>
-  <text x="400" y="1025" text-anchor="middle" font-size="8" fill="gray">DIFFUSER PLATE</text>
-  
+  <rect x="375" y="50" width="50" height="18" rx="4" fill="none" stroke="black" class="k"/>
+  <line x1="390" y1="50" x2="390" y2="40" stroke="black" class="m"/>
+  <line x1="410" y1="50" x2="410" y2="40" stroke="black" class="m"/>
+  <rect x="385" y="32" width="30" height="10" rx="2" fill="none" stroke="black" class="m"/>
+  <line x1="400" y1="68" x2="400" y2="95" stroke="black" stroke-dasharray="6,3" class="t"/>
+
+  <!-- Helmet shell (smooth dome shape) -->
+  <path d="M400,110 C490,110 545,150 560,220 C575,290 575,350 560,400 C545,450 510,490 470,510 C445,522 420,527 400,528 C380,527 355,522 330,510 C290,490 255,450 240,400 C225,350 225,290 240,220 C255,150 310,110 400,110 Z" fill="none" stroke="black" class="k"/>
+
+  <!-- Visor (separated forward — large wrap-around piece) -->
+  <path d="M400,565 C480,565 530,600 545,655 C555,700 555,750 548,795 C540,835 518,870 488,895 C463,910 432,918 400,920 C368,918 337,910 312,895 C282,870 260,835 252,795 C245,750 245,700 255,655 C270,600 320,565 400,565 Z" fill="none" stroke="black" class="k"/>
+  <line x1="400" y1="528" x2="400" y2="565" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="400" y="750" text-anchor="middle" font-size="9" fill="gray">WRAP-AROUND VISOR</text>
+
+  <!-- Face seal (separated below visor) -->
+  <path d="M400,945 C455,945 490,965 500,990 C508,1010 505,1030 495,1045 C480,1060 450,1070 420,1075 C407,1077 393,1077 380,1075 C350,1070 320,1060 305,1045 C295,1030 292,1010 300,990 C310,965 345,945 400,945 Z" fill="none" stroke="black" stroke-dasharray="6,3" class="m"/>
+  <line x1="400" y1="920" x2="400" y2="945" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="400" y="1015" text-anchor="middle" font-size="9" fill="gray">LSR FACE SEAL</text>
+
+  <!-- Internal mouthpiece assembly (separated left) -->
+  <rect x="80" y="400" width="100" height="30" rx="6" fill="none" stroke="black" class="m"/>
+  <rect x="105" y="410" width="30" height="12" rx="4" fill="none" stroke="black" class="m"/>
+  <line x1="130" y1="430" x2="130" y2="450" stroke="black" class="m"/>
+  <rect x="120" y="450" width="20" height="15" rx="2" fill="none" stroke="black" class="m"/>
+  <text x="130" y="395" text-anchor="middle" font-size="8" fill="gray">MOUTHPIECE + TUBE</text>
+  <line x1="180" y1="415" x2="240" y2="350" stroke="black" stroke-dasharray="6,3" class="t"/>
+
+  <!-- Magnetic strap assemblies (separated left, above mouthpiece) -->
+  <path d="M80,220 L160,220 Q170,220 170,230 L170,250 Q170,260 160,260 L80,260 Q70,260 70,250 L70,230 Q70,220 80,220 Z" fill="none" stroke="black" class="m"/>
+  <circle cx="155" cy="240" r="10" fill="none" stroke="black" class="k"/>
+  <text x="120" y="244" text-anchor="middle" font-size="8">STRAP + MAGNET</text>
+  <line x1="170" y1="240" x2="240" y2="240" stroke="black" stroke-dasharray="6,3" class="t"/>
+
+  <!-- Tank with pressure gauge/valve (separated far right) -->
+  <rect x="660" y="160" width="45" height="150" rx="22" fill="none" stroke="black" class="k"/>
+  <!-- Pressure gauge on top -->
+  <circle cx="682" cy="150" r="14" fill="none" stroke="black" class="m"/>
+  <line x1="682" y1="142" x2="682" y2="150" stroke="black" class="t"/>
+  <line x1="682" y1="150" x2="688" y2="146" stroke="black" class="t"/>
+  <!-- Valve assembly -->
+  <rect x="670" y="148" width="24" height="18" rx="3" fill="none" stroke="black" class="m"/>
+  <text x="682" y="245" text-anchor="middle" font-size="8" fill="gray">0.5L TANK</text>
+  <text x="682" y="258" text-anchor="middle" font-size="7" fill="gray">+ GAUGE</text>
+
+  <!-- Tank cradle bracket (separated right, between tank and shell) -->
+  <path d="M610,220 C620,210 630,215 630,230 L630,330 C630,345 620,350 610,340 Z" fill="none" stroke="black" class="k"/>
+  <path d="M630,240 L645,240" fill="none" stroke="black" class="m"/>
+  <path d="M630,310 L645,310" fill="none" stroke="black" class="m"/>
+  <line x1="560" y1="280" x2="610" y2="280" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="620" y="370" text-anchor="middle" font-size="8" fill="gray">CRADLE</text>
+
+  <!-- Bulkhead fitting (separated right, below cradle) -->
+  <rect x="620" y="410" width="50" height="35" rx="5" fill="none" stroke="black" class="k"/>
+  <circle cx="645" cy="427" r="8" fill="none" stroke="black" class="m"/>
+  <line x1="555" y1="380" x2="620" y2="410" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="645" y="460" text-anchor="middle" font-size="8" fill="gray">BULKHEAD</text>
+
+  <!-- Diffuser plate (separated below face seal) -->
+  <rect x="355" y="1060" width="90" height="16" rx="5" fill="none" stroke="black" class="k"/>
+  <circle cx="370" cy="1068" r="2" fill="black"/>
+  <circle cx="385" cy="1068" r="2" fill="black"/>
+  <circle cx="400" cy="1068" r="2" fill="black"/>
+  <circle cx="415" cy="1068" r="2" fill="black"/>
+  <circle cx="430" cy="1068" r="2" fill="black"/>
+  <line x1="400" y1="1040" x2="400" y2="1060" stroke="black" stroke-dasharray="6,3" class="t"/>
+  <text x="400" y="1090" text-anchor="middle" font-size="8" fill="gray">DIFFUSER PLATE</text>
+
   <!-- Labels -->
-  <text x="555" y="125" class="label">200 — Shell</text>
-  <text x="520" y="640" class="label">202 — Visor</text>
+  <text x="555" y="125" class="label">200 — Shell (dome)</text>
+  <text x="520" y="740" class="label">202 — Visor</text>
   <text x="365" y="46" class="label">204 — Camera mount</text>
-  <text x="60" y="175" class="label">210 — Magnetic strap</text>
-  <text x="600" y="415" class="label">208 — Bulkhead</text>
-  <text x="690" y="295" class="label">216 — Cradle</text>
-  <text x="455" y="995" class="label">212 — Diffuser</text>
-  <text x="520" y="880" class="label">218 — Face seal</text>
-  <text x="580" y="290" class="label">220 — Comfort liner</text>
-  
-  <text x="50" y="1060" class="caption" font-weight="bold">Components shown separated along assembly axis for clarity.</text>
+  <text x="40" y="215" class="label">210 — Magnetic strap</text>
+  <text x="600" y="405" class="label">208 — Bulkhead</text>
+  <text x="600" y="215" class="label">216 — Cradle</text>
+  <text x="700" y="145" class="label">206 — Tank</text>
+  <text x="455" y="1068" class="label">212 — Diffuser</text>
+  <text x="520" y="1010" class="label">218 — Face seal</text>
+  <text x="40" y="390" class="label">252 — Mouthpiece</text>
+  <text x="700" y="168" class="label">242 — Gauge/valve</text>
+
+  <text x="50" y="1100" class="caption" font-weight="bold">Components shown separated along assembly axis for clarity. Tank mounts to right side of dome shell via cradle bracket.</text>
 </svg>
