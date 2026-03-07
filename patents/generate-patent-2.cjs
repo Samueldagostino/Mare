@@ -34,16 +34,20 @@ function generateFig1SVG() {
   <!-- Head outline for tube destination -->
   <ellipse cx="400" cy="70" rx="45" ry="35" fill="none" stroke="black" stroke-dasharray="8,4" class="thin"/>
 
-  <!-- WAIST BELT (wraps fully around torso) -->
-  <path d="M220,380 L300,372 L350,369 L400,368 L450,369 L500,372 L580,380" fill="none" stroke="black" class="thick"/>
-  <path d="M220,408 L300,400 L350,397 L400,396 L450,397 L500,400 L580,408" fill="none" stroke="black" class="thick"/>
+  <!-- WAIST BELT (wraps fully around torso at waist level) -->
+  <!-- Front belt runs across entire waist -->
+  <path d="M220,380 L280,373 L330,370 L400,368 L470,370 L520,373 L580,380" fill="none" stroke="black" class="thick"/>
+  <path d="M220,408 L280,401 L330,398 L400,396 L470,398 L520,401 L580,408" fill="none" stroke="black" class="thick"/>
+  <!-- Belt wraps behind (shown curving at sides) -->
+  <path d="M220,380 Q200,385 195,394 Q200,403 220,408" fill="none" stroke="black" class="thick"/>
+  <path d="M580,380 Q600,385 605,394 Q600,403 580,408" fill="none" stroke="black" class="thick"/>
   <!-- Belt webbing texture lines -->
   <line x1="250" y1="385" x2="250" y2="403" stroke="black" class="thin"/>
   <line x1="290" y1="378" x2="290" y2="396" stroke="black" class="thin"/>
   <line x1="510" y1="378" x2="510" y2="396" stroke="black" class="thin"/>
   <line x1="550" y1="385" x2="550" y2="403" stroke="black" class="thin"/>
 
-  <!-- Neoprene comfort padding (cross-hatch on interior) -->
+  <!-- Neoprene comfort padding (cross-hatch pattern on belt interior) -->
   <line x1="340" y1="372" x2="345" y2="394" stroke="gray" class="thin"/>
   <line x1="360" y1="371" x2="365" y2="393" stroke="gray" class="thin"/>
   <line x1="440" y1="371" x2="445" y2="393" stroke="gray" class="thin"/>
@@ -60,102 +64,115 @@ function generateFig1SVG() {
   <path d="M379,383 L385,383" stroke="black" class="thin"/>
   <path d="M415,383 L421,383" stroke="black" class="thin"/>
 
-  <!-- D-RING attachment points -->
+  <!-- D-RING attachment points on belt -->
   <path d="M330,375 Q320,370 315,378 Q310,386 320,390 L330,393" fill="none" stroke="black" class="medium"/>
   <path d="M470,375 Q480,370 485,378 Q490,386 480,390 L470,393" fill="none" stroke="black" class="medium"/>
 
-  <!-- LEFT TANK CRADLE (fabric webbing loop on belt, left-front hip) -->
-  <!-- Outer fabric loop strap wrapping around tank -->
-  <path d="M280,396 L280,410 Q280,540 280,545 Q280,555 290,555 L310,555 Q320,555 320,545 L320,410 L320,396" fill="none" stroke="black" class="thick"/>
-  <!-- Inner fabric loop strap (second tank) -->
-  <path d="M335,396 L335,410 Q335,540 335,545 Q335,555 345,555 L365,555 Q375,555 375,545 L375,410 L375,396" fill="none" stroke="black" class="thick"/>
+  <!-- TANK CRADLE — Fabric webbing loops sewn onto belt at left-front hip -->
+  <!-- Loop 1 (outer, for Tank 1): fabric strap hangs from belt, wraps under tank, back up -->
+  <path d="M275,398 L275,420 L275,540 Q275,558 290,558 L305,558 Q320,558 320,540 L320,420 L320,398" fill="none" stroke="black" class="thick"/>
+  <!-- Loop 2 (inner, for Tank 2): adjacent fabric strap -->
+  <path d="M330,398 L330,420 L330,540 Q330,558 345,558 L360,558 Q375,558 375,540 L375,420 L375,398" fill="none" stroke="black" class="thick"/>
+  <!-- Stitching at belt attachment (double-stitch reinforcement) -->
+  <line x1="275" y1="400" x2="320" y2="400" stroke="black" class="thin"/>
+  <line x1="275" y1="403" x2="320" y2="403" stroke="black" class="thin"/>
+  <line x1="330" y1="400" x2="375" y2="400" stroke="black" class="thin"/>
+  <line x1="330" y1="403" x2="375" y2="403" stroke="black" class="thin"/>
   <!-- Fabric texture (stitching lines on loops) -->
-  <line x1="283" y1="420" x2="283" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <line x1="278" y1="420" x2="278" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
   <line x1="317" y1="420" x2="317" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
-  <line x1="338" y1="420" x2="338" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <line x1="333" y1="420" x2="333" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
   <line x1="372" y1="420" x2="372" y2="540" stroke="gray" class="thin" stroke-dasharray="3,2"/>
 
-  <!-- LEFT TANK (Tank 1 — in left fabric loop) -->
-  <rect x="282" y="405" width="36" height="140" rx="18" fill="none" stroke="black" class="thick"/>
-  <!-- Tank valve top (silver metallic cap) -->
-  <rect x="290" y="392" width="20" height="16" rx="3" fill="none" stroke="black" class="medium"/>
-  <!-- Pressure gauge dial -->
-  <circle cx="300" cy="395" r="5" fill="none" stroke="black" class="thin"/>
-  <line x1="300" y1="393" x2="303" y2="391" stroke="black" class="thin"/>
-  <text x="300" y="530" text-anchor="middle" font-size="7">0.5L</text>
+  <!-- TANK 1 (left, in outer fabric loop) — white cylindrical 0.5L tank, vertical -->
+  <rect x="280" y="410" width="36" height="140" rx="18" fill="none" stroke="black" class="thick"/>
+  <!-- Tank valve top (silver/metallic cap with profile) -->
+  <rect x="287" y="393" width="22" height="18" rx="3" fill="none" stroke="black" class="medium"/>
+  <line x1="287" y1="400" x2="309" y2="400" stroke="black" class="thin"/>
+  <!-- Pressure gauge dial on valve -->
+  <circle cx="298" cy="397" r="5" fill="none" stroke="black" class="thin"/>
+  <line x1="298" y1="395" x2="301" y2="393" stroke="black" class="thin"/>
+  <text x="298" y="535" text-anchor="middle" font-size="7">0.5L</text>
 
-  <!-- RIGHT TANK (Tank 2 — in right fabric loop, side by side) -->
-  <rect x="337" y="405" width="36" height="140" rx="18" fill="none" stroke="black" class="thick"/>
+  <!-- TANK 2 (right, in inner fabric loop — side by side, close together) -->
+  <rect x="335" y="410" width="36" height="140" rx="18" fill="none" stroke="black" class="thick"/>
   <!-- Tank valve top -->
-  <rect x="345" y="392" width="20" height="16" rx="3" fill="none" stroke="black" class="medium"/>
+  <rect x="342" y="393" width="22" height="18" rx="3" fill="none" stroke="black" class="medium"/>
+  <line x1="342" y1="400" x2="364" y2="400" stroke="black" class="thin"/>
   <!-- Pressure gauge dial -->
-  <circle cx="355" cy="395" r="5" fill="none" stroke="black" class="thin"/>
-  <line x1="355" y1="393" x2="358" y2="391" stroke="black" class="thin"/>
-  <text x="355" y="530" text-anchor="middle" font-size="7">0.5L</text>
+  <circle cx="353" cy="397" r="5" fill="none" stroke="black" class="thin"/>
+  <line x1="353" y1="395" x2="356" y2="393" stroke="black" class="thin"/>
+  <text x="353" y="535" text-anchor="middle" font-size="7">0.5L</text>
 
-  <!-- Y-VALVE MANIFOLD (metal Y-junction connecting both tank tops) -->
-  <!-- Left input arm from Tank 1 valve -->
-  <line x1="300" y1="392" x2="315" y2="378" stroke="black" class="thick"/>
-  <!-- Right input arm from Tank 2 valve -->
-  <line x1="355" y1="392" x2="340" y2="378" stroke="black" class="thick"/>
-  <!-- Junction body (where Y merges) -->
-  <circle cx="327" cy="375" r="8" fill="none" stroke="black" class="thick"/>
-  <text x="327" y="378" text-anchor="middle" font-size="6" font-weight="bold">Y</text>
+  <!-- Y-VALVE MANIFOLD (metal Y-shaped junction connecting both tank valve tops) -->
+  <!-- Left input arm from Tank 1 valve top -->
+  <line x1="298" y1="393" x2="314" y2="376" stroke="black" class="thick"/>
+  <!-- Right input arm from Tank 2 valve top -->
+  <line x1="353" y1="393" x2="338" y2="376" stroke="black" class="thick"/>
+  <!-- Junction body (where Y merges into single output) -->
+  <circle cx="326" cy="373" r="9" fill="none" stroke="black" class="thick"/>
+  <text x="326" y="376" text-anchor="middle" font-size="6" font-weight="bold">Y</text>
 
-  <!-- Single breathing tube from Y-valve up to face/mouthpiece -->
-  <path d="M327,367 Q327,340 335,300 Q345,250 370,200 Q385,170 395,140 Q398,120 400,105" fill="none" stroke="black" class="medium"/>
-  <!-- Tube texture (smooth tube with periodic rings) -->
-  <ellipse cx="340" cy="280" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
-  <ellipse cx="360" cy="230" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
-  <ellipse cx="385" cy="170" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
-  <!-- Mouthpiece at end -->
+  <!-- Single breathing tube from Y-valve output UP to mouthpiece at face -->
+  <path d="M326,364 Q326,340 334,300 Q342,260 360,220 Q378,185 392,155 Q398,130 400,105" fill="none" stroke="black" class="medium"/>
+  <!-- Tube rings (smooth tube with periodic reinforcement rings) -->
+  <ellipse cx="338" cy="285" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="355" cy="240" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="378" cy="185" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="393" cy="148" rx="4" ry="2" fill="none" stroke="black" class="thin"/>
+  <!-- Mouthpiece at end (at mouth level) -->
   <ellipse cx="400" cy="103" rx="8" ry="5" fill="none" stroke="black" class="medium"/>
+  <line x1="394" y1="108" x2="394" y2="115" stroke="black" class="thin"/>
+  <line x1="406" y1="108" x2="406" y2="115" stroke="black" class="thin"/>
 
-  <!-- STABILIZER STRAP (secondary strap below belt, wraps around upper left thigh) -->
-  <path d="M270,408 L265,480 Q260,530 265,560 Q270,580 290,585 Q320,590 350,585 Q370,580 375,560 Q380,530 375,480 L375,408" fill="none" stroke="black" stroke-dasharray="6,3" class="medium"/>
-  <!-- Stabilizer buckle -->
-  <rect x="305" y="578" width="20" height="10" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- STABILIZER STRAP (secondary strap below belt, wraps around upper left thigh for stability) -->
+  <path d="M265,410 L260,470 Q255,520 260,560 Q265,580 285,588 Q315,595 345,588 Q365,580 370,560 Q375,520 370,470 L368,410" fill="none" stroke="black" stroke-dasharray="6,3" class="medium"/>
+  <!-- Stabilizer adjustment buckle -->
+  <rect x="300" y="582" width="22" height="10" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Stabilizer connects to belt via loops -->
+  <line x1="265" y1="410" x2="265" y2="398" stroke="black" class="thin"/>
+  <line x1="368" y1="410" x2="368" y2="398" stroke="black" class="thin"/>
 
   <!-- REFERENCE LABELS -->
   <!-- 100 — Quick-release buckle -->
-  <line x1="418" y1="383" x2="465" y2="400" stroke="black" class="thin"/>
-  <text x="470" y="404" class="label">100</text>
+  <line x1="418" y1="383" x2="470" y2="400" stroke="black" class="thin"/>
+  <text x="475" y="404" class="label">100</text>
 
   <!-- 102 — Waist belt -->
-  <line x1="230" y1="394" x2="175" y2="385" stroke="black" class="thin"/>
-  <text x="110" y="389" class="label">102</text>
+  <line x1="540" y1="394" x2="590" y2="385" stroke="black" class="thin"/>
+  <text x="595" y="389" class="label">102</text>
 
-  <!-- 104 — Snap-lock latch (now fabric loop retention) -->
-  <line x1="280" y1="470" x2="240" y2="470" stroke="black" class="thin"/>
-  <text x="195" y="474" class="label">104</text>
+  <!-- 104 — Fabric loop retention -->
+  <line x1="275" y1="480" x2="230" y2="480" stroke="black" class="thin"/>
+  <text x="185" y="484" class="label">104</text>
 
   <!-- 106 — D-ring attachment -->
-  <line x1="315" y1="382" x2="315" y2="360" stroke="black" class="thin"/>
-  <text x="308" y="355" class="label">106</text>
+  <line x1="315" y1="382" x2="280" y2="355" stroke="black" class="thin"/>
+  <text x="255" y="350" class="label">106</text>
 
-  <!-- 108 — Tank cradle (fabric loop) -->
-  <line x1="375" y1="475" x2="420" y2="475" stroke="black" class="thin"/>
-  <text x="425" y="479" class="label">108</text>
+  <!-- 108 — Tank cradle (fabric webbing loop) -->
+  <line x1="375" y1="480" x2="425" y2="480" stroke="black" class="thin"/>
+  <text x="430" y="484" class="label">108</text>
 
   <!-- 110 — 0.5L tank -->
-  <line x1="282" y1="510" x2="230" y2="520" stroke="black" class="thin"/>
-  <text x="175" y="524" class="label">110</text>
+  <line x1="280" y1="520" x2="225" y2="530" stroke="black" class="thin"/>
+  <text x="170" y="534" class="label">110</text>
 
   <!-- 112 — Y-valve manifold -->
-  <line x1="335" y1="375" x2="380" y2="360" stroke="black" class="thin"/>
-  <text x="385" y="358" class="label">112</text>
+  <line x1="335" y1="373" x2="390" y2="355" stroke="black" class="thin"/>
+  <text x="395" y="353" class="label">112</text>
 
   <!-- 114 — Stabilizer strap -->
-  <line x1="290" y1="585" x2="245" y2="600" stroke="black" class="thin"/>
-  <text x="185" y="604" class="label">114</text>
+  <line x1="285" y1="588" x2="235" y2="605" stroke="black" class="thin"/>
+  <text x="170" y="609" class="label">114</text>
 
   <!-- 116 — Neoprene comfort padding -->
-  <line x1="345" y1="393" x2="345" y2="360" stroke="black" class="thin"/>
-  <text x="338" y="355" class="label">116</text>
+  <line x1="450" y1="393" x2="490" y2="356" stroke="black" class="thin"/>
+  <text x="495" y="354" class="label">116</text>
 
   <!-- 140 — Breathing tube -->
-  <line x1="360" y1="230" x2="410" y2="230" stroke="black" class="thin"/>
-  <text x="415" y="234" class="label">140</text>
+  <line x1="358" y1="235" x2="415" y2="235" stroke="black" class="thin"/>
+  <text x="420" y="239" class="label">140</text>
 
   <!-- Legend -->
   <text x="50" y="700" class="caption" font-weight="bold">Reference Numerals:</text>
