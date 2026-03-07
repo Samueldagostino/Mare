@@ -408,85 +408,82 @@ function fig4() {
 }
 
 function fig5() {
-  // Acoustic exhaust diffuser detail
+  // Acoustic exhaust diffuser detail — at chin area of dome helmet
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700">
   <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}.h{stroke-width:0.4;stroke:gray}</style>
   <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 5 — Acoustic Exhaust Diffuser System (Detail)</text>
-  
-  <!-- Chin chamber (cross section) -->
-  <path d="M200,150 L200,300 Q200,330 230,340 L570,340 Q600,330 600,300 L600,150" fill="none" stroke="black" class="k"/>
-  <!-- Chamber hatching -->
-  <line x1="205" y1="160" x2="215" y2="175" class="h"/>
-  <line x1="205" y1="200" x2="215" y2="215" class="h"/>
-  <line x1="205" y1="240" x2="215" y2="255" class="h"/>
-  <line x1="585" y1="160" x2="595" y2="175" class="h"/>
-  <line x1="585" y1="200" x2="595" y2="215" class="h"/>
-  <line x1="585" y1="240" x2="595" y2="255" class="h"/>
-  
+
+  <!-- Chin chamber cross-section — curved to match dome helmet bottom -->
+  <path d="M220,150 C220,150 215,300 230,330 C245,345 350,350 400,350 C450,350 555,345 570,330 C585,300 580,150 580,150" fill="none" stroke="black" class="k"/>
+  <!-- Chamber wall hatching -->
+  <line x1="222" y1="160" x2="230" y2="175" class="h"/>
+  <line x1="220" y1="210" x2="228" y2="225" class="h"/>
+  <line x1="218" y1="260" x2="226" y2="275" class="h"/>
+  <line x1="574" y1="160" x2="582" y2="175" class="h"/>
+  <line x1="576" y1="210" x2="584" y2="225" class="h"/>
+  <line x1="578" y1="260" x2="586" y2="275" class="h"/>
+
   <!-- Interior label -->
-  <text x="400" y="200" text-anchor="middle" font-size="12" fill="gray">Chin Chamber</text>
-  <text x="400" y="218" text-anchor="middle" font-size="10" fill="gray">Volume: ~150 mL</text>
-  
+  <text x="400" y="210" text-anchor="middle" font-size="12" fill="gray">Chin Chamber</text>
+  <text x="400" y="228" text-anchor="middle" font-size="10" fill="gray">Volume: ~150 mL</text>
+
   <!-- Exhaled air entering from above -->
   <defs><marker id="a5" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="black" stroke-width="0.8"/></marker></defs>
   <line x1="350" y1="100" x2="350" y2="145" stroke="black" class="m" marker-end="url(#a5)"/>
   <line x1="400" y1="90" x2="400" y2="145" stroke="black" class="m" marker-end="url(#a5)"/>
   <line x1="450" y1="100" x2="450" y2="145" stroke="black" class="m" marker-end="url(#a5)"/>
   <text x="400" y="85" text-anchor="middle" font-size="10" fill="gray">Exhaled Air</text>
-  
-  <!-- DIFFUSER PLATE (cross section, detail) -->
-  <rect x="220" y="340" width="360" height="20" rx="3" fill="none" stroke="black" class="k"/>
+
+  <!-- DIFFUSER PLATE (cross section, curved to follow chin contour) -->
+  <path d="M240,350 C300,355 500,355 560,350 L560,370 C500,375 300,375 240,370 Z" fill="none" stroke="black" class="k"/>
   <!-- Hatching for plate material (PA66-GF30) -->
-  <line x1="225" y1="343" x2="232" y2="357" class="h"/>
-  <line x1="240" y1="343" x2="247" y2="357" class="h"/>
-  <line x1="540" y1="343" x2="547" y2="357" class="h"/>
-  <line x1="555" y1="343" x2="562" y2="357" class="h"/>
-  
+  <line x1="245" y1="353" x2="252" y2="367" class="h"/>
+  <line x1="260" y1="354" x2="267" y2="368" class="h"/>
+  <line x1="535" y1="354" x2="542" y2="368" class="h"/>
+  <line x1="550" y1="353" x2="557" y2="367" class="h"/>
+
   <!-- Diffuser holes (through plate) — 2-3mm diameter each -->
-  <rect x="265" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  <rect x="295" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  <rect x="325" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  <rect x="355" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  <rect x="385" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  <rect x="415" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  <rect x="445" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  <rect x="475" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  <rect x="505" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  <rect x="535" y="340" width="4" height="20" fill="white" stroke="black" class="m"/>
-  
+  <rect x="285" y="350" width="4" height="20" fill="white" stroke="black" class="m"/>
+  <rect x="315" y="350" width="4" height="20" fill="white" stroke="black" class="m"/>
+  <rect x="345" y="350" width="4" height="20" fill="white" stroke="black" class="m"/>
+  <rect x="375" y="350" width="4" height="20" fill="white" stroke="black" class="m"/>
+  <rect x="398" y="350" width="4" height="20" fill="white" stroke="black" class="m"/>
+  <rect x="425" y="350" width="4" height="20" fill="white" stroke="black" class="m"/>
+  <rect x="455" y="350" width="4" height="20" fill="white" stroke="black" class="m"/>
+  <rect x="485" y="350" width="4" height="20" fill="white" stroke="black" class="m"/>
+  <rect x="515" y="350" width="4" height="20" fill="white" stroke="black" class="m"/>
+
   <!-- Mushroom valve (one-way, at left side of plate) -->
-  <path d="M230,338 Q225,330 230,325 Q240,320 250,325 Q255,330 250,338" fill="none" stroke="black" class="k"/>
-  <line x1="240" y1="325" x2="240" y2="338" stroke="black" class="m"/>
-  
+  <path d="M250,348 Q245,340 250,335 Q260,330 270,335 Q275,340 270,348" fill="none" stroke="black" class="k"/>
+  <line x1="260" y1="335" x2="260" y2="348" stroke="black" class="m"/>
+
   <!-- Flow arrows through holes -->
-  <line x1="267" y1="335" x2="267" y2="365" stroke="black" class="t" marker-end="url(#a5)"/>
-  <line x1="357" y1="335" x2="357" y2="365" stroke="black" class="t" marker-end="url(#a5)"/>
-  <line x1="447" y1="335" x2="447" y2="365" stroke="black" class="t" marker-end="url(#a5)"/>
-  <line x1="537" y1="335" x2="537" y2="365" stroke="black" class="t" marker-end="url(#a5)"/>
-  
+  <line x1="287" y1="345" x2="287" y2="378" stroke="black" class="t" marker-end="url(#a5)"/>
+  <line x1="377" y1="345" x2="377" y2="378" stroke="black" class="t" marker-end="url(#a5)"/>
+  <line x1="457" y1="345" x2="457" y2="378" stroke="black" class="t" marker-end="url(#a5)"/>
+  <line x1="517" y1="345" x2="517" y2="378" stroke="black" class="t" marker-end="url(#a5)"/>
+
   <!-- TINY BUBBLES exiting (dispersed pattern) -->
-  <circle cx="270" cy="390" r="3" fill="none" stroke="black" class="m"/>
-  <circle cx="285" cy="400" r="2" fill="none" stroke="black" class="m"/>
-  <circle cx="300" cy="395" r="2.5" fill="none" stroke="black" class="m"/>
-  <circle cx="330" cy="392" r="3" fill="none" stroke="black" class="m"/>
-  <circle cx="345" cy="405" r="2" fill="none" stroke="black" class="m"/>
-  <circle cx="360" cy="388" r="2.5" fill="none" stroke="black" class="m"/>
-  <circle cx="390" cy="398" r="3" fill="none" stroke="black" class="m"/>
-  <circle cx="405" cy="385" r="2" fill="none" stroke="black" class="m"/>
-  <circle cx="420" cy="402" r="2.5" fill="none" stroke="black" class="m"/>
-  <circle cx="450" cy="390" r="3" fill="none" stroke="black" class="m"/>
-  <circle cx="465" cy="400" r="2" fill="none" stroke="black" class="m"/>
-  <circle cx="480" cy="393" r="2.5" fill="none" stroke="black" class="m"/>
-  <circle cx="510" cy="395" r="2" fill="none" stroke="black" class="m"/>
-  <circle cx="525" cy="388" r="3" fill="none" stroke="black" class="m"/>
-  <circle cx="540" cy="402" r="2" fill="none" stroke="black" class="m"/>
-  
+  <circle cx="290" cy="400" r="3" fill="none" stroke="black" class="m"/>
+  <circle cx="305" cy="410" r="2" fill="none" stroke="black" class="m"/>
+  <circle cx="320" cy="405" r="2.5" fill="none" stroke="black" class="m"/>
+  <circle cx="345" cy="402" r="3" fill="none" stroke="black" class="m"/>
+  <circle cx="360" cy="415" r="2" fill="none" stroke="black" class="m"/>
+  <circle cx="380" cy="398" r="2.5" fill="none" stroke="black" class="m"/>
+  <circle cx="400" cy="408" r="3" fill="none" stroke="black" class="m"/>
+  <circle cx="420" cy="395" r="2" fill="none" stroke="black" class="m"/>
+  <circle cx="440" cy="412" r="2.5" fill="none" stroke="black" class="m"/>
+  <circle cx="460" cy="400" r="3" fill="none" stroke="black" class="m"/>
+  <circle cx="480" cy="410" r="2" fill="none" stroke="black" class="m"/>
+  <circle cx="500" cy="403" r="2.5" fill="none" stroke="black" class="m"/>
+  <circle cx="520" cy="405" r="2" fill="none" stroke="black" class="m"/>
+
   <!-- Lateral dispersion arrows -->
-  <path d="M250,395 Q220,400 200,410" fill="none" stroke="black" class="t" marker-end="url(#a5)"/>
-  <path d="M550,395 Q580,400 600,410" fill="none" stroke="black" class="t" marker-end="url(#a5)"/>
-  <text x="175" y="425" font-size="9" fill="gray">lateral dispersion</text>
-  <text x="575" y="425" font-size="9" fill="gray">lateral dispersion</text>
-  
+  <path d="M270,405 Q240,410 220,420" fill="none" stroke="black" class="t" marker-end="url(#a5)"/>
+  <path d="M540,405 Q570,410 590,420" fill="none" stroke="black" class="t" marker-end="url(#a5)"/>
+  <text x="190" y="435" font-size="9" fill="gray">lateral dispersion</text>
+  <text x="565" y="435" font-size="9" fill="gray">lateral dispersion</text>
+
   <!-- Comparison: Traditional single-port (inset) -->
   <rect x="150" y="480" width="200" height="120" rx="8" fill="none" stroke="black" class="m"/>
   <text x="250" y="500" text-anchor="middle" font-size="10" font-weight="bold">Traditional (Single Port)</text>
@@ -495,7 +492,7 @@ function fig5() {
   <circle cx="255" cy="560" r="10" fill="none" stroke="black" class="m"/>
   <circle cx="265" cy="578" r="12" fill="none" stroke="black" class="m"/>
   <text x="250" y="600" text-anchor="middle" font-size="9">60-80 dB noise</text>
-  
+
   <rect x="450" y="480" width="200" height="120" rx="8" fill="none" stroke="black" class="m"/>
   <text x="550" y="500" text-anchor="middle" font-size="10" font-weight="bold">DRIFT Diffuser (Multi-Port)</text>
   <circle cx="510" cy="530" r="2" fill="none" stroke="black" class="t"/>
@@ -510,18 +507,18 @@ function fig5() {
   <circle cx="560" cy="553" r="2" fill="none" stroke="black" class="t"/>
   <circle cx="575" cy="550" r="1.5" fill="none" stroke="black" class="t"/>
   <text x="550" y="580" text-anchor="middle" font-size="9">~40-60 dB (15-25 dB reduction)</text>
-  
+
   <!-- Labels -->
-  <text x="620" y="160" class="label">238 — Chin chamber</text>
-  <line x1="600" y1="200" x2="615" y2="165" stroke="black" class="t"/>
-  <text x="620" y="350" class="label">212 — Diffuser plate</text>
-  <line x1="580" y1="350" x2="615" y2="350" stroke="black" class="t"/>
-  <text x="100" y="330" class="label">224 — Mushroom valve</text>
-  <line x1="230" y1="332" x2="185" y2="332" stroke="black" class="t"/>
-  <text x="620" y="395" class="label">226 — Dispersed bubbles</text>
-  <line x1="545" y1="395" x2="615" y2="395" stroke="black" class="t"/>
-  <text x="620" y="340" class="label">240 — Diffuser holes (2-3mm)</text>
-  
+  <text x="620" y="170" class="label">238 — Chin chamber</text>
+  <line x1="580" y1="200" x2="615" y2="175" stroke="black" class="t"/>
+  <text x="620" y="360" class="label">212 — Diffuser plate</text>
+  <line x1="560" y1="360" x2="615" y2="360" stroke="black" class="t"/>
+  <text x="100" y="340" class="label">224 — Mushroom valve</text>
+  <line x1="250" y1="342" x2="185" y2="342" stroke="black" class="t"/>
+  <text x="620" y="405" class="label">226 — Dispersed bubbles</text>
+  <line x1="525" y1="405" x2="615" y2="405" stroke="black" class="t"/>
+  <text x="620" y="350" class="label">240 — Diffuser holes (2-3mm)</text>
+
   <text x="50" y="650" class="caption" font-weight="bold">Noise Reduction Principle: Multiple small holes produce many tiny bubbles (lower acoustic energy) vs. single large port producing few large bubbles (higher acoustic energy).</text>
   <text x="50" y="665" class="caption">Estimated noise reduction: 15-25 dB. Lateral bubble dispersion also keeps bubbles out of camera field of view.</text>
 </svg>`;
