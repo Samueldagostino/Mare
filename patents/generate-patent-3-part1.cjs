@@ -303,107 +303,107 @@ function fig3() {
 }
 
 function fig4() {
-  // Magnetic quick-release detail
+  // Magnetic quick-release detail — dome shell wall curvature
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
   <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}.h{stroke-width:0.4;stroke:gray}</style>
   <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 4 — Magnetic Quick-Release Strap Mechanism (Detail)</text>
-  
+
   <!-- STATE A: ATTACHED -->
   <text x="200" y="60" text-anchor="middle" font-size="12" font-weight="bold">(a) Attached State</text>
-  
-  <!-- Helmet shell wall section -->
-  <rect x="130" y="100" width="140" height="30" rx="4" fill="none" stroke="black" class="k"/>
+
+  <!-- Helmet shell wall section — curved to show dome curvature -->
+  <path d="M130,95 C160,90 240,88 270,95 L270,130 C240,125 160,125 130,130 Z" fill="none" stroke="black" class="k"/>
   <!-- Hatching for shell material -->
-  <line x1="135" y1="105" x2="145" y2="115" class="h"/>
-  <line x1="150" y1="105" x2="160" y2="115" class="h"/>
-  <line x1="235" y1="105" x2="245" y2="115" class="h"/>
-  <line x1="250" y1="105" x2="260" y2="115" class="h"/>
-  
-  <!-- Recessed ferromagnetic receiver plate -->
-  <rect x="170" y="115" width="60" height="15" rx="2" fill="none" stroke="black" class="k"/>
+  <line x1="135" y1="100" x2="145" y2="112" class="h"/>
+  <line x1="150" y1="99" x2="160" y2="112" class="h"/>
+  <line x1="240" y1="99" x2="250" y2="112" class="h"/>
+  <line x1="255" y1="100" x2="265" y2="112" class="h"/>
+
+  <!-- Recessed ferromagnetic receiver plate (inside curved wall) -->
+  <path d="M170,118 C185,116 215,116 230,118 L230,130 C215,128 185,128 170,130 Z" fill="none" stroke="black" class="k"/>
   <!-- Hatching for steel plate -->
-  <line x1="175" y1="118" x2="180" y2="127" class="h"/>
-  <line x1="185" y1="118" x2="190" y2="127" class="h"/>
-  <line x1="195" y1="118" x2="200" y2="127" class="h"/>
-  <line x1="205" y1="118" x2="210" y2="127" class="h"/>
-  <line x1="215" y1="118" x2="220" y2="127" class="h"/>
-  
+  <line x1="175" y1="120" x2="180" y2="128" class="h"/>
+  <line x1="185" y1="119" x2="190" y2="127" class="h"/>
+  <line x1="195" y1="119" x2="200" y2="127" class="h"/>
+  <line x1="205" y1="119" x2="210" y2="127" class="h"/>
+  <line x1="215" y1="119" x2="220" y2="127" class="h"/>
+
   <!-- Magnetic puck (snapped to plate) -->
   <rect x="168" y="130" width="64" height="20" rx="6" fill="none" stroke="black" class="k"/>
   <!-- N52 magnet inside puck -->
   <rect x="180" y="134" width="40" height="12" rx="2" fill="none" stroke="black" class="m"/>
   <text x="200" y="143" text-anchor="middle" font-size="7" font-weight="bold">N52</text>
-  
+
   <!-- Silicone encapsulation (around magnet) -->
   <path d="M172,132 Q168,135 168,140 Q168,148 172,150" fill="none" stroke="black" stroke-dasharray="3,2" class="t"/>
-  
-  <!-- Strap webbing -->
+
+  <!-- Strap webbing (internal, hidden from exterior) -->
   <rect x="145" y="140" width="23" height="8" rx="1" fill="none" stroke="black" class="m"/>
   <rect x="232" y="140" width="23" height="8" rx="1" fill="none" stroke="black" class="m"/>
   <line x1="120" y1="144" x2="145" y2="144" stroke="black" class="m"/>
   <line x1="255" y1="144" x2="280" y2="144" stroke="black" class="m"/>
-  
+
   <!-- Magnetic field lines -->
   <path d="M185,130 Q180,125 185,120" fill="none" stroke="gray" stroke-dasharray="2,2" class="t"/>
   <path d="M200,130 Q200,122 200,118" fill="none" stroke="gray" stroke-dasharray="2,2" class="t"/>
   <path d="M215,130 Q220,125 215,120" fill="none" stroke="gray" stroke-dasharray="2,2" class="t"/>
-  
+
   <!-- Force label -->
   <text x="200" y="175" text-anchor="middle" font-size="9" fill="gray">3-5 kg pull force</text>
-  
+
   <!-- STATE B: SEPARATED -->
   <text x="600" y="60" text-anchor="middle" font-size="12" font-weight="bold">(b) Separated State</text>
-  
-  <!-- Helmet shell wall section -->
-  <rect x="530" y="100" width="140" height="30" rx="4" fill="none" stroke="black" class="k"/>
-  <line x1="535" y1="105" x2="545" y2="115" class="h"/>
-  <line x1="550" y1="105" x2="560" y2="115" class="h"/>
-  <line x1="635" y1="105" x2="645" y2="115" class="h"/>
-  <line x1="650" y1="105" x2="660" y2="115" class="h"/>
-  
+
+  <!-- Helmet shell wall section — curved dome -->
+  <path d="M530,95 C560,90 640,88 670,95 L670,130 C640,125 560,125 530,130 Z" fill="none" stroke="black" class="k"/>
+  <line x1="535" y1="100" x2="545" y2="112" class="h"/>
+  <line x1="550" y1="99" x2="560" y2="112" class="h"/>
+  <line x1="635" y1="99" x2="645" y2="112" class="h"/>
+  <line x1="650" y1="100" x2="660" y2="112" class="h"/>
+
   <!-- Receiver plate still in shell -->
-  <rect x="570" y="115" width="60" height="15" rx="2" fill="none" stroke="black" class="k"/>
-  <line x1="575" y1="118" x2="580" y2="127" class="h"/>
-  <line x1="585" y1="118" x2="590" y2="127" class="h"/>
-  <line x1="595" y1="118" x2="600" y2="127" class="h"/>
-  <line x1="605" y1="118" x2="610" y2="127" class="h"/>
-  <line x1="615" y1="118" x2="620" y2="127" class="h"/>
-  
+  <path d="M570,118 C585,116 615,116 630,118 L630,130 C615,128 585,128 570,130 Z" fill="none" stroke="black" class="k"/>
+  <line x1="575" y1="120" x2="580" y2="128" class="h"/>
+  <line x1="585" y1="119" x2="590" y2="127" class="h"/>
+  <line x1="595" y1="119" x2="600" y2="127" class="h"/>
+  <line x1="605" y1="119" x2="610" y2="127" class="h"/>
+  <line x1="615" y1="119" x2="620" y2="127" class="h"/>
+
   <!-- Magnetic puck (separated, pulled away) -->
   <rect x="568" y="200" width="64" height="20" rx="6" fill="none" stroke="black" class="k"/>
   <rect x="580" y="204" width="40" height="12" rx="2" fill="none" stroke="black" class="m"/>
   <text x="600" y="213" text-anchor="middle" font-size="7" font-weight="bold">N52</text>
-  
+
   <!-- Strap pulled away -->
   <rect x="545" y="208" width="23" height="8" rx="1" fill="none" stroke="black" class="m"/>
   <rect x="632" y="208" width="23" height="8" rx="1" fill="none" stroke="black" class="m"/>
   <line x1="520" y1="212" x2="545" y2="212" stroke="black" class="m"/>
   <line x1="655" y1="212" x2="680" y2="212" stroke="black" class="m"/>
-  
+
   <!-- Pull direction arrow -->
   <line x1="600" y1="170" x2="600" y2="195" stroke="black" class="m"/>
   <path d="M595,190 L600,200 L605,190" fill="none" stroke="black" class="m"/>
   <text x="600" y="165" text-anchor="middle" font-size="9" fill="gray">perpendicular pull</text>
-  
+
   <!-- Separation gap -->
   <line x1="560" y1="130" x2="560" y2="200" stroke="gray" stroke-dasharray="4,4" class="t"/>
   <line x1="640" y1="130" x2="640" y2="200" stroke="gray" stroke-dasharray="4,4" class="t"/>
   <text x="600" y="180" text-anchor="middle" font-size="8" fill="gray">gap</text>
-  
+
   <!-- Labels -->
-  <text x="60" y="110" class="label">228 — Shell wall</text>
+  <text x="60" y="110" class="label">228 — Shell wall (dome)</text>
   <line x1="130" y1="115" x2="110" y2="110" stroke="black" class="t"/>
   <text x="60" y="130" class="label">230 — Receiver plate</text>
-  <line x1="170" y1="122" x2="120" y2="127" stroke="black" class="t"/>
+  <line x1="170" y1="124" x2="120" y2="127" stroke="black" class="t"/>
   <text x="60" y="148" class="label">232 — Magnetic puck</text>
   <line x1="168" y1="140" x2="120" y2="145" stroke="black" class="t"/>
   <text x="60" y="170" class="label">234 — Silicone encapsulation</text>
   <text x="295" y="148" class="label">236 — Strap webbing</text>
   <line x1="255" y1="144" x2="290" y2="145" stroke="black" class="t"/>
-  
-  <text x="50" y="290" class="caption" font-weight="bold">Operation: Strap terminal magnetic puck (232) snaps to ferromagnetic receiver plate (230) recessed in helmet shell (228).</text>
+
+  <text x="50" y="290" class="caption" font-weight="bold">Operation: Strap terminal magnetic puck (232) snaps to ferromagnetic receiver plate (230) recessed inside dome shell wall (228).</text>
   <text x="50" y="305" class="caption">N52 neodymium magnets encapsulated in medical-grade silicone (234) for saltwater corrosion resistance.</text>
-  <text x="50" y="320" class="caption">Release: deliberate perpendicular pull overcomes 3-5 kg magnetic force. Don/doff time: under 3 seconds.</text>
+  <text x="50" y="320" class="caption">Release: deliberate perpendicular pull overcomes 3-5 kg magnetic force. Don/doff time: under 3 seconds. Straps hidden inside helmet — clean exterior.</text>
 </svg>`;
 }
 
