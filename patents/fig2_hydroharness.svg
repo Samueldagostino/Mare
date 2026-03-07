@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <style>
+    text { font-family: Arial, sans-serif; font-size: 11px; }
+    .label { font-size: 11px; font-weight: bold; }
+    .caption { font-size: 10px; }
+    .thin { stroke-width: 0.5; }
+    .medium { stroke-width: 1.2; }
+    .thick { stroke-width: 1.8; }
+    .hatch { stroke-width: 0.4; stroke: gray; }
+  </style>
+  <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold">FIG. 2 — Exploded View of Tank Cradle Assembly</text>
+
+  <!-- BELT MOUNTING CLIPS (top, separated) -->
+  <rect x="180" y="80" width="60" height="30" rx="4" fill="none" stroke="black" class="thick"/>
+  <rect x="195" y="85" width="30" height="20" rx="2" fill="none" stroke="black" class="medium"/>
+  <rect x="560" y="80" width="60" height="30" rx="4" fill="none" stroke="black" class="thick"/>
+  <rect x="575" y="85" width="30" height="20" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Dashed connection lines -->
+  <line x1="210" y1="110" x2="270" y2="180" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <line x1="590" y1="110" x2="530" y2="180" stroke="black" stroke-dasharray="6,3" class="thin"/>
+
+  <!-- CRADLE BODY (main piece, center) -->
+  <rect x="230" y="200" width="340" height="120" rx="16" fill="none" stroke="black" class="thick"/>
+  <!-- Interior cylindrical recess (dashed - interior feature) -->
+  <ellipse cx="400" cy="260" rx="55" ry="25" fill="none" stroke="black" stroke-dasharray="4,2" class="medium"/>
+  <!-- Anti-rotation ridges (interior) -->
+  <line x1="350" y1="240" x2="350" y2="290" stroke="black" class="medium"/>
+  <line x1="450" y1="240" x2="450" y2="290" stroke="black" class="medium"/>
+  <!-- Material cross-hatch (glass-reinforced nylon) -->
+  <line x1="240" y1="210" x2="260" y2="230" class="hatch"/>
+  <line x1="260" y1="210" x2="280" y2="230" class="hatch"/>
+  <line x1="520" y1="210" x2="540" y2="230" class="hatch"/>
+  <line x1="540" y1="210" x2="560" y2="230" class="hatch"/>
+  <!-- Belt clip receivers -->
+  <rect x="245" y="190" width="30" height="15" rx="2" fill="none" stroke="black" class="medium"/>
+  <rect x="525" y="190" width="30" height="15" rx="2" fill="none" stroke="black" class="medium"/>
+
+  <!-- SPRING-LOADED LATCH (separated above cradle) -->
+  <rect x="355" y="140" width="90" height="30" rx="5" fill="none" stroke="black" class="thick"/>
+  <!-- Spring inside latch -->
+  <path d="M370,150 Q375,145 380,150 Q385,155 390,150 Q395,145 400,150 Q405,155 410,150 Q415,145 420,150 Q425,155 430,150" fill="none" stroke="black" class="thin"/>
+  <!-- Latch hook -->
+  <path d="M400,170 L400,185 Q395,195 390,190" fill="none" stroke="black" class="medium"/>
+  <!-- Dashed assembly line -->
+  <line x1="400" y1="170" x2="400" y2="200" stroke="black" stroke-dasharray="6,3" class="thin"/>
+
+  <!-- RELEASE TAB (separated to right) -->
+  <path d="M620,230 L660,230 Q670,230 670,240 L670,270 Q670,280 660,280 L620,280 Z" fill="none" stroke="black" class="thick"/>
+  <text x="645" y="260" text-anchor="middle" font-size="9" font-weight="bold">TAB</text>
+  <!-- Connection line -->
+  <line x1="570" y1="260" x2="620" y2="260" stroke="black" stroke-dasharray="6,3" class="thin"/>
+
+  <!-- TANK (below cradle, separated) -->
+  <rect x="365" y="380" width="70" height="180" rx="35" fill="none" stroke="black" class="thick"/>
+  <!-- Tank valve -->
+  <rect x="385" y="365" width="30" height="20" rx="3" fill="none" stroke="black" class="medium"/>
+  <!-- Tank neck ring -->
+  <ellipse cx="400" cy="395" rx="40" ry="8" fill="none" stroke="black" class="medium"/>
+  <text x="400" y="475" text-anchor="middle" font-size="9">0.5L / 3000 PSI</text>
+  <!-- Dashed assembly arrow -->
+  <line x1="400" y1="365" x2="400" y2="320" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <path d="M395,325 L400,315 L405,325" fill="none" stroke="black" class="thin"/>
+
+  <!-- REFERENCE LABELS -->
+  <line x1="210" y1="95" x2="155" y2="80" stroke="black" class="thin"/>
+  <text x="70" y="84" class="label">120 — Belt clips</text>
+
+  <line x1="400" y1="155" x2="470" y2="130" stroke="black" class="thin"/>
+  <text x="475" y="134" class="label">104 — Spring latch</text>
+
+  <line x1="570" y1="260" x2="570" y2="310" stroke="black" class="thin"/>
+  <text x="495" y="318" class="label">122 — Release tab</text>
+
+  <line x1="230" y1="260" x2="170" y2="275" stroke="black" class="thin"/>
+  <text x="60" y="279" class="label">108 — Cradle body</text>
+
+  <line x1="350" y1="265" x2="300" y2="290" stroke="black" class="thin"/>
+  <text x="190" y="300" class="label">124 — Anti-rotation ridges</text>
+
+  <line x1="400" y1="395" x2="480" y2="385" stroke="black" class="thin"/>
+  <text x="485" y="389" class="label">126 — Tank neck ring</text>
+
+  <line x1="400" y1="480" x2="480" y2="490" stroke="black" class="thin"/>
+  <text x="485" y="494" class="label">110 — 0.5L tank</text>
+
+  <!-- Legend -->
+  <text x="50" y="620" class="caption" font-weight="bold">Reference Numerals:</text>
+  <text x="50" y="635" class="caption">104 — Spring-loaded snap-lock latch  |  108 — Cradle body (glass-reinforced nylon)  |  110 — 0.5L tank</text>
+  <text x="50" y="650" class="caption">120 — Belt mounting clips  |  122 — Release tab  |  124 — Anti-rotation ridges  |  126 — Tank neck ring</text>
+</svg>

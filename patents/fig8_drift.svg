@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}</style>
+  <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 8 — Interchangeable Visor Tint System</text>
+  
+  <!-- Five visor variants shown side by side -->
+  <!-- Clear -->
+  <path d="M80,100 Q120,90 140,120 Q150,150 148,200 Q145,240 135,265 Q120,290 100,300 Q85,305 80,303 Q75,300 65,290 Q55,265 52,200 Q50,150 60,120 Q70,90 80,100 Z" fill="none" stroke="black" class="m"/>
+  <text x="80" y="200" text-anchor="middle" font-size="10" fill="gray">CLEAR</text>
+  <text x="80" y="330" text-anchor="middle" font-size="10" font-weight="bold">Clear</text>
+  <text x="80" y="345" text-anchor="middle" font-size="8" fill="gray">All conditions</text>
+  
+  <!-- Smoke -->
+  <path d="M220,100 Q260,90 280,120 Q290,150 288,200 Q285,240 275,265 Q260,290 240,300 Q225,305 220,303 Q215,300 205,290 Q195,265 192,200 Q190,150 200,120 Q210,90 220,100 Z" fill="none" stroke="black" class="m"/>
+  <!-- Smoke tint pattern -->
+  <line x1="205" y1="130" x2="260" y2="130" stroke="gray" class="t"/>
+  <line x1="200" y1="150" x2="270" y2="150" stroke="gray" class="t"/>
+  <line x1="198" y1="170" x2="275" y2="170" stroke="gray" class="t"/>
+  <line x1="196" y1="190" x2="278" y2="190" stroke="gray" class="t"/>
+  <line x1="198" y1="210" x2="275" y2="210" stroke="gray" class="t"/>
+  <line x1="200" y1="230" x2="270" y2="230" stroke="gray" class="t"/>
+  <line x1="205" y1="250" x2="260" y2="250" stroke="gray" class="t"/>
+  <text x="220" y="330" text-anchor="middle" font-size="10" font-weight="bold">Smoke</text>
+  <text x="220" y="345" text-anchor="middle" font-size="8" fill="gray">Bright sun</text>
+  
+  <!-- Amber -->
+  <path d="M360,100 Q400,90 420,120 Q430,150 428,200 Q425,240 415,265 Q400,290 380,300 Q365,305 360,303 Q355,300 345,290 Q335,265 332,200 Q330,150 340,120 Q350,90 360,100 Z" fill="none" stroke="black" class="m"/>
+  <!-- Amber tint pattern (dots) -->
+  <circle cx="360" cy="160" r="1.5" fill="gray"/>
+  <circle cx="375" cy="170" r="1.5" fill="gray"/>
+  <circle cx="350" cy="180" r="1.5" fill="gray"/>
+  <circle cx="370" cy="195" r="1.5" fill="gray"/>
+  <circle cx="355" cy="210" r="1.5" fill="gray"/>
+  <circle cx="380" cy="220" r="1.5" fill="gray"/>
+  <circle cx="360" cy="235" r="1.5" fill="gray"/>
+  <text x="360" y="330" text-anchor="middle" font-size="10" font-weight="bold">Amber</text>
+  <text x="360" y="345" text-anchor="middle" font-size="8" fill="gray">Low light</text>
+  
+  <!-- Blue Mirror -->
+  <path d="M500,100 Q540,90 560,120 Q570,150 568,200 Q565,240 555,265 Q540,290 520,300 Q505,305 500,303 Q495,300 485,290 Q475,265 472,200 Q470,150 480,120 Q490,90 500,100 Z" fill="none" stroke="black" class="m"/>
+  <!-- Mirror reflection lines -->
+  <path d="M495,140 L520,160" stroke="gray" class="m"/>
+  <path d="M490,170 L525,195" stroke="gray" class="m"/>
+  <path d="M488,210 L530,240" stroke="gray" class="m"/>
+  <text x="500" y="330" text-anchor="middle" font-size="10" font-weight="bold">Blue Mirror</text>
+  <text x="500" y="345" text-anchor="middle" font-size="8" fill="gray">Style / glare</text>
+  
+  <!-- Rose -->
+  <path d="M640,100 Q680,90 700,120 Q710,150 708,200 Q705,240 695,265 Q680,290 660,300 Q645,305 640,303 Q635,300 625,290 Q615,265 612,200 Q610,150 620,120 Q630,90 640,100 Z" fill="none" stroke="black" class="m"/>
+  <!-- Rose tint (crosshatch) -->
+  <line x1="625" y1="140" x2="665" y2="180" stroke="gray" class="t"/>
+  <line x1="625" y1="170" x2="680" y2="225" stroke="gray" class="t"/>
+  <line x1="620" y1="200" x2="685" y2="260" stroke="gray" class="t"/>
+  <line x1="665" y1="140" x2="625" y2="180" stroke="gray" class="t"/>
+  <line x1="680" y1="170" x2="625" y2="225" stroke="gray" class="t"/>
+  <line x1="685" y1="200" x2="620" y2="260" stroke="gray" class="t"/>
+  <text x="640" y="330" text-anchor="middle" font-size="10" font-weight="bold">Rose</text>
+  <text x="640" y="345" text-anchor="middle" font-size="8" fill="gray">Contrast</text>
+  
+  <!-- Arrow showing interchange -->
+  <path d="M80,370 L640,370" fill="none" stroke="black" class="t"/>
+  <text x="360" y="390" text-anchor="middle" font-size="10">Tool-free visor swap via compression-fit silicone gasket</text>
+  
+  <!-- Labels -->
+  <text x="400" y="440" text-anchor="middle" class="label">202 — Interchangeable visor panels (5 tint options shown)</text>
+  <text x="400" y="460" text-anchor="middle" class="caption">All visors: optically clear polycarbonate, anti-fog interior, anti-scratch exterior, UV400 protection.</text>
+  <text x="400" y="475" text-anchor="middle" class="caption">User swaps entire visor panel — no tools required. Gasket maintains watertight seal across all variants.</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700">
+  <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}</style>
+  <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 7 — Rear View of DRIFT Helmet</text>
+  
+  <!-- Helmet shell rear outline -->
+  <path d="M400,80 Q520,85 555,150 Q580,220 580,310 Q580,380 565,430 Q545,480 500,520 Q460,545 400,555 Q340,545 300,520 Q255,480 235,430 Q220,380 220,310 Q220,220 245,150 Q280,85 400,80 Z" fill="none" stroke="black" class="k"/>
+  
+  <!-- Crown strap path -->
+  <path d="M300,150 Q310,120 340,100 Q370,85 400,80 Q430,85 460,100 Q490,120 500,150" fill="none" stroke="black" class="m"/>
+  <!-- Strap adjustment keeper -->
+  <rect x="385" y="88" width="30" height="10" rx="2" fill="none" stroke="black" class="m"/>
+  
+  <!-- Left magnetic attachment point (crown) -->
+  <circle cx="300" cy="150" r="12" fill="none" stroke="black" class="k"/>
+  <circle cx="300" cy="150" r="6" fill="none" stroke="black" class="m"/>
+  <!-- Right magnetic attachment point (crown) -->
+  <circle cx="500" cy="150" r="12" fill="none" stroke="black" class="k"/>
+  <circle cx="500" cy="150" r="6" fill="none" stroke="black" class="m"/>
+  
+  <!-- Chin strap path (going around bottom) -->
+  <path d="M280,470 Q300,500 340,520 Q370,535 400,540 Q430,535 460,520 Q500,500 520,470" fill="none" stroke="black" class="m"/>
+  <!-- Left magnetic attachment point (chin) -->
+  <circle cx="280" cy="470" r="12" fill="none" stroke="black" class="k"/>
+  <circle cx="280" cy="470" r="6" fill="none" stroke="black" class="m"/>
+  <!-- Right magnetic attachment point (chin) -->
+  <circle cx="520" cy="470" r="12" fill="none" stroke="black" class="k"/>
+  <circle cx="520" cy="470" r="6" fill="none" stroke="black" class="m"/>
+  
+  <!-- Diffuser plate position (bottom rear) -->
+  <rect x="340" y="545" width="120" height="15" rx="5" fill="none" stroke="black" class="k"/>
+  <!-- Holes -->
+  <circle cx="355" cy="552" r="2" fill="black"/>
+  <circle cx="370" cy="552" r="2" fill="black"/>
+  <circle cx="385" cy="552" r="2" fill="black"/>
+  <circle cx="400" cy="552" r="2" fill="black"/>
+  <circle cx="415" cy="552" r="2" fill="black"/>
+  <circle cx="430" cy="552" r="2" fill="black"/>
+  <circle cx="445" cy="552" r="2" fill="black"/>
+  
+  <!-- Communications port (left side) -->
+  <circle cx="225" cy="310" r="14" fill="none" stroke="black" class="k"/>
+  <circle cx="225" cy="310" r="8" fill="none" stroke="black" class="m"/>
+  <!-- Cap detail -->
+  <line x1="219" y1="304" x2="231" y2="316" stroke="black" class="t"/>
+  <line x1="219" y1="316" x2="231" y2="304" stroke="black" class="t"/>
+  <text x="225" y="335" text-anchor="middle" font-size="8" fill="gray">SEALED CAP</text>
+  
+  <!-- Tank cradle position (right side, rear visible) -->
+  <rect x="565" y="250" width="25" height="60" rx="5" fill="none" stroke="black" class="m"/>
+  
+  <!-- Labels -->
+  <line x1="300" y1="138" x2="260" y2="115" stroke="black" class="t"/>
+  <text x="180" y="119" class="label">210 — Mag. point</text>
+  <line x1="500" y1="138" x2="540" y2="115" stroke="black" class="t"/>
+  <text x="545" y="119" class="label">210 — Mag. point</text>
+  
+  <line x1="360" y1="100" x2="330" y2="90" stroke="black" class="t"/>
+  <text x="260" y="85" class="label">248 — Crown strap</text>
+  
+  <line x1="400" y1="540" x2="440" y2="530" stroke="black" class="t"/>
+  <text x="445" y="527" class="label">250 — Chin strap</text>
+  
+  <line x1="340" y1="552" x2="300" y2="560" stroke="black" class="t"/>
+  <text x="200" y="564" class="label">212 — Diffuser plate</text>
+  
+  <line x1="225" y1="296" x2="180" y2="275" stroke="black" class="t"/>
+  <text x="100" y="279" class="label">214 — Comms port</text>
+  
+  <line x1="590" y1="280" x2="620" y2="275" stroke="black" class="t"/>
+  <text x="625" y="279" class="label">216 — Cradle</text>
+  
+  <text x="50" y="620" class="caption" font-weight="bold">Four magnetic attachment points (210) shown: 2 on crown strap path, 2 on chin strap path.</text>
+  <text x="50" y="635" class="caption">Diffuser plate (212) positioned at bottom-rear for optimal bubble dispersion away from camera field of view.</text>
+  <text x="50" y="650" class="caption">Communications port (214) sealed with waterproof blanking cap. 4-pin wet-mate connector for future modules.</text>
+</svg>

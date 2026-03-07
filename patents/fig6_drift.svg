@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}.h{stroke-width:0.4;stroke:gray}</style>
+  <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 6 — Side-Mount Tank System (Detail Cross-Section)</text>
+  
+  <!-- Helmet shell wall (partial, side view) -->
+  <path d="M250,100 L250,450" fill="none" stroke="black" class="k"/>
+  <path d="M270,100 L270,450" fill="none" stroke="black" class="k"/>
+  <!-- Hatching for shell wall -->
+  <line x1="253" y1="110" x2="263" y2="125" class="h"/>
+  <line x1="253" y1="150" x2="263" y2="165" class="h"/>
+  <line x1="253" y1="190" x2="263" y2="205" class="h"/>
+  <line x1="253" y1="230" x2="263" y2="245" class="h"/>
+  <line x1="253" y1="350" x2="263" y2="365" class="h"/>
+  <line x1="253" y1="390" x2="263" y2="405" class="h"/>
+  <text x="260" y="95" text-anchor="middle" font-size="8" fill="gray">SHELL WALL</text>
+  <text x="230" y="280" text-anchor="middle" font-size="8" fill="gray" transform="rotate(-90, 230, 280)">INTERIOR</text>
+  <text x="290" y="280" text-anchor="middle" font-size="8" fill="gray" transform="rotate(-90, 290, 280)">EXTERIOR</text>
+  
+  <!-- BULKHEAD FITTING (through shell wall) -->
+  <rect x="240" y="260" width="40" height="30" rx="3" fill="none" stroke="black" class="k"/>
+  <!-- O-ring seals -->
+  <ellipse cx="250" cy="275" rx="3" ry="8" fill="none" stroke="black" class="m"/>
+  <ellipse cx="270" cy="275" rx="3" ry="8" fill="none" stroke="black" class="m"/>
+  <!-- Air passage through bulkhead -->
+  <rect x="255" y="268" width="10" height="14" fill="white" stroke="black" class="m"/>
+  
+  <!-- Interior demand valve -->
+  <rect x="200" y="265" width="42" height="20" rx="4" fill="none" stroke="black" class="m"/>
+  <text x="221" y="279" text-anchor="middle" font-size="7">DEMAND</text>
+  
+  <!-- Exterior first-stage regulator connection -->
+  <rect x="278" y="262" width="50" height="26" rx="4" fill="none" stroke="black" class="m"/>
+  <text x="303" y="279" text-anchor="middle" font-size="7">1st STAGE</text>
+  
+  <!-- TANK CRADLE -->
+  <path d="M330,160 Q340,150 355,155 L355,400 Q340,410 330,400 Z" fill="none" stroke="black" class="k"/>
+  <!-- Snap-lock latch -->
+  <rect x="335" y="155" width="25" height="12" rx="2" fill="none" stroke="black" class="m"/>
+  <!-- Spring in latch -->
+  <path d="M340,160 Q343,157 346,160 Q349,163 352,160" fill="none" stroke="black" class="t"/>
+  
+  <!-- TANK (0.5L, 15 degree cant) -->
+  <g transform="rotate(-15, 430, 280)">
+    <rect x="360" y="150" width="50" height="160" rx="25" fill="none" stroke="black" class="k"/>
+    <!-- Tank valve -->
+    <rect x="375" y="138" width="20" height="15" rx="3" fill="none" stroke="black" class="m"/>
+    <!-- Tank markings -->
+    <text x="385" y="230" text-anchor="middle" font-size="8">0.5L</text>
+    <text x="385" y="245" text-anchor="middle" font-size="7">3000 PSI</text>
+    <text x="385" y="260" text-anchor="middle" font-size="7">Al 6061</text>
+  </g>
+  
+  <!-- 15 degree angle indicator -->
+  <line x1="350" y1="150" x2="350" y2="400" stroke="gray" stroke-dasharray="4,4" class="t"/>
+  <path d="M350,400 L380,170" fill="none" stroke="gray" stroke-dasharray="4,4" class="t"/>
+  <text x="360" y="420" font-size="9" fill="gray">15° cant</text>
+  
+  <!-- Air flow arrows -->
+  <defs><marker id="a6" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="black" stroke-width="0.8"/></marker></defs>
+  <line x1="328" y1="275" x2="285" y2="275" stroke="black" class="m" marker-end="url(#a6)"/>
+  <line x1="240" y1="275" x2="215" y2="275" stroke="black" class="m" marker-end="url(#a6)"/>
+  <text x="305" y="295" font-size="8" fill="gray">air flow</text>
+  
+  <!-- Labels -->
+  <text x="50" y="275" class="label">222 — Demand valve</text>
+  <line x1="145" y1="275" x2="200" y2="275" stroke="black" class="t"/>
+  <text x="50" y="295" class="label">208 — Bulkhead fitting</text>
+  <line x1="145" y1="292" x2="240" y2="275" stroke="black" class="t"/>
+  <text x="460" y="175" class="label">206 — Tank</text>
+  <text x="460" y="330" class="label">216 — Cradle</text>
+  <line x1="355" y1="300" x2="455" y2="325" stroke="black" class="t"/>
+  <text x="460" y="165" class="label">242 — Tank valve</text>
+  <text x="460" y="195" class="label">244 — First-stage reg.</text>
+  <line x1="328" y1="275" x2="455" y2="192" stroke="black" class="t"/>
+  <text x="50" y="258" class="label">246 — O-ring seals</text>
+  <line x1="145" y1="258" x2="248" y2="270" stroke="black" class="t"/>
+  
+  <text x="50" y="500" class="caption" font-weight="bold">Air Path: Tank (206) → First-stage regulator (244) → Bulkhead fitting (208) with O-ring seals (246) → Demand valve (222) → Interior breathing space</text>
+  <text x="50" y="515" class="caption">No external hoses: air routes through the sealed bulkhead in the helmet shell wall. Tank replaceable underwater via snap-lock cradle (216).</text>
+</svg>
