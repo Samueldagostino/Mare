@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <style>
+    text { font-family: Arial, sans-serif; font-size: 11px; }
+    .label { font-size: 11px; font-weight: bold; }
+    .caption { font-size: 10px; }
+    .thin { stroke-width: 0.5; }
+    .medium { stroke-width: 1.2; }
+    .thick { stroke-width: 1.8; }
+  </style>
+  <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold">FIG. 5 — Tank Insertion Sequence</text>
+
+  <!-- STEP A: Tank approaching cradle -->
+  <text x="133" y="65" text-anchor="middle" font-size="12" font-weight="bold">(a) Approach</text>
+  <!-- Cradle -->
+  <rect x="80" y="130" width="106" height="50" rx="8" fill="none" stroke="black" class="thick"/>
+  <rect x="113" y="123" width="40" height="12" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Latch open -->
+  <path d="M133,123 L133,105" fill="none" stroke="black" class="medium"/>
+  <path d="M125,108 L133,100 L141,108" fill="none" stroke="black" class="thin"/>
+  <!-- Tank above (approaching) -->
+  <rect x="108" y="210" width="50" height="120" rx="25" fill="none" stroke="black" class="thick"/>
+  <rect x="120" y="198" width="26" height="14" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Arrow showing direction -->
+  <line x1="133" y1="198" x2="133" y2="185" stroke="black" class="medium"/>
+  <path d="M128,190 L133,180 L138,190" fill="none" stroke="black" class="medium"/>
+
+  <!-- STEP B: Tank partially inserted -->
+  <text x="400" y="65" text-anchor="middle" font-size="12" font-weight="bold">(b) Engaging</text>
+  <rect x="347" y="130" width="106" height="50" rx="8" fill="none" stroke="black" class="thick"/>
+  <!-- Latch partially closing -->
+  <path d="M400,125 L400,115 Q395,110 390,115" fill="none" stroke="black" class="medium"/>
+  <!-- Tank partially in -->
+  <rect x="375" y="160" width="50" height="120" rx="25" fill="none" stroke="black" class="thick"/>
+  <rect x="387" y="148" width="26" height="14" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Contact indicator -->
+  <text x="470" y="170" font-size="9" fill="gray">latch engaging</text>
+  <text x="470" y="185" font-size="9" fill="gray">neck ring</text>
+
+  <!-- STEP C: Tank fully seated and locked -->
+  <text x="667" y="65" text-anchor="middle" font-size="12" font-weight="bold">(c) Locked</text>
+  <rect x="614" y="130" width="106" height="50" rx="8" fill="none" stroke="black" class="thick"/>
+  <!-- Latch closed and locked -->
+  <rect x="647" y="123" width="40" height="12" rx="2" fill="none" stroke="black" class="thick"/>
+  <text x="667" y="132" text-anchor="middle" font-size="7" font-weight="bold">CLICK</text>
+  <!-- Tank fully seated -->
+  <rect x="642" y="175" width="50" height="120" rx="25" fill="none" stroke="black" class="thick"/>
+  <rect x="654" y="163" width="26" height="14" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Locked indicators -->
+  <line x1="640" y1="155" x2="640" y2="175" stroke="black" class="medium"/>
+  <line x1="692" y1="155" x2="692" y2="175" stroke="black" class="medium"/>
+  <!-- Check mark -->
+  <path d="M730,170 L740,185 L760,155" fill="none" stroke="black" class="thick"/>
+
+  <!-- Legend -->
+  <text x="50" y="400" class="caption" font-weight="bold">Tank Insertion Sequence:</text>
+  <text x="50" y="415" class="caption">(a) Tank approaches cradle from below with spring-loaded latch in open position</text>
+  <text x="50" y="430" class="caption">(b) Tank neck ring contacts latch mechanism, which begins to engage around the tank's neck flange</text>
+  <text x="50" y="445" class="caption">(c) Tank fully seated — latch snaps closed with audible click, anti-rotation ridges prevent tank from spinning</text>
+  <text x="50" y="465" class="caption">Removal: Press release tab (122) and pull tank downward. Total removal time: under 2 seconds.</text>
+</svg>

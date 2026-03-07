@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900">
+  <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}</style>
+  <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 1 — Front Isometric View of DRIFT Helmet</text>
+
+  <!-- Helmet shell -->
+  <path d="M400,80 Q520,80 560,150 Q590,220 590,320 Q590,400 570,450 Q540,510 480,550 Q440,570 400,575 Q360,570 320,550 Q260,510 230,450 Q210,400 210,320 Q210,220 240,150 Q280,80 400,80 Z" fill="none" stroke="black" class="k"/>
+  
+  <!-- Visor -->
+  <path d="M400,120 Q500,120 530,180 Q550,230 545,300 Q540,360 520,400 Q500,440 460,470 Q440,480 400,485 Q360,480 340,470 Q300,440 280,400 Q260,360 255,300 Q250,230 270,180 Q300,120 400,120 Z" fill="none" stroke="black" class="m"/>
+  
+  <!-- Camera mount (top) -->
+  <rect x="380" y="68" width="40" height="18" rx="4" fill="none" stroke="black" class="k"/>
+  <line x1="390" y1="68" x2="390" y2="50" stroke="black" class="m"/>
+  <line x1="410" y1="68" x2="410" y2="50" stroke="black" class="m"/>
+  <rect x="385" y="40" width="30" height="12" rx="3" fill="none" stroke="black" class="m"/>
+  
+  <!-- Side-mount tank (right side) -->
+  <rect x="595" y="200" width="40" height="130" rx="20" fill="none" stroke="black" class="k"/>
+  <rect x="603" y="188" width="24" height="16" rx="3" fill="none" stroke="black" class="m"/>
+  <!-- Tank cradle -->
+  <path d="M590,220 Q585,215 583,230 L583,310 Q585,325 590,320" fill="none" stroke="black" class="m"/>
+  <!-- Bulkhead fitting -->
+  <rect x="570" y="260" width="25" height="20" rx="3" fill="none" stroke="black" class="k"/>
+  
+  <!-- Magnetic strap - crown -->
+  <path d="M310,120 Q300,100 320,85 Q360,70 400,68" fill="none" stroke="black" class="m"/>
+  <path d="M490,120 Q500,100 480,85 Q440,70 400,68" fill="none" stroke="black" class="m"/>
+  <!-- Magnetic pucks on crown strap -->
+  <circle cx="310" cy="120" r="8" fill="none" stroke="black" class="k"/>
+  <circle cx="490" cy="120" r="8" fill="none" stroke="black" class="k"/>
+  
+  <!-- Magnetic strap - chin -->
+  <path d="M310,500 Q340,530 400,540 Q460,530 490,500" fill="none" stroke="black" class="m"/>
+  <!-- Magnetic pucks on chin strap -->
+  <circle cx="310" cy="500" r="8" fill="none" stroke="black" class="k"/>
+  <circle cx="490" cy="500" r="8" fill="none" stroke="black" class="k"/>
+  
+  <!-- Diffuser plate (bottom) -->
+  <rect x="360" y="555" width="80" height="15" rx="4" fill="none" stroke="black" class="m"/>
+  <!-- Diffuser holes -->
+  <circle cx="370" cy="562" r="2" fill="black"/>
+  <circle cx="380" cy="562" r="2" fill="black"/>
+  <circle cx="390" cy="562" r="2" fill="black"/>
+  <circle cx="400" cy="562" r="2" fill="black"/>
+  <circle cx="410" cy="562" r="2" fill="black"/>
+  <circle cx="420" cy="562" r="2" fill="black"/>
+  <circle cx="430" cy="562" r="2" fill="black"/>
+  
+  <!-- Comms port (left side) -->
+  <circle cx="215" cy="300" r="10" fill="none" stroke="black" class="m"/>
+  <circle cx="215" cy="300" r="6" fill="none" stroke="black" class="t"/>
+  
+  <!-- Labels -->
+  <line x1="560" y1="100" x2="530" y2="110" stroke="black" class="t"/>
+  <text x="535" y="100" class="label">200</text>
+  <line x1="545" y1="250" x2="520" y2="240" stroke="black" class="t"/>
+  <text x="522" y="237" class="label">202</text>
+  <line x1="400" y1="40" x2="440" y2="35" stroke="black" class="t"/>
+  <text x="445" y="38" class="label">204</text>
+  <line x1="635" y1="265" x2="660" y2="255" stroke="black" class="t"/>
+  <text x="665" y="259" class="label">206</text>
+  <line x1="570" y1="270" x2="555" y2="255" stroke="black" class="t"/>
+  <text x="540" y="250" class="label">208</text>
+  <line x1="310" y1="112" x2="275" y2="100" stroke="black" class="t"/>
+  <text x="225" y="104" class="label">210</text>
+  <line x1="490" y1="508" x2="530" y2="520" stroke="black" class="t"/>
+  <text x="535" y="524" class="label">210</text>
+  <line x1="440" y1="562" x2="480" y2="565" stroke="black" class="t"/>
+  <text x="485" y="569" class="label">212</text>
+  <line x1="215" y1="310" x2="180" y2="320" stroke="black" class="t"/>
+  <text x="120" y="324" class="label">214</text>
+  <line x1="590" y1="270" x2="560" y2="285" stroke="black" class="t"/>
+  <text x="530" y="295" class="label">216</text>
+  
+  <text x="50" y="700" class="caption" font-weight="bold">Reference Numerals:</text>
+  <text x="50" y="715" class="caption">200 — Helmet shell  |  202 — Full-face visor  |  204 — GoPro camera mount  |  206 — 0.5L side-mount tank</text>
+  <text x="50" y="730" class="caption">208 — Sealed bulkhead fitting  |  210 — Magnetic strap pucks  |  212 — Acoustic exhaust diffuser</text>
+  <text x="50" y="745" class="caption">214 — Communications port  |  216 — Tank cradle</text>
+</svg>

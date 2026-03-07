@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900">
+  <style>
+    text { font-family: Arial, sans-serif; font-size: 11px; }
+    .label { font-size: 11px; font-weight: bold; }
+    .caption { font-size: 10px; }
+    .thin { stroke-width: 0.5; }
+    .medium { stroke-width: 1.2; }
+    .thick { stroke-width: 1.8; }
+  </style>
+
+  <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold">FIG. 2 — Side Profile View (System Worn by User)</text>
+
+  <!-- User head outline (side profile) -->
+  <path d="M350,120 Q300,100 280,140 Q255,180 260,230 Q260,280 275,310 Q290,350 310,370 Q330,390 340,400 L360,400 Q380,390 390,370 Q400,340 400,310 Q405,280 400,250 Q395,200 380,170 Q365,140 350,120 Z" fill="none" stroke="black" stroke-dasharray="8,4" class="medium"/>
+  <!-- Ear -->
+  <path d="M260,220 Q245,215 243,235 Q242,255 258,255" fill="none" stroke="black" stroke-dasharray="4,2" class="thin"/>
+
+  <!-- MASK on face (solid - product component) -->
+  <path d="M380,175 Q420,160 435,190 Q445,220 440,260 Q435,290 420,310 Q400,330 375,335 Q360,335 355,325" fill="none" stroke="black" class="thick"/>
+  <!-- Visor surface -->
+  <path d="M385,185 Q415,175 425,200 Q432,225 428,260 Q425,285 415,300 Q400,315 382,318" fill="none" stroke="black" class="medium"/>
+  <!-- Face seal against skin -->
+  <path d="M378,170 Q370,175 365,200 Q360,240 362,280 Q365,310 375,335" fill="none" stroke="black" stroke-dasharray="4,2" class="thin"/>
+
+  <!-- Head strap going over crown -->
+  <path d="M382,170 Q370,130 340,110 Q310,100 280,120 Q265,140 260,180" fill="none" stroke="black" class="medium"/>
+  <!-- Strap buckle at back of head -->
+  <rect x="268" y="155" width="20" height="14" rx="2" fill="none" stroke="black" class="medium"/>
+
+  <!-- MOUTHPIECE in mouth area -->
+  <path d="M395,310 L420,305 Q430,308 432,318 L432,325 Q430,332 420,335 L395,338" fill="none" stroke="black" class="thick"/>
+  <!-- Bite flanges shown -->
+  <line x1="400" y1="312" x2="425" y2="309" stroke="black" class="thin"/>
+  <line x1="400" y1="335" x2="425" y2="332" stroke="black" class="thin"/>
+
+  <!-- BREATHING TUBE routing down from mouthpiece -->
+  <path d="M432,322 Q460,325 475,345 Q490,370 490,400 Q490,430 485,460 Q480,490 475,520 Q470,545 468,560" fill="none" stroke="black" class="medium"/>
+  <!-- Tube corrugation detail -->
+  <path d="M483,380 Q495,385 483,390" fill="none" stroke="black" class="thin"/>
+  <path d="M482,410 Q494,415 482,420" fill="none" stroke="black" class="thin"/>
+  <path d="M480,440 Q492,445 480,450" fill="none" stroke="black" class="thin"/>
+  <path d="M478,470 Q490,475 478,480" fill="none" stroke="black" class="thin"/>
+  <path d="M476,500 Q488,505 476,510" fill="none" stroke="black" class="thin"/>
+
+  <!-- HAND holding tank -->
+  <!-- Forearm and hand outline -->
+  <path d="M520,520 Q510,540 500,560 Q495,575 490,590 Q485,600 488,610 Q492,620 500,625 Q510,630 520,625 Q530,620 535,610 Q540,590 535,570 Q530,550 525,530" fill="none" stroke="black" stroke-dasharray="6,3" class="medium"/>
+  <!-- Fingers wrapped around tank -->
+  <path d="M488,610 Q480,615 478,625 Q478,640 485,650" fill="none" stroke="black" stroke-dasharray="4,2" class="thin"/>
+  <path d="M500,625 Q495,635 493,650" fill="none" stroke="black" stroke-dasharray="4,2" class="thin"/>
+
+  <!-- TANK in hand -->
+  <rect x="478" y="595" width="45" height="130" rx="22" fill="none" stroke="black" class="thick"/>
+  <!-- Tank valve at top -->
+  <rect x="490" y="582" width="22" height="16" rx="3" fill="none" stroke="black" class="medium"/>
+  <!-- First-stage regulator on tank -->
+  <rect x="475" y="560" width="52" height="25" rx="4" fill="none" stroke="black" class="medium"/>
+
+  <!-- Exhaled bubbles (indicating open mask exhale) -->
+  <circle cx="430" cy="280" r="4" fill="none" stroke="black" class="thin"/>
+  <circle cx="445" cy="265" r="3" fill="none" stroke="black" class="thin"/>
+  <circle cx="437" cy="248" r="5" fill="none" stroke="black" class="thin"/>
+  <circle cx="450" cy="230" r="3.5" fill="none" stroke="black" class="thin"/>
+
+  <!-- REFERENCE LABELS -->
+  <line x1="435" y1="190" x2="500" y2="170" stroke="black" class="thin"/>
+  <text x="505" y="174" class="label">10</text>
+
+  <line x1="425" y1="240" x2="500" y2="230" stroke="black" class="thin"/>
+  <text x="505" y="234" class="label">12</text>
+
+  <line x1="370" y1="250" x2="330" y2="260" stroke="black" class="thin"/>
+  <text x="290" y="264" class="label">14</text>
+
+  <line x1="345" y1="110" x2="310" y2="85" stroke="black" class="thin"/>
+  <text x="275" y="85" class="label">20</text>
+
+  <line x1="278" y1="162" x2="240" y2="155" stroke="black" class="thin"/>
+  <text x="200" y="159" class="label">22</text>
+
+  <line x1="420" y1="322" x2="460" y2="310" stroke="black" class="thin"/>
+  <text x="465" y="305" class="label">24</text>
+
+  <line x1="490" y1="450" x2="540" y2="440" stroke="black" class="thin"/>
+  <text x="545" y="444" class="label">26</text>
+
+  <line x1="527" y1="572" x2="570" y2="560" stroke="black" class="thin"/>
+  <text x="575" y="564" class="label">28/32</text>
+
+  <line x1="523" y1="660" x2="570" y2="660" stroke="black" class="thin"/>
+  <text x="575" y="664" class="label">36</text>
+
+  <line x1="445" y1="265" x2="490" y2="255" stroke="black" class="thin"/>
+  <text x="495" y="250" class="label">38</text>
+
+  <!-- Legend -->
+  <text x="50" y="810" class="caption" font-weight="bold">Reference Numerals:</text>
+  <text x="50" y="825" class="caption">10 — Mask assembly  |  12 — Visor  |  14 — Face seal  |  20 — Head strap  |  22 — Buckle</text>
+  <text x="50" y="840" class="caption">24 — Mouthpiece  |  26 — Breathing tube  |  28/32 — Regulator/first-stage  |  36 — Tank  |  38 — Exhaled bubbles</text>
+</svg>
