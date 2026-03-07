@@ -33,14 +33,11 @@
   <line x1="400" y1="312" x2="425" y2="309" stroke="black" class="thin"/>
   <line x1="400" y1="335" x2="425" y2="332" stroke="black" class="thin"/>
 
-  <!-- BREATHING TUBE routing down from mouthpiece -->
+  <!-- BREATHING TUBE routing down from mouthpiece (smooth, not corrugated) -->
+  <!-- Tube outer wall -->
   <path d="M432,322 Q460,325 475,345 Q490,370 490,400 Q490,430 485,460 Q480,490 475,520 Q470,545 468,560" fill="none" stroke="black" class="medium"/>
-  <!-- Tube corrugation detail -->
-  <path d="M483,380 Q495,385 483,390" fill="none" stroke="black" class="thin"/>
-  <path d="M482,410 Q494,415 482,420" fill="none" stroke="black" class="thin"/>
-  <path d="M480,440 Q492,445 480,450" fill="none" stroke="black" class="thin"/>
-  <path d="M478,470 Q490,475 478,480" fill="none" stroke="black" class="thin"/>
-  <path d="M476,500 Q488,505 476,510" fill="none" stroke="black" class="thin"/>
+  <!-- Tube inner wall (parallel, smooth) -->
+  <path d="M428,328 Q454,331 468,350 Q482,374 482,404 Q482,434 477,464 Q472,494 467,524 Q462,548 460,563" fill="none" stroke="black" class="thin"/>
 
   <!-- HAND holding tank -->
   <!-- Forearm and hand outline -->

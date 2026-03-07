@@ -183,7 +183,7 @@ function generateFig1SVG() {
 }
 
 function generateFig2SVG() {
-  // Exploded view of a single tank cradle
+  // Exploded view of a single tank cradle (fabric webbing loop design)
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
   <style>
     text { font-family: Arial, sans-serif; font-size: 11px; }
@@ -196,83 +196,93 @@ function generateFig2SVG() {
   </style>
   <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold">FIG. 2 — Exploded View of Tank Cradle Assembly</text>
 
-  <!-- BELT MOUNTING CLIPS (top, separated) -->
-  <rect x="180" y="80" width="60" height="30" rx="4" fill="none" stroke="black" class="thick"/>
-  <rect x="195" y="85" width="30" height="20" rx="2" fill="none" stroke="black" class="medium"/>
-  <rect x="560" y="80" width="60" height="30" rx="4" fill="none" stroke="black" class="thick"/>
-  <rect x="575" y="85" width="30" height="20" rx="2" fill="none" stroke="black" class="medium"/>
-  <!-- Dashed connection lines -->
-  <line x1="210" y1="110" x2="270" y2="180" stroke="black" stroke-dasharray="6,3" class="thin"/>
-  <line x1="590" y1="110" x2="530" y2="180" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <!-- BELT SECTION (top, shown as a horizontal band, separated) -->
+  <rect x="150" y="70" width="500" height="35" rx="3" fill="none" stroke="black" class="thick"/>
+  <!-- Belt webbing texture -->
+  <line x1="200" y1="75" x2="200" y2="100" stroke="black" class="thin"/>
+  <line x1="300" y1="75" x2="300" y2="100" stroke="black" class="thin"/>
+  <line x1="500" y1="75" x2="500" y2="100" stroke="black" class="thin"/>
+  <line x1="600" y1="75" x2="600" y2="100" stroke="black" class="thin"/>
+  <!-- Belt threading slots where loop attaches -->
+  <rect x="340" y="95" width="50" height="10" rx="2" fill="none" stroke="black" class="medium"/>
+  <rect x="410" y="95" width="50" height="10" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- Dashed assembly lines from belt down to loop -->
+  <line x1="365" y1="105" x2="340" y2="170" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <line x1="435" y1="105" x2="460" y2="170" stroke="black" stroke-dasharray="6,3" class="thin"/>
 
-  <!-- CRADLE BODY (main piece, center) -->
-  <rect x="230" y="200" width="340" height="120" rx="16" fill="none" stroke="black" class="thick"/>
-  <!-- Interior cylindrical recess (dashed - interior feature) -->
-  <ellipse cx="400" cy="260" rx="55" ry="25" fill="none" stroke="black" stroke-dasharray="4,2" class="medium"/>
-  <!-- Anti-rotation ridges (interior) -->
-  <line x1="350" y1="240" x2="350" y2="290" stroke="black" class="medium"/>
-  <line x1="450" y1="240" x2="450" y2="290" stroke="black" class="medium"/>
-  <!-- Material cross-hatch (glass-reinforced nylon) -->
-  <line x1="240" y1="210" x2="260" y2="230" class="hatch"/>
-  <line x1="260" y1="210" x2="280" y2="230" class="hatch"/>
-  <line x1="520" y1="210" x2="540" y2="230" class="hatch"/>
-  <line x1="540" y1="210" x2="560" y2="230" class="hatch"/>
-  <!-- Belt clip receivers -->
-  <rect x="245" y="190" width="30" height="15" rx="2" fill="none" stroke="black" class="medium"/>
-  <rect x="525" y="190" width="30" height="15" rx="2" fill="none" stroke="black" class="medium"/>
+  <!-- FABRIC WEBBING LOOP (main cradle piece — U-shaped strap) -->
+  <!-- The loop is a single continuous strap that threads through belt slots -->
+  <!-- Left side of strap going up to belt -->
+  <path d="M310,180 L310,200" fill="none" stroke="black" class="thick"/>
+  <!-- U-shape: down left side, across bottom, up right side -->
+  <path d="M310,200 L310,480 Q310,510 340,510 L460,510 Q490,510 490,480 L490,200" fill="none" stroke="black" class="thick"/>
+  <!-- Right side going up to belt -->
+  <path d="M490,200 L490,180" fill="none" stroke="black" class="thick"/>
+  <!-- Inner edge of fabric strap (showing strap width ~25mm) -->
+  <path d="M335,200 L335,470 Q335,490 355,490 L445,490 Q465,490 465,470 L465,200" fill="none" stroke="black" class="medium"/>
+  <!-- Fabric texture — stitching lines along strap -->
+  <line x1="315" y1="220" x2="315" y2="470" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <line x1="485" y1="220" x2="485" y2="470" stroke="gray" class="thin" stroke-dasharray="3,2"/>
+  <!-- Double-stitch reinforcement at top where strap meets belt -->
+  <line x1="310" y1="205" x2="335" y2="205" stroke="black" class="thin"/>
+  <line x1="310" y1="210" x2="335" y2="210" stroke="black" class="thin"/>
+  <line x1="465" y1="205" x2="490" y2="205" stroke="black" class="thin"/>
+  <line x1="465" y1="210" x2="490" y2="210" stroke="black" class="thin"/>
+  <!-- Cross-stitch reinforcement at bottom curve -->
+  <line x1="340" y1="495" x2="355" y2="510" class="hatch"/>
+  <line x1="355" y1="495" x2="370" y2="510" class="hatch"/>
+  <line x1="430" y1="495" x2="445" y2="510" class="hatch"/>
+  <line x1="445" y1="495" x2="460" y2="510" class="hatch"/>
 
-  <!-- SPRING-LOADED LATCH (separated above cradle) -->
-  <rect x="355" y="140" width="90" height="30" rx="5" fill="none" stroke="black" class="thick"/>
-  <!-- Spring inside latch -->
-  <path d="M370,150 Q375,145 380,150 Q385,155 390,150 Q395,145 400,150 Q405,155 410,150 Q415,145 420,150 Q425,155 430,150" fill="none" stroke="black" class="thin"/>
-  <!-- Latch hook -->
-  <path d="M400,170 L400,185 Q395,195 390,190" fill="none" stroke="black" class="medium"/>
-  <!-- Dashed assembly line -->
-  <line x1="400" y1="170" x2="400" y2="200" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <!-- ELASTIC RETENTION STRAP (crosses front of loop to hold tank in) -->
+  <path d="M310,300 L490,300" fill="none" stroke="black" class="medium" stroke-dasharray="8,3"/>
+  <path d="M310,310 L490,310" fill="none" stroke="black" class="medium" stroke-dasharray="8,3"/>
+  <!-- Snap button on retention strap -->
+  <circle cx="490" cy="305" r="6" fill="none" stroke="black" class="medium"/>
+  <circle cx="490" cy="305" r="2" fill="black"/>
 
-  <!-- RELEASE TAB (separated to right) -->
-  <path d="M620,230 L660,230 Q670,230 670,240 L670,270 Q670,280 660,280 L620,280 Z" fill="none" stroke="black" class="thick"/>
-  <text x="645" y="260" text-anchor="middle" font-size="9" font-weight="bold">TAB</text>
-  <!-- Connection line -->
-  <line x1="570" y1="260" x2="620" y2="260" stroke="black" stroke-dasharray="6,3" class="thin"/>
-
-  <!-- TANK (below cradle, separated) -->
-  <rect x="365" y="380" width="70" height="180" rx="35" fill="none" stroke="black" class="thick"/>
-  <!-- Tank valve -->
-  <rect x="385" y="365" width="30" height="20" rx="3" fill="none" stroke="black" class="medium"/>
+  <!-- TANK (separated below, showing insertion path) -->
+  <rect x="355" y="580" width="90" height="180" rx="45" fill="none" stroke="black" class="thick"/>
+  <!-- Tank valve top -->
+  <rect x="380" y="562" width="40" height="22" rx="4" fill="none" stroke="black" class="medium"/>
+  <line x1="380" y1="572" x2="420" y2="572" stroke="black" class="thin"/>
+  <!-- Pressure gauge -->
+  <circle cx="400" cy="568" r="6" fill="none" stroke="black" class="thin"/>
+  <line x1="400" y1="565" x2="404" y2="562" stroke="black" class="thin"/>
   <!-- Tank neck ring -->
-  <ellipse cx="400" cy="395" rx="40" ry="8" fill="none" stroke="black" class="medium"/>
-  <text x="400" y="475" text-anchor="middle" font-size="9">0.5L / 3000 PSI</text>
-  <!-- Dashed assembly arrow -->
-  <line x1="400" y1="365" x2="400" y2="320" stroke="black" stroke-dasharray="6,3" class="thin"/>
-  <path d="M395,325 L400,315 L405,325" fill="none" stroke="black" class="thin"/>
+  <ellipse cx="400" cy="595" rx="50" ry="8" fill="none" stroke="black" class="medium"/>
+  <text x="400" y="680" text-anchor="middle" font-size="9">0.5L / 3000 PSI</text>
+
+  <!-- Dashed assembly arrow (tank slides UP into loop) -->
+  <line x1="400" y1="560" x2="400" y2="520" stroke="black" stroke-dasharray="6,3" class="thin"/>
+  <path d="M395,525 L400,513 L405,525" fill="none" stroke="black" class="thin"/>
 
   <!-- REFERENCE LABELS -->
-  <line x1="210" y1="95" x2="155" y2="80" stroke="black" class="thin"/>
-  <text x="70" y="84" class="label">120 — Belt clips</text>
+  <line x1="400" y1="70" x2="400" y2="50" stroke="black" class="thin"/>
+  <text x="375" y="47" class="label">120 — Belt</text>
 
-  <line x1="400" y1="155" x2="470" y2="130" stroke="black" class="thin"/>
-  <text x="475" y="134" class="label">104 — Spring latch</text>
+  <line x1="310" y1="350" x2="250" y2="350" stroke="black" class="thin"/>
+  <text x="115" y="354" class="label">108 — Webbing loop</text>
 
-  <line x1="570" y1="260" x2="570" y2="310" stroke="black" class="thin"/>
-  <text x="495" y="318" class="label">122 — Release tab</text>
+  <line x1="490" y1="305" x2="550" y2="305" stroke="black" class="thin"/>
+  <text x="555" y="309" class="label">104 — Retention strap</text>
 
-  <line x1="230" y1="260" x2="170" y2="275" stroke="black" class="thin"/>
-  <text x="60" y="279" class="label">108 — Cradle body</text>
+  <line x1="335" y1="210" x2="265" y2="218" stroke="black" class="thin"/>
+  <text x="135" y="222" class="label">124 — Stitch reinforcement</text>
 
-  <line x1="350" y1="265" x2="300" y2="290" stroke="black" class="thin"/>
-  <text x="190" y="300" class="label">124 — Anti-rotation ridges</text>
+  <line x1="400" y1="595" x2="480" y2="595" stroke="black" class="thin"/>
+  <text x="485" y="599" class="label">126 — Tank neck ring</text>
 
-  <line x1="400" y1="395" x2="480" y2="385" stroke="black" class="thin"/>
-  <text x="485" y="389" class="label">126 — Tank neck ring</text>
+  <line x1="445" y1="680" x2="510" y2="690" stroke="black" class="thin"/>
+  <text x="515" y="694" class="label">110 — 0.5L tank</text>
 
-  <line x1="400" y1="480" x2="480" y2="490" stroke="black" class="thin"/>
-  <text x="485" y="494" class="label">110 — 0.5L tank</text>
+  <line x1="370" y1="100" x2="330" y2="130" stroke="black" class="thin"/>
+  <text x="220" y="140" class="label">122 — Belt threading slot</text>
 
   <!-- Legend -->
-  <text x="50" y="620" class="caption" font-weight="bold">Reference Numerals:</text>
-  <text x="50" y="635" class="caption">104 — Spring-loaded snap-lock latch  |  108 — Cradle body (glass-reinforced nylon)  |  110 — 0.5L tank</text>
-  <text x="50" y="650" class="caption">120 — Belt mounting clips  |  122 — Release tab  |  124 — Anti-rotation ridges  |  126 — Tank neck ring</text>
+  <text x="50" y="730" class="caption" font-weight="bold">Reference Numerals:</text>
+  <text x="50" y="745" class="caption">104 — Elastic retention strap (snap closure)  |  108 — Webbing loop cradle (fabric)  |  110 — 0.5L tank</text>
+  <text x="50" y="760" class="caption">120 — Waist belt (50mm webbing)  |  122 — Belt threading slot  |  124 — Stitch reinforcement  |  126 — Tank neck ring</text>
 </svg>`;
 }
 

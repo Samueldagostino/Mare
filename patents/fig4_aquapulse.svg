@@ -10,25 +10,22 @@
 
   <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold">FIG. 4 — Front View of Mask Assembly</text>
 
-  <!-- Outer face seal perimeter -->
+  <!-- Outer face seal perimeter (dashed — soft silicone skirt) -->
   <path d="M400,100 Q530,100 560,170 Q580,230 575,300 Q570,370 550,420 Q530,470 480,510 Q440,540 400,550 Q360,540 320,510 Q270,470 250,420 Q230,370 225,300 Q220,230 240,170 Q270,100 400,100 Z" fill="none" stroke="black" stroke-dasharray="6,3" class="medium"/>
 
-  <!-- Mask frame (rigid) -->
+  <!-- Mask frame — frameless design, minimal rigid perimeter -->
   <path d="M400,120 Q510,120 535,180 Q555,230 550,290 Q545,350 530,390 Q510,440 470,475 Q440,500 400,508 Q360,500 330,475 Q290,440 270,390 Q255,350 250,290 Q245,230 265,180 Q290,120 400,120 Z" fill="none" stroke="black" class="thick"/>
 
-  <!-- Bridge/nose divider -->
-  <line x1="400" y1="160" x2="400" y2="400" stroke="black" class="medium"/>
+  <!-- Single panoramic lens (wide, no divider) -->
+  <path d="M400,155 Q490,155 515,195 Q535,235 532,290 Q530,340 515,375 Q495,415 460,440 Q435,458 400,462 Q365,458 340,440 Q305,415 285,375 Q270,340 268,290 Q265,235 285,195 Q310,155 400,155 Z" fill="none" stroke="black" class="medium"/>
 
-  <!-- Left lens -->
-  <path d="M390,165 Q340,165 310,200 Q280,245 278,300 Q280,350 300,385 Q325,420 370,440 L390,400 Q390,300 390,165 Z" fill="none" stroke="black" class="medium"/>
+  <!-- Nose bridge area integrated within single lens (subtle bump, dashed — no hard divider) -->
+  <path d="M385,370 Q390,390 400,400 Q410,390 415,370" fill="none" stroke="black" stroke-dasharray="4,2" class="thin"/>
 
-  <!-- Right lens -->
-  <path d="M410,165 Q460,165 490,200 Q520,245 522,300 Q520,350 500,385 Q475,420 430,440 L410,400 Q410,300 410,165 Z" fill="none" stroke="black" class="medium"/>
-
-  <!-- Nose pocket -->
-  <path d="M375,400 Q380,430 400,450 Q420,430 425,400" fill="none" stroke="black" class="medium"/>
+  <!-- Nose pocket (below lens) -->
+  <path d="M375,462 Q380,485 400,500 Q420,485 425,462" fill="none" stroke="black" class="medium"/>
   <!-- Nose pocket interior dashed -->
-  <path d="M382,405 Q390,425 400,435 Q410,425 418,405" fill="none" stroke="black" stroke-dasharray="3,2" class="thin"/>
+  <path d="M382,465 Q390,482 400,490 Q410,482 418,465" fill="none" stroke="black" stroke-dasharray="3,2" class="thin"/>
 
   <!-- Strap attachment points (left and right) -->
   <circle cx="225" cy="270" r="8" fill="none" stroke="black" class="medium"/>
@@ -40,46 +37,43 @@
   <path d="M190,270 L150,260 Q140,258 135,265 L135,275 Q140,282 150,280 L190,270" fill="none" stroke="black" class="medium"/>
   <path d="M610,270 L650,260 Q660,258 665,265 L665,275 Q660,282 650,280 L610,270" fill="none" stroke="black" class="medium"/>
 
-  <!-- Breathing tube entry point (bottom center) -->
-  <circle cx="400" cy="520" r="12" fill="none" stroke="black" class="thick"/>
-  <circle cx="400" cy="520" r="7" fill="none" stroke="black" class="medium"/>
-  <!-- Tube going down -->
-  <path d="M393,532 L393,570 Q388,575 393,580 Q398,585 393,590" fill="none" stroke="black" class="medium"/>
-  <path d="M407,532 L407,570 Q412,575 407,580 Q402,585 407,590" fill="none" stroke="black" class="medium"/>
+  <!-- Mouthpiece at bottom center -->
+  <path d="M385,520 Q390,515 400,513 Q410,515 415,520 L417,533 Q413,540 400,543 Q387,540 383,533 Z" fill="none" stroke="black" class="medium"/>
 
-  <!-- Anti-fog coating indicator (interior detail) -->
-  <text x="335" y="310" font-size="8" fill="gray" font-style="italic">anti-fog</text>
-  <text x="335" y="322" font-size="8" fill="gray" font-style="italic">coating</text>
-  <text x="445" y="310" font-size="8" fill="gray" font-style="italic">anti-fog</text>
-  <text x="445" y="322" font-size="8" fill="gray" font-style="italic">coating</text>
+  <!-- Smooth tube going down from mouthpiece -->
+  <!-- Outer wall -->
+  <path d="M393,543 L393,580 Q393,600 395,620 L395,660" fill="none" stroke="black" class="medium"/>
+  <!-- Inner wall -->
+  <path d="M407,543 L407,580 Q407,600 405,620 L405,660" fill="none" stroke="black" class="thin"/>
+
+  <!-- Anti-fog coating indicator (interior detail, centered in single lens) -->
+  <text x="370" y="305" font-size="8" fill="gray" font-style="italic">anti-fog</text>
+  <text x="370" y="317" font-size="8" fill="gray" font-style="italic">coating</text>
 
   <!-- REFERENCE LABELS -->
   <line x1="300" y1="120" x2="250" y2="90" stroke="black" class="thin"/>
   <text x="170" y="94" class="label">10 — Mask frame</text>
 
-  <line x1="310" y1="250" x2="220" y2="220" stroke="black" class="thin"/>
-  <text x="115" y="224" class="label">12 — Left lens</text>
-
-  <line x1="490" y1="250" x2="580" y2="220" stroke="black" class="thin"/>
-  <text x="585" y="224" class="label">12 — Right lens</text>
+  <line x1="350" y1="250" x2="220" y2="220" stroke="black" class="thin"/>
+  <text x="80" y="224" class="label">12 — Panoramic lens</text>
 
   <line x1="560" y1="170" x2="620" y2="140" stroke="black" class="thin"/>
   <text x="625" y="144" class="label">14 — Face seal</text>
 
-  <line x1="400" y1="450" x2="480" y2="470" stroke="black" class="thin"/>
-  <text x="485" y="474" class="label">16 — Nose pocket</text>
+  <line x1="400" y1="500" x2="480" y2="490" stroke="black" class="thin"/>
+  <text x="485" y="494" class="label">16 — Nose pocket</text>
 
   <line x1="225" y1="262" x2="200" y2="235" stroke="black" class="thin"/>
   <text x="100" y="239" class="label">18 — Strap point</text>
 
-  <line x1="400" y1="508" x2="490" y2="530" stroke="black" class="thin"/>
-  <text x="495" y="534" class="label">56 — Tube entry</text>
+  <line x1="415" y1="528" x2="470" y2="530" stroke="black" class="thin"/>
+  <text x="475" y="534" class="label">24 — Mouthpiece</text>
 
-  <line x1="400" y1="235" x2="440" y2="200" stroke="black" class="thin"/>
-  <text x="445" y="197" class="label">58 — Bridge</text>
+  <line x1="407" y1="630" x2="450" y2="640" stroke="black" class="thin"/>
+  <text x="455" y="644" class="label">26 — Breathing tube</text>
 
   <!-- Legend -->
-  <text x="50" y="680" class="caption" font-weight="bold">Reference Numerals:</text>
-  <text x="50" y="695" class="caption">10 — Mask frame  |  12 — Tempered glass lenses (×2)  |  14 — Silicone face seal (dashed)  |  16 — Nose pocket</text>
-  <text x="50" y="710" class="caption">18 — Strap attachment points  |  56 — Breathing tube entry point  |  58 — Nose bridge divider</text>
+  <text x="50" y="720" class="caption" font-weight="bold">Reference Numerals:</text>
+  <text x="50" y="735" class="caption">10 — Mask frame  |  12 — Single panoramic lens  |  14 — Silicone face seal (dashed)  |  16 — Nose pocket</text>
+  <text x="50" y="750" class="caption">18 — Strap attachment points  |  24 — Mouthpiece  |  26 — Breathing tube</text>
 </svg>
