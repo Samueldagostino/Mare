@@ -181,77 +181,87 @@ function fig2() {
 }
 
 function fig3() {
-  // Cross-section side view
+  // Cross-section side view — dome shell, mouthpiece with internal tube, air path
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
   <style>text{font-family:Arial,sans-serif;font-size:11px}.label{font-size:11px;font-weight:bold}.caption{font-size:10px}.t{stroke-width:0.5}.m{stroke-width:1.2}.k{stroke-width:1.8}.h{stroke-width:0.4;stroke:gray}</style>
   <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold">FIG. 3 — Cross-Section Side View (Air Path Detail)</text>
-  
-  <!-- Helmet shell cross-section (side view) -->
-  <path d="M350,80 Q420,70 460,100 Q500,140 510,200 Q520,280 515,360 Q510,420 490,470 Q470,510 440,540 L430,550 L380,560 Q350,555 330,540 Q300,510 285,470 Q270,420 265,360 Q260,280 265,200 Q270,140 300,100 Q330,75 350,80 Z" fill="none" stroke="black" class="k"/>
-  <!-- Shell thickness hatching -->
-  <path d="M355,85 Q415,76 455,103 Q493,140 503,200 Q512,275 508,355 Q503,415 485,465 Q467,505 438,535" fill="none" stroke="black" class="m"/>
-  <line x1="352" y1="88" x2="358" y2="88" class="h"/>
-  <line x1="458" y1="105" x2="452" y2="108" class="h"/>
-  <line x1="505" y1="200" x2="512" y2="202" class="h"/>
-  <line x1="500" y1="350" x2="510" y2="352" class="h"/>
-  
-  <!-- Visor (front face) -->
-  <path d="M455,105 Q490,160 500,250 Q505,330 490,400 Q475,450 445,490" fill="none" stroke="black" class="k"/>
-  
+
+  <!-- Helmet shell cross-section (side view) — smooth dome -->
+  <path d="M350,80 C400,70 450,75 480,100 C510,130 525,180 530,240 C535,310 532,380 520,430 C508,480 485,520 455,545 L435,555 L375,565 C350,560 330,545 310,520 C285,485 270,440 262,390 C255,330 255,270 262,210 C270,150 300,100 330,85 Z" fill="none" stroke="black" class="k"/>
+  <!-- Shell thickness inner wall -->
+  <path d="M355,90 C400,80 445,84 473,107 C500,135 515,180 520,235 C525,305 522,370 512,420 C502,465 482,502 455,530" fill="none" stroke="black" class="m"/>
+  <!-- Shell hatching -->
+  <line x1="352" y1="88" x2="358" y2="93" class="h"/>
+  <line x1="475" y1="105" x2="470" y2="112" class="h"/>
+  <line x1="522" y1="240" x2="528" y2="242" class="h"/>
+  <line x1="518" y1="370" x2="528" y2="372" class="h"/>
+
+  <!-- Visor (front face — large, from forehead to chin) -->
+  <path d="M473,107 C505,155 518,230 520,310 C522,380 510,440 490,485 C475,515 458,535 440,548" fill="none" stroke="black" class="k"/>
+
   <!-- Interior breathing space -->
-  <text x="380" y="300" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Interior</text>
-  <text x="380" y="315" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Breathing</text>
-  <text x="380" y="330" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Space</text>
-  
+  <text x="390" y="280" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Interior</text>
+  <text x="390" y="295" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Breathing</text>
+  <text x="390" y="310" text-anchor="middle" font-size="10" fill="gray" font-style="italic">Space</text>
+
+  <!-- Internal mouthpiece (user bites on it) -->
+  <rect x="410" y="420" width="30" height="14" rx="5" fill="none" stroke="black" class="m"/>
+  <text x="425" y="415" font-size="7" text-anchor="middle" fill="gray">MOUTHPIECE</text>
+
+  <!-- Internal tube from mouthpiece to bulkhead -->
+  <path d="M440,427 L470,427 C480,427 485,420 485,410 L485,310 C485,300 490,295 498,295" fill="none" stroke="black" class="m"/>
+
   <!-- BULKHEAD FITTING — air path through shell wall -->
-  <!-- Exterior side -->
-  <rect x="510" y="230" width="40" height="25" rx="3" fill="none" stroke="black" class="k"/>
+  <rect x="498" y="285" width="35" height="25" rx="3" fill="none" stroke="black" class="k"/>
   <!-- Through-wall passage -->
-  <rect x="500" y="237" width="15" height="12" fill="none" stroke="black" class="m"/>
+  <rect x="520" y="292" width="15" height="12" fill="none" stroke="black" class="m"/>
   <!-- Hatching for bulkhead -->
-  <line x1="512" y1="233" x2="518" y2="240" class="h"/>
-  <line x1="520" y1="233" x2="526" y2="240" class="h"/>
-  <line x1="528" y1="233" x2="534" y2="240" class="h"/>
-  <line x1="536" y1="233" x2="542" y2="240" class="h"/>
-  <!-- Interior demand valve -->
-  <rect x="485" y="237" width="18" height="12" rx="2" fill="none" stroke="black" class="m"/>
-  <!-- Air flow arrows through bulkhead -->
+  <line x1="500" y1="288" x2="506" y2="295" class="h"/>
+  <line x1="508" y1="288" x2="514" y2="295" class="h"/>
+  <line x1="524" y1="288" x2="530" y2="295" class="h"/>
+
+  <!-- Air flow arrows -->
   <defs><marker id="a3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="black" stroke-width="0.8"/></marker></defs>
-  <line x1="550" y1="243" x2="525" y2="243" stroke="black" class="m" marker-end="url(#a3)"/>
-  <line x1="500" y1="243" x2="490" y2="243" stroke="black" class="m" marker-end="url(#a3)"/>
-  <text x="540" y="225" font-size="8" fill="gray">AIR IN</text>
-  
-  <!-- Tank connected to exterior of bulkhead -->
-  <rect x="555" y="180" width="30" height="100" rx="15" fill="none" stroke="black" class="k"/>
-  <rect x="562" y="170" width="16" height="14" rx="2" fill="none" stroke="black" class="m"/>
-  <!-- First-stage regulator -->
-  <rect x="548" y="160" width="44" height="15" rx="3" fill="none" stroke="black" class="m"/>
-  
+  <line x1="555" y1="298" x2="535" y2="298" stroke="black" class="m" marker-end="url(#a3)"/>
+  <line x1="498" y1="298" x2="488" y2="298" stroke="black" class="m" marker-end="url(#a3)"/>
+  <text x="555" y="285" font-size="8" fill="gray">AIR IN</text>
+
+  <!-- Air tube from tank loops down then into bulkhead -->
+  <path d="M580,210 C580,250 590,380 590,400 C590,420 575,425 560,415 C550,408 540,390 535,310" fill="none" stroke="black" class="m"/>
+
+  <!-- Tank connected via tube -->
+  <rect x="565" y="130" width="32" height="110" rx="16" fill="none" stroke="black" class="k"/>
+  <!-- Pressure gauge on top -->
+  <circle cx="581" cy="122" r="10" fill="none" stroke="black" class="m"/>
+  <line x1="581" y1="116" x2="581" y2="122" stroke="black" class="t"/>
+  <line x1="581" y1="122" x2="585" y2="119" stroke="black" class="t"/>
+  <!-- Valve assembly -->
+  <rect x="572" y="118" width="18" height="16" rx="2" fill="none" stroke="black" class="m"/>
+
   <!-- EXHAUST PATH -->
   <!-- Chin chamber -->
-  <path d="M330,510 L330,540 Q330,560 350,565 L430,565 Q450,560 450,540 L450,510" fill="none" stroke="black" class="m"/>
-  <text x="390" y="540" text-anchor="middle" font-size="8" fill="gray">Chin Chamber</text>
-  <text x="390" y="552" text-anchor="middle" font-size="8" fill="gray">(~150 mL)</text>
-  
+  <path d="M325,520 L325,545 Q325,560 345,565 L425,565 Q445,560 445,545 L445,520" fill="none" stroke="black" class="m"/>
+  <text x="385" y="540" text-anchor="middle" font-size="8" fill="gray">Chin Chamber</text>
+  <text x="385" y="552" text-anchor="middle" font-size="8" fill="gray">(~150 mL)</text>
+
   <!-- Exhale flow arrow down into chin chamber -->
-  <path d="M390,450 L390,510" fill="none" stroke="black" class="m" marker-end="url(#a3)"/>
-  <text x="410" y="480" font-size="8" fill="gray">EXHALED AIR</text>
-  
+  <path d="M385,460 L385,520" fill="none" stroke="black" class="m" marker-end="url(#a3)"/>
+  <text x="405" y="490" font-size="8" fill="gray">EXHALED AIR</text>
+
   <!-- Diffuser plate at bottom of chin chamber -->
-  <rect x="340" y="565" width="100" height="10" rx="3" fill="none" stroke="black" class="k"/>
+  <rect x="335" y="565" width="100" height="10" rx="3" fill="none" stroke="black" class="k"/>
   <!-- Holes in diffuser -->
-  <circle cx="355" cy="570" r="1.5" fill="black"/>
-  <circle cx="365" cy="570" r="1.5" fill="black"/>
-  <circle cx="375" cy="570" r="1.5" fill="black"/>
-  <circle cx="385" cy="570" r="1.5" fill="black"/>
-  <circle cx="395" cy="570" r="1.5" fill="black"/>
-  <circle cx="405" cy="570" r="1.5" fill="black"/>
-  <circle cx="415" cy="570" r="1.5" fill="black"/>
-  <circle cx="425" cy="570" r="1.5" fill="black"/>
-  
+  <circle cx="350" cy="570" r="1.5" fill="black"/>
+  <circle cx="362" cy="570" r="1.5" fill="black"/>
+  <circle cx="374" cy="570" r="1.5" fill="black"/>
+  <circle cx="386" cy="570" r="1.5" fill="black"/>
+  <circle cx="398" cy="570" r="1.5" fill="black"/>
+  <circle cx="410" cy="570" r="1.5" fill="black"/>
+  <circle cx="422" cy="570" r="1.5" fill="black"/>
+
   <!-- Mushroom valve -->
-  <path d="M350,563 Q345,558 350,555 Q355,553 360,555" fill="none" stroke="black" class="m"/>
-  
+  <path d="M345,563 Q340,558 345,555 Q350,553 355,555" fill="none" stroke="black" class="m"/>
+
   <!-- Tiny bubbles exiting -->
   <circle cx="355" cy="585" r="2" fill="none" stroke="black" class="t"/>
   <circle cx="370" cy="590" r="1.5" fill="none" stroke="black" class="t"/>
@@ -259,34 +269,36 @@ function fig3() {
   <circle cx="400" cy="592" r="1.5" fill="none" stroke="black" class="t"/>
   <circle cx="415" cy="586" r="2" fill="none" stroke="black" class="t"/>
   <circle cx="430" cy="590" r="1.5" fill="none" stroke="black" class="t"/>
-  <circle cx="360" cy="598" r="1" fill="none" stroke="black" class="t"/>
-  <circle cx="390" cy="602" r="1.5" fill="none" stroke="black" class="t"/>
-  <circle cx="420" cy="600" r="1" fill="none" stroke="black" class="t"/>
-  
+  <circle cx="365" cy="598" r="1" fill="none" stroke="black" class="t"/>
+  <circle cx="395" cy="602" r="1.5" fill="none" stroke="black" class="t"/>
+
   <!-- Labels -->
   <line x1="265" y1="200" x2="230" y2="190" stroke="black" class="t"/>
-  <text x="160" y="194" class="label">200 — Shell</text>
-  
-  <line x1="490" y1="243" x2="460" y2="250" stroke="black" class="t"/>
-  <text x="400" y="262" class="label">222 — Demand valve</text>
-  
-  <line x1="510" y1="243" x2="510" y2="270" stroke="black" class="t"/>
-  <text x="510" y="285" class="label">208 — Bulkhead</text>
-  
-  <line x1="570" y1="230" x2="620" y2="220" stroke="black" class="t"/>
-  <text x="625" y="224" class="label">206 — Tank</text>
-  
-  <line x1="440" y1="570" x2="480" y2="580" stroke="black" class="t"/>
-  <text x="485" y="584" class="label">212 — Diffuser</text>
-  
-  <line x1="350" y1="555" x2="310" y2="545" stroke="black" class="t"/>
-  <text x="220" y="549" class="label">224 — Mushroom valve</text>
-  
-  <line x1="390" y1="600" x2="460" y2="615" stroke="black" class="t"/>
-  <text x="465" y="619" class="label">226 — Dispersed bubbles</text>
-  
-  <text x="50" y="680" class="caption" font-weight="bold">Air Path: Tank (206) → Bulkhead (208) → Demand valve (222) → Interior breathing space → Chin chamber → Diffuser (212) → Bubbles (226)</text>
-  <text x="50" y="695" class="caption">Cross-hatching indicates solid material in cross-section. Dashed lines indicate hidden/internal features.</text>
+  <text x="150" y="194" class="label">200 — Shell (dome)</text>
+
+  <line x1="425" y1="427" x2="350" y2="430" stroke="black" class="t"/>
+  <text x="260" y="434" class="label">252 — Mouthpiece</text>
+
+  <line x1="498" y1="298" x2="470" y2="310" stroke="black" class="t"/>
+  <text x="390" y="350" class="label">208 — Bulkhead</text>
+
+  <line x1="581" y1="185" x2="630" y2="175" stroke="black" class="t"/>
+  <text x="635" y="179" class="label">206 — Tank</text>
+
+  <line x1="581" y1="112" x2="630" y2="105" stroke="black" class="t"/>
+  <text x="635" y="109" class="label">242 — Gauge</text>
+
+  <line x1="435" y1="570" x2="470" y2="580" stroke="black" class="t"/>
+  <text x="475" y="584" class="label">212 — Diffuser</text>
+
+  <line x1="345" y1="555" x2="300" y2="545" stroke="black" class="t"/>
+  <text x="200" y="549" class="label">224 — Mushroom valve</text>
+
+  <line x1="390" y1="600" x2="455" y2="615" stroke="black" class="t"/>
+  <text x="460" y="619" class="label">226 — Dispersed bubbles</text>
+
+  <text x="50" y="680" class="caption" font-weight="bold">Air Path: Tank (206) → Tube → Bulkhead (208) → Internal tube → Mouthpiece (252) → Interior breathing space → Chin chamber → Diffuser (212) → Bubbles (226)</text>
+  <text x="50" y="695" class="caption">Cross-hatching indicates solid material in cross-section. User bites mouthpiece inside helmet. Air tube loops from tank down and into bulkhead on shell side.</text>
 </svg>`;
 }
 
